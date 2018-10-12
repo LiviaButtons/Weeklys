@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        
+        <title>Weekly's</title>
+        
+        <!-- CSS Stylesheets -->
+        <link rel="stylesheet" href="./css/normalize.css">
+        <link rel="stylesheet" href="./css/fontawesome-all.min.css">
+        
+        <!-- JavaScript and jQuery -->
+    </head>
+    
+    <body>
+        <header>
+            <div class="headerImg">
+                <img src="./assets/images/hpImage.jpg" alt="homepage">
+            </div>
+            
+            <div>
+                <a href="http://interface3.be" target="_self"><img src="./assets/logo/onlyBowl.png" alt="Weekly's logo"></a>
+                
+                <div>
+                    <button>My calendars</button>
+                    <button>Login</button>
+                    <a href="http://interface3.be">EN</a> | <a href="http://interface3.be">FR</a>
+                </div>
+            </div>
+            
+            <div class="hpSearch">
+                <input type="text" placeholder="Search for recipes, ingredients, and much more!">
+                <button class="fas fa-search"></button>
+            </div>
+        </header>
+        
+        <main>
+            <section id="calendar">
+                <h2>The calendar</h2>
+                
+                <div id="hpCalendar" class="calendar">
+                    
+                </div>
+                
+                <div id="hpGenerator">
+                    <form action="#" method="#" id="calGenerator" name="calGenerator">
+                        <input type="text" placeholder="blabla">
+                        <input type="radio" name="radio1" value="1">
+                        <input type="radio" name="radio1" value="2">
+                        <input type="radio" name="radio1" value="3">
+                        <button>Previous</button>
+                        <button>Next</button>
+                        <button>Generate Calendar</button>
+                    </form>
+                </div>
+            </section>
+            
+            <section id="categories">
+                <h1>Categories</h1>
+                
+                <div>
+                    <div class="hpCat">
+
+                    </div>
+
+                    <div class="hpCat">
+
+                    </div>
+
+                    <div class="hpCat">
+
+                    </div>
+
+                    <div class="hpCat">
+
+                    </div>
+
+                    <div class="hpCat">
+
+                    </div>
+                </div>
+                
+                <button>See all categories</button>
+            </section>
+        </main>
+        
+        <footer>
+            <div>
+                Share on social media: 
+                <i class="fab fa-facebook-square fa-2x"></i>
+                <i class="fab fa-twitter-square fa-2x"></i><i class="fab fa-pinterest-square fa-2x"></i>
+                <i class="fab fa-instagram fa-2x"></i>
+            </div>
+            
+            <div>
+                <div class="footerLogin form-wrap">
+                    <div class="tabs">
+                        <h3 class="login-tab"><a class="active" href="#login-tab-content">Login</a></h3>
+                        <h3 class="signup-tab"><a href="#signup-tab-content">Sign Up</a></h3>
+                    </div><!--.tabs-->
+
+                    <div class="tabs-content" class="active">
+                        <div id="login-tab-content">
+                            <form class="login-form" action="" method="post">
+                                <input type="text" class="input" id="user_login" autocomplete="off" placeholder="Email or Username">
+                                <input type="password" class="input" id="user_pass" autocomplete="off" placeholder="Password">
+                                <input type="checkbox" class="checkbox" id="remember_me">
+                                <label for="remember_me">Remember me</label>
+
+                                <input type="submit" class="button" value="Login">
+                            </form>
+                            <div class="help-text">
+                                <p><a href="#">Forget your password?</a></p>
+                            </div>
+                        </div>
+
+                        <div id="signup-tab-content">
+                            <form class="signup-form" action="" method="post">
+                                <input type="email" class="input" id="user_email" autocomplete="off" placeholder="Email">
+                                <input type="text" class="input" id="user_name" autocomplete="off" placeholder="Username">
+                                <input type="password" class="input" id="user_pass" autocomplete="off" placeholder="Password">
+                                <input type="submit" class="button" value="Sign Up">
+                            </form>
+
+                            <div class="help-text">
+                                <p>By signing up, you agree to our</p>
+                                <p><a href="#">Terms of service</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                   
+                <div class="footerSitemap">
+                    <h4>Sitemap</h4>
+                    <nav class="footerNav">
+                        <ul>
+                            <li>Home</li>
+                            <li>Calendar</li>
+                            <li>Recipes</li>
+                            <li>FAQ</li>
+                            <li>Jobs</li>
+                        </ul>
+                    </nav>
+                </div>
+                   
+                <div class="footerContact">
+                    <h4>Contact us</h4>
+                    <form action="" method="" id="contactForm">
+                        <input type="text" name="name" placeholder="Name">
+                        <input type="text" name="email" placeholder="E-mail address">
+                        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                        <button>Send message</button>
+                    </form>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
