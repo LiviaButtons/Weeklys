@@ -19,15 +19,17 @@
     <body>
         <header>
             <div> 
-                <div class="logoImg">
-                    <a href="http://www.interface3.be" target="_self">
-                    <img src="./assets/logo/onlyBowl.png" alt="Weekly's logo">
-                    </a>
-                </div>
+                <div class="logo">
+                    <div class="logoImg">
+                        <a href="http://www.interface3.be" target="_self">
+                        <img src="./assets/logo/onlyBowl.png" alt="Weekly's logo">
+                        </a>
+                    </div>
 
-                <div class="logoText">
-                    <h1>Weekly's</h1>
-                    <p>plan it, eat it, cook it</p> 
+                    <div class="logoText">
+                        <h1>Weekly's</h1>
+                        <p>plan it, eat it, cook it</p> 
+                    </div>
                 </div>
                 
                 <div class="dbSearch mobileHidden">
@@ -35,7 +37,7 @@
                     <button class="fas fa-search mobileHidden searchButton"></button>
                 </div>
 
-                <div>
+                <div class="lang">
                     <a href="http://www.interface3.be">EN</a> | <a href="http://www.interface3.be">FR</a>
                 </div>
             </div>
@@ -63,7 +65,7 @@
                 <div>
                     <h2>Meal planner</h2>
                     
-                    <div>
+                    <div class="planGenerator">
                         <div class="form">
                             <div>
                                 <input type="checkbox" id="vege" name="vege" value="vege">
@@ -350,8 +352,9 @@
                 <div class="contactForm">
                     <input type="text" name="email" id="email" placeholder="Your e-mail">
                     <textarea name="message" id="message" cols="30" rows="10" placeholder="Your message"></textarea>
+                    <input type="checkbox" name="robot" id="robot">
+                    <label for="robot">I'm not a robot</label>
                     <button id="contactButton" class="contactButton"><span class="far fa-envelope"></span> Contact us</button>
-                    
                     <p class="contactMessage"></p>
                 </div>
 

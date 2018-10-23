@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Weekly's</title>
+        
+        <!-- CSS Stylesheets -->
+        <link rel="stylesheet" href="./css/normalize.css">
+        <link rel="stylesheet" href="./css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="./css/recipes.css">
+    </head>
+    
+    <body>
+        <header>
+            <div> 
+                <div class="logo">
+                    <div class="logoImg">
+                        <a href="http://www.interface3.be" target="_self">
+                        <img src="./assets/logo/onlyBowl.png" alt="Weekly's logo">
+                        </a>
+                    </div>
+
+                    <div class="logoText">
+                        <h1>Weekly's</h1>
+                        <p>plan it, eat it, cook it</p> 
+                    </div>
+                </div>
+                
+                <div class="dbSearch mobileHidden">
+                    <input class="mobileHidden" type="text" placeholder="Search for recipes, ingredients...">
+                    <button class="fas fa-search mobileHidden searchButton"></button>
+                </div>
+
+                <div class="lang">
+                    <a href="http://www.interface3.be">EN</a> | <a href="http://www.interface3.be">FR</a>
+                </div>
+            </div>
+        </header>
+        
+        <main>
+            <div>
+                <section id="search">
+                    <div class="dbSearch desktopHidden">
+                        <input class="desktopHidden" type="text" placeholder="Search for recipes, ingredients...">
+                        <button class="fas fa-search desktopHidden searchButton"></button>
+                    </div>
+                </section>
+
+                <section id="recipes">
+
+                </section>
+            </div>
+        </main>
+        
+        <footer>
+            <div>
+                <div class="socialButtons">
+                    <p>Find us on social media:</p> 
+                    
+                    <div>
+                        <span class="fab fa-facebook-square fa-2x"></span>
+                        <span class="fab fa-twitter-square fa-2x"></span>
+                        <span class="fab fa-pinterest-square fa-2x"></span>
+                        <span class="fab fa-instagram fa-2x"></span>
+                        <span class="fab fa-youtube fa-2x"></span>
+                    </div>
+                </div>
+                
+                <div class="contactForm">
+                    <input type="text" name="email" id="email" placeholder="Your e-mail">
+                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Your message"></textarea>
+                    <input type="checkbox" name="robot" id="robot">
+                    <label for="robot">I'm not a robot</label>
+                    <button id="contactButton" class="contactButton"><span class="far fa-envelope"></span> Contact us</button>
+                    <p class="contactMessage"></p>
+                </div>
+
+                <p class="copyright">&copy; Weekly's 2018</p>
+            </div>
+        </footer>
+    </body>
+</html>
