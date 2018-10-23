@@ -90,7 +90,6 @@ header img {
     max-width: 60%;
     min-width: 100px;
     margin: 0;
-    padding: 10px;
 }
 
 .logoText {
@@ -133,7 +132,7 @@ header .dbSearch input[type="text"] {
     min-width: 245px;
     padding: 10px;
     margin-right: 0;
-    border-style: none;
+    border: 1px solid transparent;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
@@ -153,10 +152,11 @@ header .dbSearch button {
     min-width: 50px;
     padding: 11px;
     margin-left: 0;
-    border-style: none;
+    border: 1px solid transparent;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
+
 
 /* --------------------------------------------- */
 /* ---------------- intro section -------------- */
@@ -205,7 +205,6 @@ header .dbSearch button {
 }
 
 #mealPlan .form {
-    margin: 10px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -240,7 +239,7 @@ header .dbSearch button {
     text-transform: uppercase;
     padding: 10px;
     margin: 10px;
-    border-style: none;
+    border: 1px solid transparent;
     border-radius: 5px;
     font-family: 'LatoBold';
     color: #FFF;
@@ -264,6 +263,10 @@ header .dbSearch button {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+}
+
+.fa-sync-alt {
+    color: #848484;
 }
 
 .weekday,
@@ -312,17 +315,17 @@ header .dbSearch button {
     margin-bottom: 20px;
 }
 
+
 /* --------------------------------------------- */
 /* ------------------ footer ------------------- */
 footer {
-/*    background-color: #f0c948;*/
-/*    background-color: #869e40;*/
     background-color: #303030;
     color: #FFF;
 }
 
 footer > div {
     width: 90%;
+    padding: 20px;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -332,7 +335,7 @@ footer > div {
 }
 
 footer > div > div {
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -359,12 +362,12 @@ footer .contactForm > button {
     width: 100%;
     padding: 10px;
     margin: 10px;    
-    border: 1px solid transparent;
     border-radius: 5px;
 }
 
 footer .contactForm > input[type=text], 
 footer .contactForm > textarea {
+    border: 1px solid transparent;
     background-color: #e3e3e3;
 }
 
@@ -374,6 +377,7 @@ footer .contactForm > textarea {
 }
 
 footer .contactForm > button {
+    border: 1px solid transparent;
     background-color: #FFF;
 }
 
@@ -387,6 +391,8 @@ footer .contactForm > button {
 
 
 /* --------------------------------------------- */
+/* --------------------------------------------- */
+
 /* --------------------------------------------- */
 /* ----------------- desktop ------------------- */
 
@@ -423,6 +429,24 @@ footer .contactForm > button {
     }
     
     /* ---------------------------- */
+    /* ---------- search ---------- */
+    header .dbSearch input {
+        width: 350px;
+    }
+    
+    header .dbSearch button {
+        transition: all;
+        transition-duration: 1s;
+    }
+    
+    header .dbSearch button:hover {
+        background-color: #FFF;
+        color: #869e40;
+        border: 1px solid #869e40;
+        cursor: pointer;
+    }
+    
+    /* ---------------------------- */
     /* ----------- intro ---------- */
     #intro {
         min-height: 600px;
@@ -430,10 +454,6 @@ footer .contactForm > button {
     
     #intro .overlayText {
         max-width: 400px;
-    }
-    
-    #intro .dbSearch input {
-        width: 350px;
     }
     
     /* ---------------------------- */
@@ -455,6 +475,15 @@ footer .contactForm > button {
     
     #mealPlan .form button {
         width: 30%;
+        transition: all;
+        transition-duration: 1s;
+    }
+    
+    #mealPlan .form button:hover {
+        border: 1px solid #869e40;
+        color: #869e40;
+        background-color: #FFF;
+        cursor: pointer;
     }
     
     #mealPlan .calendarShare {
@@ -486,6 +515,16 @@ footer .contactForm > button {
         justify-content: center;
         border-radius: 0;
         border: 1px solid #FFF;
+    }
+    
+    .mealtime > h5 {
+        padding-top: 0;
+        margin-top: 0;
+    }
+    
+    .fa-sync-alt {
+        padding-bottom: 0;
+        padding-left: 0;
     }
     
     .monday {
@@ -550,5 +589,17 @@ footer .contactForm > button {
     
     footer .contactForm textarea {
         height: 40px;
+    }
+    
+    footer .contactForm > button {
+        transition: all;
+        transition-duration: 1s;
+    }
+
+    footer .contactForm > button:hover {
+        cursor: pointer;
+        border: 1px solid #FFF;
+        background-color: transparent;
+        color: #FFF;
     }
 }
