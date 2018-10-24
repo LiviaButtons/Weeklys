@@ -100,16 +100,20 @@ header > div {
 }
 
 header .logo {
-    max-width: 60%;
+    padding: 0;
+    margin: 0;
+    max-width: 50%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 header img {
-    max-width: 60%;
+    max-width: 40%;
     min-width: 100px;
     margin: 0;
+    padding-right: 15px;
 }
 
 .logoText {
@@ -469,12 +473,21 @@ footer .contactForm > button {
 
 
 /* --------------------------------------------- */
-/* --------------------------------------------- */
+/* ---------------- intermediate --------------- */
+/*
+@media (max-width: 999px),
+@media (min-width: 600px) {
+    header .dbSearch {
+        width: 50%;
+    } 
+}
+*/
+
 
 /* --------------------------------------------- */
 /* ----------------- desktop ------------------- */
 
-@media(min-width: 800px) {
+@media(min-width: 850px) {
     /* ---------------------------- */
     /* ---------- general --------- */
     .mobileHidden {
@@ -555,7 +568,7 @@ footer .contactForm > button {
     /* ---------------------------- */
     /* ---------- search ---------- */
     header .dbSearch input {
-        width: 350px;
+        max-width: 350px;
     }
     
     header .dbSearch button {
