@@ -10,7 +10,7 @@ $(document).ready(function (event) {
             $('#email').attr('placeholder', 'Your email');
         } else {
             $('#email').addClass('error');
-            $('#email').attr('placeholder', 'Error: Please write a valid email address!');
+            $('#email').attr('placeholder', 'Error: invalid email address!');
             formIsValid = false;
         }
 
@@ -19,7 +19,7 @@ $(document).ready(function (event) {
             $('#message').attr('placeholder', 'Your message');
         } else {
             $('#message').addClass('error');
-            $('#message').attr('placeholder', 'Error: Your message cannot be empty!');
+            $('#message').attr('placeholder', 'Error: message is empty!');
             formIsValid = false;
         }
 
