@@ -204,6 +204,7 @@ header .dbSearch {
 #intro .dbSearch input[type="text"],
 header .dbSearch input[type="text"] {
     min-width: 245px;
+    height: 40px;
     padding: 10px;
     margin-right: 0;
     border: 1px solid transparent;
@@ -525,6 +526,8 @@ footer .contactForm > button {
     
     nav ul li a {
         color: #303030;
+        transition: all;
+        transition-duration: 1s;
     }
     
     nav ul li:last-child a {
@@ -541,6 +544,10 @@ footer .contactForm > button {
     nav ul li:last-child a:last-child {
         padding-left: 5px;
         border-left: 1px solid #303030;
+    }
+    
+    nav ul li a:hover {
+        color: #869e40;
     }
     /* ---------------------------- */
     /* ---------- search ---------- */
