@@ -3,7 +3,7 @@ header ('Cache-Control: no-cache');
 header ('Content-Type: application/json');
 
 if (isset ($_POST['email'], $_POST['message'])) {
-    if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) !== false && $_POST['message'] |= '') {
+    if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) !== false && $_POST['message'] != '') {
         $email = $_POST['email'];
         $message = trim(strip_tags($_POST['message']));
         $recipient = 'contact@weeklys.com';
@@ -26,5 +26,4 @@ if (isset ($_POST['email'], $_POST['message'])) {
     // error: nothing received in post
     echo '{"result": "Error"}';
 }
-
 ?>
