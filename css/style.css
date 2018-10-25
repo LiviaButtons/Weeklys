@@ -397,6 +397,12 @@ header .dbSearch button {
     margin-bottom: 20px;
 }
 
+.fa-share-square,
+.fa-print,
+.fa-file-pdf {
+    color: #848484;
+}
+
 
 /* --------------------------------------------- */
 /* ------------------ footer ------------------- */
@@ -476,12 +482,20 @@ footer .contactForm > button {
 /* ---------------- intermediate --------------- */
 
 @media (max-width: 400px) {
-    header h1 {
+    header .logoText h1 {
         font-size: 2em;
     }
     
-    header p {
-        font-size: 1em;
+    header .logoText p {
+        font-size: 0.8em;
+    }
+    
+    header .logoImg {
+        margin-left: 5px;
+    }
+    
+    header .logoText {
+        margin-left: 5px;
     }
 }
 
@@ -536,6 +550,7 @@ footer .contactForm > button {
     }
     
     nav ul li {
+        font-size: 1.2em;
         border: none;
         margin-top: 0;
         margin-bottom: 0;
@@ -552,7 +567,7 @@ footer .contactForm > button {
     nav ul li:last-child a {
         padding: 0;
         margin: 0;
-        font-size: 0.5em;
+        font-size: 0.6em;
     }
     
     nav ul li:last-child a:first-child {
@@ -661,11 +676,7 @@ footer .contactForm > button {
         padding-top: 0;
         margin-top: 0;
     }
-    
-    .fa-sync-alt {
-        padding-bottom: 0;
-        padding-left: 0;
-    }
+
     
     .monday {
         border-top-left-radius: 5px;
@@ -690,6 +701,8 @@ footer .contactForm > button {
     }
     
     .mealtime .fa-sync-alt {
+        padding-bottom: 0;
+        padding-left: 0;
         order: -1;
         align-self: flex-end;
     }
