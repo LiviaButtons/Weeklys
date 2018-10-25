@@ -474,14 +474,17 @@ footer .contactForm > button {
 
 /* --------------------------------------------- */
 /* ---------------- intermediate --------------- */
-/*
-@media (max-width: 999px),
-@media (min-width: 600px) {
-    header .dbSearch {
-        width: 50%;
-    } 
+
+@media (max-width: 400px) {
+    header h1 {
+        font-size: 2em;
+    }
+    
+    header p {
+        font-size: 1em;
+    }
 }
-*/
+
 
 
 /* --------------------------------------------- */
