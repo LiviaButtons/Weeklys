@@ -223,6 +223,10 @@ header .dbSearch input[type="text"] {
     border-bottom-left-radius: 5px;
 }
 
+#intro .dbSearch {
+    margin-bottom: 30px;
+}
+
 #intro .dbSearch input[type="text"] {
     background: rgba(255, 255, 255, 0.7);
 }
@@ -345,6 +349,7 @@ header .dbSearch button {
 }
 
 .calendarSection {
+    padding-top: 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
