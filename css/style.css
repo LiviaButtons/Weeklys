@@ -91,6 +91,8 @@ header {
 
 header > div {
     width: 90%;
+    padding-left: 20px;
+    padding-right: 20px;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -127,7 +129,7 @@ header img {
 .logoText > h1 {
     padding-bottom: 15px;
     margin-bottom: 5px;
-    border-bottom: 1px solid #e3e3e3;
+/*    border-bottom: 1px solid #e3e3e3;*/
 }
 
 .logoText > p {
@@ -142,10 +144,9 @@ header a {
 }
 
 nav {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
     position: fixed;
+    left: 0;
     top: 115px;
     display: flex;
     flex-direction: column;
@@ -169,8 +170,11 @@ nav ul li {
     text-transform: uppercase;
     color: #FFF;
     font-size: 1.5em;
-    font-family: 'LatoLight';
-    border-bottom: 1px solid #000;
+    font-family: 'Lato';
+}
+
+nav ul li:not(:last-child) {
+    border-bottom: 1px solid #000;    
 }
 
 nav ul a {
@@ -486,7 +490,6 @@ footer .contactForm > button {
 }
 
 
-
 /* --------------------------------------------- */
 /* ----------------- desktop ------------------- */
 
@@ -494,7 +497,7 @@ footer .contactForm > button {
     /* ---------------------------- */
     /* ---------- general --------- */
     .mobileHidden {
-        display: inline-block;
+        display: flex;
     }
     
     .desktopHidden {
@@ -523,7 +526,7 @@ footer .contactForm > button {
     }
     
     nav {
-        width: 30%;
+/*        width: 30%;*/
         position: inherit;
         background-color: #FFF;
         border: none;
@@ -536,6 +539,7 @@ footer .contactForm > button {
     }
     
     nav ul li {
+        font-size: 1em;
         border: none;
         margin-top: 0;
         margin-bottom: 0;
@@ -548,11 +552,11 @@ footer .contactForm > button {
         transition: all;
         transition-duration: 1s;
     }
-    
+
     nav ul li:last-child a {
         padding: 0;
         margin: 0;
-        font-size: 0.5em;
+        font-size: 0.7em;
     }
     
     nav ul li:last-child a:first-child {
