@@ -550,6 +550,7 @@ footer .contactForm > button {
         margin-bottom: 0;
         margin-left: 10px;
         margin-right: 10px;
+        border: none !important;
     }
     
     nav ul li a {
