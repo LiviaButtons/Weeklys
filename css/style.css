@@ -81,8 +81,7 @@ header {
 }
 
 .nav-up {
-    top: -115px;
-    /* same as height of header */
+    top: -90px; /* same as height of header */
 }
 
 header > div {
@@ -104,20 +103,14 @@ header .logo {
     align-items: center;
 }
 
-/*
-header .logoImg {
-    width: 100px;
-}
-*/
-
 header img {
     width: 85px;
     margin: 0;
-    padding-right: 25px;
+    padding-right: 10px;
 }
 
 .logoText {
-    padding-left: 25px;
+    padding-left: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -137,6 +130,10 @@ header img {
 
 header a {
     text-decoration: none;
+}
+
+#hamMenu {
+    margin-left: 20px;
 }
 
 nav {
@@ -539,6 +536,14 @@ footer .contactForm > button {
     header .logo {
         justify-content: space-between;
         align-items: center;
+    }
+    
+    .logoImg {
+        padding-right: 25px;
+    }
+    
+    .logoText {
+        padding-left: 25px;
     }
 
     nav {
