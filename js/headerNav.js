@@ -2,7 +2,7 @@
 var didScroll;
 var lastScrollTop = 0;
 var delta = 1;
-var navbarHeight = 115; // set in CSS
+var navbarHeight = 90; // set in CSS
 //var navbarHeight = $('header').outerHeight();
 //console.log ($('header').outerHeight());
 
