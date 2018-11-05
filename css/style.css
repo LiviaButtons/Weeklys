@@ -127,10 +127,6 @@ header img {
 .logoText > h1 {
     padding-bottom: 0;
     margin-bottom: 5px;
-<<<<<<< HEAD
-/*    border-bottom: 1px solid #e3e3e3;*/
-=======
->>>>>>> menuFixes
 }
 
 .logoText > p {
@@ -146,13 +142,8 @@ header a {
 nav {
     width: 100%;
     position: fixed;
-<<<<<<< HEAD
-    left: 0;
-    top: 115px;
-=======
     top: 90px;
     left: 0;
->>>>>>> menuFixes
     display: flex;
     flex-direction: column;
     background-color: #303030;

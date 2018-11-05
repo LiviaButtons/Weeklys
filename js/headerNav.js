@@ -10,7 +10,7 @@ $(window).scroll (function (event) {
     didScroll = true;
 });
 
-// Check every 250ms whether a scroll did take place, only launching the function if a scroll took place
+// Check every 250ms whether a scroll did take place, only launching the function if it did
 setInterval (function () {
     if (didScroll) {
         hasScrolled();
