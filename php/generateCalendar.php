@@ -12,7 +12,10 @@
     }
 
     // 2. Create SQL request
-    $sql = "SELECT * FROM t_recette";
+    $sqlBreakfast = "SELECT id, nom FROM t_recette
+                     WHERE ";
+    $sqlLunch = "SELECT nom FROM t_recette";
+    $sqlDinner = "SELECT nom FROM t_recette";
 
     // 3. Prepare the request (send to server)
     $statement = $pdo->prepare ($sql);
