@@ -526,51 +526,10 @@ footer .contactForm > button {
         display: flex !important;
     }
     
-    .hamMenu {
-        display: none !important;
-    }
-    
-    header .dbSearch input {
-        width: 350px;
-    }
-}
-
-
-/* --------------------------------------------- */
-/* ----------------- desktop ------------------- */
-
-@media (min-width: 850px) {
-    /* ---------------------------- */
-    /* ---------- general --------- */
-    .tabletHidden,
-    .desktopHidden {
-        display: none;
-    }
-
-    .mobileHidden,
-    .tabletShow {
-        display: flex;
-    }
-
-    .tabletHidden {
+    #hamMenu {
         display: none;
     }
     
-    /* ---------------------------- */
-    /* ----------- Header --------- */
-    header .logo {
-        justify-content: space-between;
-        align-items: center;
-    }
-    
-    .logoImg {
-        padding-right: 25px;
-    }
-    
-    .logoText {
-        padding-left: 25px;
-    }
-
     nav {
         width: 30%;
         position: inherit;
@@ -623,6 +582,44 @@ footer .contactForm > button {
     nav ul li a:hover {
         color: #869e40;
     }
+}
+
+
+/* --------------------------------------------- */
+/* ----------------- desktop ------------------- */
+
+@media (min-width: 850px) {
+    /* ---------------------------- */
+    /* ---------- general --------- */
+    .tabletHidden,
+    .desktopHidden {
+        display: none;
+    }
+
+    .mobileHidden,
+    .tabletShow {
+        display: flex;
+    }
+
+    .tabletHidden {
+        display: none;
+    }
+    
+    /* ---------------------------- */
+    /* ----------- Header --------- */
+    header .logo {
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .logoImg {
+        padding-right: 25px;
+    }
+    
+    .logoText {
+        padding-left: 25px;
+    }
+
     
     /* ---------------------------- */
     /* ---------- search ---------- */
