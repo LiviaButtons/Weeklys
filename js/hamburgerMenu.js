@@ -1,5 +1,6 @@
-/* Simple JavaScript for a hamburger menu on a responsive website */
-/* Author: Livia Bottoni */
+// Simple JavaScript for a hamburger menu on a responsive website 
+// Author: Livia Bottoni 
+
 document.addEventListener("DOMContentLoaded", function(event) {
     function toggleMenu(event) {
         if (!window.matchMedia('(min-width: 1100px)').matches) {

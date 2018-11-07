@@ -1,5 +1,8 @@
+// Allows navigation between the different weekdays of the meal planner
+// on mobile website
+// Author: Livia Bottoni
+
 $(document).ready (function (ev) {
-    
     $('.jsLeftButton').on('click', function (e) {    
         // target the grandparent of the button that was clicked
         // and get the index of the clicked element
@@ -42,7 +45,7 @@ $(document).ready (function (ev) {
     });
     
     $(window).resize(function() {
-        if (!window.matchMedia('(min-width: 800px)').matches) {
+        if (!window.matchMedia('(min-width: 850px)').matches) {
             $('#weeklyCalendar').children().hide().addClass('mobileHidden');
             $('#weeklyCalendar > .calendarSection:nth-of-type(1)').show().removeClass('mobileHidden');
         } else {

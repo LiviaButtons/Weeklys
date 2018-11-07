@@ -365,6 +365,10 @@ header .dbSearch button {
     align-items: center;
 }
 
+.calendarSection:not(:first-of-type) {
+    display: none; /* hide all but the first calendar section on mobile */
+}
+
 .fa-sync-alt {
     color: #848484;
 }
@@ -748,6 +752,7 @@ footer .contactForm > button {
     }
     
     .calendarSection {
+        display: flex !important;
         width: 20%;
     }
     
