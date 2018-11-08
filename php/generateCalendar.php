@@ -12,26 +12,36 @@
     }
 
     // 2. Create SQL request
-    $sqlBreakfast = "SELECT id, nom FROM t_recette
-                     WHERE ";
-    $sqlLunch = "SELECT nom FROM t_recette";
-    $sqlDinner = "SELECT nom FROM t_recette";
+    $sqlBreakfast = "SELECT id, nom FROM view_recette
+                     WHERE typeDeRepas = snack";
+    $sqlLunch = "SELECT id, nom FROM view_recette
+                 WHERE typeDeRepas = snack";
+    $sqlDinner = "SELECT id, nom FROM view_recette
+                  WHERE typeDeRepas = snack";
 
     // 3. Prepare the request (send to server)
-    $statement = $pdo->prepare ($sql);
+    $statementB = $pdo->prepare ($sqlBreakfast);
+    $statementL = $pdo->prepare ($sqlLunch);
+    $statementD = $pdo->prepare ($sqlDinner);
 
     // 4. Give the parameters a value (based on form etc.)
 //    $statement->bindValue(':date', $_POST['datepicker'], PDO::PARAM_STR);
 
     // 5. Execute the request in the server
-    $statement->execute();
+    $statementB->execute();
+    $statementL->execute();
+    $statementD->execute();
 
     // 5.1 Something not working?
-     var_dump ($statement->errorInfo());
+//     var_dump ($statement->errorInfo());
 
     // 5.2 Put results into a table
-    $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $resultsB = $statementB->fetchAll(PDO::FETCH_ASSOC);
+    $resultsL = $statementL->fetchAll(PDO::FETCH_ASSOC);
+    $resultsD = $statementD->fetchAll(PDO::FETCH_ASSOC);
 
     // 6. Send results back
-    echo json_encode($results);
+    echo json_encode($resultsB);
+    echo json_encode($resultsL);
+    echo json_encode($resultsD);
 ?>
