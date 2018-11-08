@@ -1,3 +1,9 @@
+// This section makes the menu respond to scrolling.  
+// If the user scrolls down, the menu scrolls away (and nav closes)
+// If they scroll back up, it reappears
+// Author: Livia Bottoni
+// adapted from https://medium.com/@mariusc23/hide-header-on-scroll-down-show-on-scroll-up-67bbaae9a78c
+
 // Hide Header on on scroll down
 var didScroll;
 var lastScrollTop = 0;
@@ -29,10 +35,10 @@ function hasScrolled() {
     // hide the nav links
     // make sure hamburger button and not hamburger cross is shown
     if (st > lastScrollTop && st > navbarHeight) {
-        // Scroll Down
-        $('header').removeClass('nav-down').addClass('nav-up');
-        $('nav').addClass('mobileHidden');
-        $('#hamMenu > span').removeClass('fa-times').addClass('fa-bars');
+        // Scroll Down 
+        $('header').removeClass('nav-down').addClass('nav-up'); /* make sure the header goes up */
+        $('nav').addClass('tabletHidden'); /* if nav is open, hide it */
+        $('#hamMenu > span').removeClass('fa-times').addClass('fa-bars'); /* "close" hamburger menu visually */
     } else {
         // Scroll Up
         if (st + $(window).height() < $(document).height()) {
@@ -42,5 +48,3 @@ function hasScrolled() {
     
     lastScrollTop = st;
 }
-
-// https://medium.com/@mariusc23/hide-header-on-scroll-down-show-on-scroll-up-67bbaae9a78c

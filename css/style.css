@@ -29,6 +29,12 @@ main {
     margin-top: 90px;
 }
 
+.mobileHidden,
+.tabletHidden,
+.hidden {
+    display: none;
+}
+
 /* --------------------------------------------- */
 /* ------------------- fonts ------------------- */
 
@@ -188,7 +194,6 @@ nav ul li:last-child {
 
 nav ul li:last-child a:first-child {
     padding-right: 20px;
-/*    border-right: 0.2px solid #000000;*/
 }
 
 nav ul li:last-child a:last-child {
@@ -201,6 +206,7 @@ nav ul li:last-child a:last-child {
 /* ------------------ search bar --------------- */
 #intro .dbSearch,
 header .dbSearch {
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -209,7 +215,6 @@ header .dbSearch {
 
 #intro .dbSearch input[type="text"],
 header .dbSearch input[type="text"] {
-    min-width: 245px;
     height: 40px;
     padding: 10px;
     margin-right: 0;
@@ -223,6 +228,10 @@ header .dbSearch input[type="text"] {
 }
 
 #intro .dbSearch input[type="text"] {
+    width: calc(90% - 50px);
+    width: -moz-calc(90% - 50px); /* Firefox */
+    width: -webkit-calc(90% - 50px); /* Safari */
+    width: -o-calc(90% - 50px); /* Opera */
     background: rgba(255, 255, 255, 0.7);
 }
 
@@ -356,6 +365,10 @@ header .dbSearch button {
     align-items: center;
 }
 
+.calendarSection:not(:first-of-type) {
+    display: none; /* hide all but the first calendar section on mobile */
+}
+
 .fa-sync-alt {
     color: #848484;
 }
@@ -382,9 +395,6 @@ header .dbSearch button {
 
 .mealtime {
     background-color: rgb(240, 201, 72, 0.2);
-/*    background-image: url('../assets/images/bgTest3.png');*/
-/*    background-position: center;*/
-/*    background-repeat:no-repeat;*/
 }
 
 .lunch {
@@ -395,10 +405,6 @@ header .dbSearch button {
 .dinner {
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-}
-    
-.mobileHidden {
-    display: none;
 }
 
 #mealPlan > .calendarShare {
@@ -493,7 +499,7 @@ footer .contactForm > button {
 /* --------------------------------------------- */
 /* --------------------- small ----------------- */
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
     header .logoText h1 {
         font-size: 2em;
     }
@@ -518,34 +524,16 @@ footer .contactForm > button {
 
 
 /* --------------------------------------------- */
-/* ----------------- desktop ------------------- */
-
-@media(min-width: 850px) {
-    /* ---------------------------- */
-    /* ---------- general --------- */
-    .mobileHidden {
-        display: flex;
+/* --------------- big screens ----------------- */
+@media (min-width: 1100px) {
+    .desktopShow {
+        display: flex !important;
     }
     
-    .desktopHidden {
+    #hamMenu {
         display: none;
     }
     
-    /* ---------------------------- */
-    /* ----------- Header --------- */
-    header .logo {
-        justify-content: space-between;
-        align-items: center;
-    }
-    
-    .logoImg {
-        padding-right: 25px;
-    }
-    
-    .logoText {
-        padding-left: 25px;
-    }
-
     nav {
         width: 30%;
         position: inherit;
@@ -588,7 +576,6 @@ footer .contactForm > button {
     
     nav ul li:last-child a:first-child {
         padding-right: 5px;
-/*        border-right: 0.2px solid #303030;*/
     }
     
     nav ul li:last-child a:last-child {
@@ -599,17 +586,51 @@ footer .contactForm > button {
     nav ul li a:hover {
         color: #869e40;
     }
+}
+
+
+/* --------------------------------------------- */
+/* ----------------- desktop ------------------- */
+
+@media (min-width: 850px) {
+    /* ---------------------------- */
+    /* ---------- general --------- */
+    .tabletHidden,
+    .desktopHidden {
+        display: none;
+    }
+
+    .mobileHidden,
+    .tabletShow {
+        display: flex;
+    }
+
+    .tabletHidden {
+        display: none;
+    }
+    
+    /* ---------------------------- */
+    /* ----------- Header --------- */
+    header .logo {
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .logoImg {
+        padding-right: 25px;
+    }
+    
+    .logoText {
+        padding-left: 25px;
+    }
+
     
     /* ---------------------------- */
     /* ---------- search ---------- */
-    header .dbSearch {
-/*        align-self: center;*/
-    }
-    
     header .dbSearch input {
         order: -1;
         align-self: center;
-        width: 350px;
+        width: 200px;
     }
     
     header .dbSearch button {
@@ -631,7 +652,7 @@ footer .contactForm > button {
     }
     
     #intro .overlayText {
-        max-width: 400px;
+        max-width: 600px;
     }
     
     /* ---------------------------- */
@@ -731,6 +752,7 @@ footer .contactForm > button {
     }
     
     .calendarSection {
+        display: flex !important;
         width: 20%;
     }
     
@@ -770,7 +792,6 @@ footer .contactForm > button {
     footer .contactForm > button {
         -webkit-transition: background-color 1s;
         transition: background-color 1s, border 1s, color 1s;
-/*        transition-duration: 1s;*/
     }
 
     footer .contactForm > button:hover {
@@ -779,8 +800,4 @@ footer .contactForm > button {
         background-color: transparent;
         color: #FFF;
     }
-}
-
-@media (min-width: 1040px) {
-    
 }
