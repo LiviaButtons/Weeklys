@@ -26,7 +26,13 @@ header, section {
 }
 
 main {
-    margin-top: 115px;
+    margin-top: 90px;
+}
+
+.mobileHidden,
+.tabletHidden,
+.hidden {
+    display: none;
 }
 
 /* --------------------------------------------- */
@@ -65,16 +71,12 @@ h6 {
     text-transform: uppercase;
 }
 
-h1 {
-    font-size: 2.5em;
-}
-
 
 /* --------------------------------------------- */
 /* -------------------- Header ----------------- */
 header {
     background-color: #FFF;
-    height: 115px;
+    height: 90px;
     position: fixed;
     transition: top 0.2s ease-in-out;
 }
@@ -85,8 +87,7 @@ header {
 }
 
 .nav-up {
-    top: -115px;
-    /* same as height of header */
+    top: -90px; /* same as height of header */
 }
 
 header > div {
@@ -96,15 +97,12 @@ header > div {
     margin-left: auto;
     margin-right: auto;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    align-items:center;
+    align-items: center;
 }
 
 header .logo {
-    padding: 0;
-    margin: 0;
-    max-width: 50%;
+    align-self: flex-start;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -112,14 +110,13 @@ header .logo {
 }
 
 header img {
-    max-width: 40%;
-    min-width: 100px;
+    width: 85px;
     margin: 0;
-    padding-right: 15px;
+    padding-right: 10px;
 }
 
 .logoText {
-    padding-left: 15px;
+    padding-left: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -127,14 +124,12 @@ header img {
 }
 
 .logoText > h1 {
-    padding-bottom: 15px;
+    padding-bottom: 0;
     margin-bottom: 5px;
-/*    border-bottom: 1px solid #e3e3e3;*/
 }
 
 .logoText > p {
     font-family: 'AusthinaBrush', cursive;
-    font-size: 1.2em;
     padding-top: 0;
     margin-top: 0;
 }
@@ -143,11 +138,15 @@ header a {
     text-decoration: none;
 }
 
+#hamMenu {
+    margin-left: 20px;
+}
+
 nav {
     width: 100%;
     position: fixed;
+    top: 90px;
     left: 0;
-    top: 115px;
     display: flex;
     flex-direction: column;
     background-color: #303030;
@@ -157,6 +156,7 @@ nav {
 
 nav ul {
     list-style: none;
+    padding: 0;
     display: flex;
     font-size: 1.3em;
     flex-direction: column;
@@ -174,7 +174,7 @@ nav ul li {
 }
 
 nav ul li:not(:last-child) {
-    border-bottom: 1px solid #000;    
+    border-bottom: 1px solid #000;
 }
 
 nav ul a {
@@ -194,18 +194,19 @@ nav ul li:last-child {
 
 nav ul li:last-child a:first-child {
     padding-right: 20px;
-    border-right: 1px solid #000000;
 }
 
 nav ul li:last-child a:last-child {
     padding-left: 20px;
-    border-left: 1px solid #000000;
+    border-left: 0.2px solid #000000;
 }
+
 
 /* --------------------------------------------- */
 /* ------------------ search bar --------------- */
 #intro .dbSearch,
 header .dbSearch {
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -214,7 +215,6 @@ header .dbSearch {
 
 #intro .dbSearch input[type="text"],
 header .dbSearch input[type="text"] {
-    min-width: 245px;
     height: 40px;
     padding: 10px;
     margin-right: 0;
@@ -228,7 +228,16 @@ header .dbSearch input[type="text"] {
 }
 
 #intro .dbSearch input[type="text"] {
+    width: calc(90% - 50px);
+    width: -moz-calc(90% - 50px); /* Firefox */
+    width: -webkit-calc(90% - 50px); /* Safari */
+    width: -o-calc(90% - 50px); /* Opera */
     background: rgba(255, 255, 255, 0.7);
+}
+
+#intro .dbSearch {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 header .dbSearch input[type="text"] {
@@ -349,11 +358,15 @@ header .dbSearch button {
 }
 
 .calendarSection {
-    padding-top: 30px;
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+}
+
+.calendarSection:not(:first-of-type) {
+    display: none; /* hide all but the first calendar section on mobile */
 }
 
 .fa-sync-alt {
@@ -381,7 +394,7 @@ header .dbSearch button {
 }
 
 .mealtime {
-    background-color: rgb(240, 201, 72, 0.3);
+    background-color: rgb(240, 201, 72, 0.2);
 }
 
 .lunch {
@@ -390,12 +403,8 @@ header .dbSearch button {
 }
 
 .dinner {
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-    
-.mobileHidden {
-    display: none;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 #mealPlan > .calendarShare {
@@ -404,6 +413,12 @@ header .dbSearch button {
     flex-direction: row;
     justify-content: space-around;
     margin-bottom: 20px;
+}
+
+.fa-share-square,
+.fa-print,
+.fa-file-pdf {
+    color: #848484;
 }
 
 
@@ -482,56 +497,45 @@ footer .contactForm > button {
 
 
 /* --------------------------------------------- */
-/* ---------------- intermediate --------------- */
+/* --------------------- small ----------------- */
 
-@media (max-width: 400px) {
-    header h1 {
+@media (max-width: 500px) {
+    header .logoText h1 {
         font-size: 2em;
     }
     
-    header p {
-        font-size: 1em;
+    header .logoText p {
+        font-size: 0.8em;
+    }
+    
+    header .logoImg {
+        width: 85px;
+        margin-left: 0px;
+    }
+    
+    header .logoImg img {
+        width: 85px;
+    }
+    
+    header .logoText {
+        margin-left: 0px;
     }
 }
 
 
 /* --------------------------------------------- */
-/* ----------------- desktop ------------------- */
-
-@media(min-width: 850px) {
-    /* ---------------------------- */
-    /* ---------- general --------- */
-    .mobileHidden {
-        display: flex;
+/* --------------- big screens ----------------- */
+@media (min-width: 1100px) {
+    .desktopShow {
+        display: flex !important;
     }
     
-    .desktopHidden {
+    #hamMenu {
         display: none;
     }
     
-    /* ---------------------------- */
-    /* ----------- Header --------- */
-
-    
-    header > div > div > div:nth-child(1) {
-        max-width: 10%;
-    }
-    
-    header .logo {
-        justify-content: flex-start;
-        align-items: center;
-    }
-    
-    .logoImg {
-        margin-right: 20px;
-    }
-    
-    .logoText {
-        margin-left: 20px;
-    }
-    
     nav {
-/*        width: 30%;*/
+        width: 30%;
         position: inherit;
         background-color: #FFF;
         border: none;
@@ -541,51 +545,96 @@ footer .contactForm > button {
         flex-direction: row;
         justify-content: flex-end;
         align-items: center;
+        margin: 0;
     }
     
     nav ul li {
-        font-size: 1em;
+        font-size: 1.1em;
         border: none;
         margin-top: 0;
         margin-bottom: 0;
-        margin-left: 10px;
-        margin-right: 10px;
+        margin-left: 30px;
+        margin-right: 30px;
         border: none !important;
     }
     
     nav ul li a {
         color: #303030;
-        transition: all;
+        transition-property: color;
         transition-duration: 1s;
     }
 
+    nav ul li:last-child {
+        margin-right: 0;
+    }
+    
     nav ul li:last-child a {
         padding: 0;
         margin: 0;
-        font-size: 0.7em;
+        font-size: 0.6em;
     }
     
     nav ul li:last-child a:first-child {
         padding-right: 5px;
-        border-right: 1px solid #303030;
     }
     
     nav ul li:last-child a:last-child {
         padding-left: 5px;
-        border-left: 1px solid #303030;
+        border-left: 0.2px solid #303030;
     }
     
     nav ul li a:hover {
         color: #869e40;
     }
+}
+
+
+/* --------------------------------------------- */
+/* ----------------- desktop ------------------- */
+
+@media (min-width: 850px) {
+    /* ---------------------------- */
+    /* ---------- general --------- */
+    .tabletHidden,
+    .desktopHidden {
+        display: none;
+    }
+
+    .mobileHidden,
+    .tabletShow {
+        display: flex;
+    }
+
+    .tabletHidden {
+        display: none;
+    }
+    
+    /* ---------------------------- */
+    /* ----------- Header --------- */
+    header .logo {
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .logoImg {
+        padding-right: 25px;
+    }
+    
+    .logoText {
+        padding-left: 25px;
+    }
+
+    
     /* ---------------------------- */
     /* ---------- search ---------- */
     header .dbSearch input {
-        max-width: 350px;
+        order: -1;
+        align-self: center;
+        width: 200px;
     }
     
     header .dbSearch button {
-        transition: all;
+        transition-property: background-color;
         transition-duration: 1s;
     }
     
@@ -603,7 +652,7 @@ footer .contactForm > button {
     }
     
     #intro .overlayText {
-        max-width: 400px;
+        max-width: 600px;
     }
     
     /* ---------------------------- */
@@ -625,7 +674,7 @@ footer .contactForm > button {
     
     #mealPlan .form button {
         width: 30%;
-        transition: all;
+        transition-property: background-color;
         transition-duration: 1s;
     }
     
@@ -664,18 +713,14 @@ footer .contactForm > button {
     .mealtime {
         justify-content: center;
         border-radius: 0;
-        border: 1px solid #FFF;
+        border: 3px solid #FFF;
     }
     
     .mealtime > h5 {
         padding-top: 0;
         margin-top: 0;
     }
-    
-    .fa-sync-alt {
-        padding-bottom: 0;
-        padding-left: 0;
-    }
+
     
     .monday {
         border-top-left-radius: 5px;
@@ -700,11 +745,14 @@ footer .contactForm > button {
     }
     
     .mealtime .fa-sync-alt {
+        padding-bottom: 0;
+        padding-left: 0;
         order: -1;
         align-self: flex-end;
     }
     
     .calendarSection {
+        display: flex !important;
         width: 20%;
     }
     
@@ -742,8 +790,8 @@ footer .contactForm > button {
     }
     
     footer .contactForm > button {
-        transition: all;
-        transition-duration: 1s;
+        -webkit-transition: background-color 1s;
+        transition: background-color 1s, border 1s, color 1s;
     }
 
     footer .contactForm > button:hover {
