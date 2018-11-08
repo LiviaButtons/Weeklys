@@ -19,7 +19,6 @@ $(document).ready (function (ev) {
                     let results = JSON.parse(xhr.responseText);
 //                    console.log (xhr.responseText);
                     console.log (results);
-                    console.log ('The button works!');
 
 
                 } else {
