@@ -16,8 +16,9 @@ $(document).ready (function (ev) {
         xhr.onreadystatechange = function (e) {
             if (xhr.readyState == 4) {
                 if (xhr.status == 200) {
-//                    let results = JSON.parse(xhr.responseText);
-                    console.log (xhr.responseText);
+                    let results = JSON.parse(xhr.responseText);
+//                    console.log (xhr.responseText);
+                    console.log (results);
                     console.log ('The button works!');
 
 
