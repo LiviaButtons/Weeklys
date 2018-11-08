@@ -1,3 +1,7 @@
+/* Code with AJAX to connect to database and retrieve information */
+/* used to populate the meal plan on the homepage w/o reloading page */
+/* Author: Livia Bottoni */
+
 $(document).ready (function (ev) {
     $('#calendarGenerator').on("click", function (e) {
         e.preventDefault ();
