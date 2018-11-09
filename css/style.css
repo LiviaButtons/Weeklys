@@ -397,6 +397,17 @@ header .dbSearch button {
     background-color: rgb(240, 201, 72, 0.2);
 }
 
+.recipe {
+    margin-top: 0;
+    padding-top: 0;
+    min-height: 100px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
 .lunch {
     border-top: 3px solid #FFF;
     border-bottom: 3px solid #FFF;
@@ -720,7 +731,10 @@ footer .contactForm > button {
         padding-top: 0;
         margin-top: 0;
     }
-
+    
+    .recipe {
+        min-height: 70px;
+    }
     
     .monday {
         border-top-left-radius: 5px;

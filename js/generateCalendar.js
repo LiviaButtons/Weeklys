@@ -16,10 +16,26 @@ $(document).ready (function (ev) {
         xhr.onreadystatechange = function (e) {
             if (xhr.readyState == 4) {
                 if (xhr.status == 200) {
-                    let results = JSON.parse(xhr.responseText);
+                    $results = JSON.parse(xhr.responseText);
 //                    console.log (xhr.responseText);
-                    console.log (results);
-
+                    console.log ($results);
+                    
+                    for ($i = 0; $i < $results.length; $i++) {
+                        console.log ($results[$i]);
+                        $link = document.createElement('a');
+                        $($link).attr({
+                            'alt': $results[$i].nomRecette,
+//                            'alt': 'blabla',
+                            'src': 'http://ecosia.org'
+                        });
+                        $($link).text($results[$i].nomRecette);
+                        
+                        $('.recipeB').each(function (i) {
+                            $(this).html($link);
+                        })
+//                        $('.recipeB').index($i).html($link);
+                    };
+                    
 
                 } else {
                     console.log ('Error! ' + xhr.status);
