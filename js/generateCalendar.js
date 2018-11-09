@@ -19,14 +19,13 @@ $(document).ready (function (ev) {
                     $breakfast = $results[0];
                     $lunch = $results[1];
                     $dinner = $results[2];
-                    console.log ($breakfast);
                     
                     // Build loop for 7 instances (7 weekdays)
 //                    for ($i = 0; $i < 7; $i++) {
 //                        buildLink($breakfast);
 //                    };
                     
-                    function buildLink ($arr) {
+                    function buildLink ($arr, section) {
                         for ($x = 0; $x < $arr.length; $x++) {
                             $link = document.createElement('a');
                             
@@ -39,17 +38,21 @@ $(document).ready (function (ev) {
                         
                             $($link).text($arr[$x].nomRecette);  
                             console.log ($link);
+                            
+                            $('recipeB').each(function(x) {
+                                $(this).html($link);
+                            })
                         };
                     };
                     
-                    buildLink ($breakfast);
-                    addLink ('recipeB');
-                    
-                    function addLink ($section) {
-                        $($section).each(function (i) {
-                            $(this).html($link);
-                        });
-                    };
+                    buildLink ($breakfast, 'recipeB');
+//                    addLink ('recipeB');
+//                    
+//                    function addLink ($section) {
+//                        $($section).each(function (i) {
+//                            $(this).html($link);
+//                        });
+//                    };
 
                 } else {
                     console.log ('Error! ' + xhr.status);
