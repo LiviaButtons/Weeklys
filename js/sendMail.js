@@ -1,5 +1,5 @@
 $(document).ready(function (event) {
-    $('button').on('click', function (e) {
+    $('#contactButton').on('click', function (e) {
         let userEmail = $('#email').val();
         let userMsg = $('#message').val();
 

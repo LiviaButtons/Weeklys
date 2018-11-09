@@ -15,19 +15,38 @@ $(document).ready (function (ev) {
 //                    console.log (xhr.responseText);
 //                    console.log ($results);
                     
-                    for ($i = 0; $i < $results.length; $i++) {
-                        console.log ($results[$i]);
-                        $link = document.createElement('a');
-                        // create a link element, and give it the correct attributes
-                        $($link).attr({
-                            'href': './recipes.html?idRecette=' + $results[$i].idRecette,
-                            //build URL that passes info (the recipe ID) in GET
-                            //so that you'll land on the correct recipe page
-                            'alt': $results[$i].nomRecette
-                        });
-                        $($link).text($results[$i].nomRecette);
+                    // Split the results into relevant categories
+                    $breakfast = $results[0];
+                    $lunch = $results[1];
+                    $dinner = $results[2];
+                    console.log ($breakfast);
+                    
+                    // Build loop for 7 instances (7 weekdays)
+//                    for ($i = 0; $i < 7; $i++) {
+//                        buildLink($breakfast);
+//                    };
+                    
+                    function buildLink ($arr) {
+                        for ($x = 0; $x < $arr.length; $x++) {
+                            $link = document.createElement('a');
+                            
+                            $($link).attr({
+                                'href': './recipes.html?idRecette=' + $arr[$x].idRecette,
+                                //build URL that passes info (the recipe ID) in GET
+                                //so that you'll land on the correct recipe page
+                                'alt': $arr[$x].nomRecette
+                            });
                         
-                        $('.recipeB').each(function (i) {
+                            $($link).text($arr[$x].nomRecette);  
+                            console.log ($link);
+                        };
+                    };
+                    
+                    buildLink ($breakfast);
+                    addLink ('recipeB');
+                    
+                    function addLink ($section) {
+                        $($section).each(function (i) {
                             $(this).html($link);
                         });
                     };
