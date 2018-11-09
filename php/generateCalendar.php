@@ -57,34 +57,99 @@
 //    echo json_encode($resultsD);
 
     $fBreakfast = array(
-        1=>'breakfast 1',
-        2=>'breakfast 2',
-        3=>'breakfast 3',
-        4=>'breakfast 4',
-        5=>'breakfast 5',
-        6=>'breakfast 6',
-        7=>'breakfast 7'
+        0 => array (
+            'idRecette' => 1,
+            'nomRecette'=>'breakfast 1'
+        ),
+        1 => array (
+            'idRecette' => 2,
+            'nomRecette'=>'breakfast 2'
+        ),
+        2 => array (
+            'idRecette' => 3,
+            'nomRecette'=>'breakfast 3'
+        ),
+        3 => array (
+            'idRecette' => 4,
+            'nomRecette'=>'breakfast 4'
+        ),
+        4 => array (
+            'idRecette' => 5,
+            'nomRecette'=>'breakfast 5'
+        ),
+        5 => array (
+            'idRecette' => 6,
+            'nomRecette'=>'breakfast 6'
+        ),
+        6 => array (
+            'idRecette' => 7,
+            'nomRecette'=>'breakfast 7'
+        )
     );
 
     $fLunch = array(
-        8=>'lunch 8',
-        9=>'lunch 9',
-        10=>'lunch 10',
-        11=>'lunch 11',
-        12=>'lunch 12',
-        13=>'lunch 13',
-        14=>'lunch 14'
+        0 => array (
+            'idRecette' => 8,
+            'nomRecette'=>'lunch 8'
+        ),
+        1 => array (
+            'idRecette' => 9,
+            'nomRecette'=>'lunch 9'
+        ),
+        2 => array (
+            'idRecette' => 10,
+            'nomRecette'=>'lunch 10'
+        ),
+        3 => array (
+            'idRecette' => 11,
+            'nomRecette'=>'lunch 11'
+        ),
+        4 => array (
+            'idRecette' => 12,
+            'nomRecette'=>'lunch 12'
+        ),
+        5 => array (
+            'idRecette' => 13,
+            'nomRecette'=>'lunch 13'
+        ),
+        6 => array (
+            'idRecette' => 14,
+            'nomRecette'=>'lunch 14'
+        )
     );
 
     $fDinner = array(
-        15=>'dinner 15',
-        16=>'dinner 16',
-        17=>'dinner 17',
-        18=>'dinner 18',
-        19=>'dinner 19',
-        20=>'dinner 20',
-        21=>'dinner 21'
+        0 => array (
+            'idRecette' => 15,
+            'nomRecette'=>'dinner 15'
+        ),
+        1 => array (
+            'idRecette' => 16,
+            'nomRecette'=>'dinner 16'
+        ),
+        2 => array (
+            'idRecette' => 17,
+            'nomRecette'=>'dinner 17'
+        ),
+        3 => array (
+            'idRecette' => 18,
+            'nomRecette'=>'dinner 18'
+        ),
+        4 => array (
+            'idRecette' => 19,
+            'nomRecette'=>'dinner 19'
+        ),
+        5 => array (
+            'idRecette' => 20,
+            'nomRecette'=>'dinner 20'
+        ),
+        6 => array (
+            'idRecette' => 21,
+            'nomRecette'=>'dinner 21'
+        )
     );
 
+//    var_dump ($fBreakfast);
     echo json_encode (array ($fBreakfast, $fLunch, $fDinner));
+
 ?>

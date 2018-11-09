@@ -19,29 +19,30 @@ $(document).ready (function (ev) {
                     $breakfast = $results[0];
                     $lunch = $results[1];
                     $dinner = $results[2];
+//                    console.log ($breakfast);
+//                    console.log ($breakfast.nomRecette);
+//                    console.log ($breakfast.idRecette);
                     
-                    // Build loop for 7 instances (7 weekdays)
-//                    for ($i = 0; $i < 7; $i++) {
-//                        buildLink($breakfast);
-//                    };
-                    
-                    function buildLink ($arr, section) {
-                        for ($x = 0; $x < $arr.length; $x++) {
+                    function buildLink ($arr, $section) {
+                        // build loop for 7 instances (7 weekday)
+                        for ($x = 0; $x < 7; $x++) {
                             $link = document.createElement('a');
                             
+                            // build URL passing info in GET
+                            // to ensure landing on correct recipe page
                             $($link).attr({
                                 'href': './recipes.html?idRecette=' + $arr[$x].idRecette,
-                                //build URL that passes info (the recipe ID) in GET
-                                //so that you'll land on the correct recipe page
                                 'alt': $arr[$x].nomRecette
                             });
-                        
-                            $($link).text($arr[$x].nomRecette);  
+                            
+                            // Inside the link, show the name of the recipe
+                            $($link).html($arr[$x].nomRecette);  
                             console.log ($link);
                             
-                            $('recipeB').each(function(x) {
+                            // Add the recipe to the appropriate section
+                            $($section).each(function() {
                                 $(this).html($link);
-                            })
+                            });
                         };
                     };
                     
