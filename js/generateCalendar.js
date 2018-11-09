@@ -24,9 +24,8 @@ $(document).ready (function (ev) {
                         console.log ($results[$i]);
                         $link = document.createElement('a');
                         $($link).attr({
-                            'alt': $results[$i].nomRecette,
-//                            'alt': 'blabla',
-                            'src': 'http://ecosia.org'
+                            'href': 'http://ecosia.org',
+                            'alt': $results[$i].nomRecette
                         });
                         $($link).text($results[$i].nomRecette);
                         

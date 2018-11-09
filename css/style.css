@@ -408,6 +408,10 @@ header .dbSearch button {
     justify-content: center;
 }
 
+.recipe > a {
+    text-decoration: none;
+}
+
 .lunch {
     border-top: 3px solid #FFF;
     border-bottom: 3px solid #FFF;
