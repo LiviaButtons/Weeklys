@@ -37,24 +37,21 @@ $(document).ready (function (ev) {
                             
                             // Inside the link, show the name of the recipe
                             $($link).html($arr[$x].nomRecette);  
-                            console.log ($link);
+//                            console.log ($link);
                             
                             // Add the recipe to the appropriate section
                             $($section).each(function() {
+                                console.log (this);
                                 $(this).html($link);
+                                console.log ('I\'m doing it!');
                             });
                         };
                     };
                     
-                    buildLink ($breakfast, 'recipeB');
-//                    addLink ('recipeB');
-//                    
-//                    function addLink ($section) {
-//                        $($section).each(function (i) {
-//                            $(this).html($link);
-//                        });
-//                    };
-
+                    buildLink ($breakfast, '.recipeB');
+                    buildLink ($lunch, '.recipeL');
+                    buildLink ($dinner, '.recipeD');
+                
                 } else {
                     console.log ('Error! ' + xhr.status);
                 }
