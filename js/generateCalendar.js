@@ -3,9 +3,17 @@
 /* Author: Livia Bottoni */
 
 $(document).ready (function (ev) {
+    // load data into calendar once the page is loaded
+    getDisplayData();
+    
     $('#calendarGenerator').on("click", function (e) {
+        // on button click, load new data
         e.preventDefault ();
-        
+        getDisplayData();
+    });
+    
+    
+    function getDisplayData () {
         let xhr = new XMLHttpRequest;
 
         xhr.onreadystatechange = function (e) {
@@ -19,11 +27,8 @@ $(document).ready (function (ev) {
                     $breakfast = $results[0];
                     $lunch = $results[1];
                     $dinner = $results[2];
-//                    console.log ($breakfast);
-//                    console.log ($breakfast.nomRecette);
-//                    console.log ($breakfast.idRecette);
                     
-                    function buildLink ($arr, $section) {
+                    function buildInjectLink ($arr, $section) {
                         // build loop for 7 instances (7 weekday)
                         for ($x = 0; $x < 7; $x++) {
                             $link = document.createElement('a');
@@ -37,7 +42,6 @@ $(document).ready (function (ev) {
                             
                             // Inside the link, show the name of the recipe
                             $($link).html($arr[$x].nomRecette);  
-//                            console.log ($link);
                             
                             // Add the recipe to the appropriate section
                             $rSection = $($section).get($x);
@@ -46,9 +50,9 @@ $(document).ready (function (ev) {
                         };
                     };
                     
-                    buildLink ($breakfast, '.recipeB');
-                    buildLink ($lunch, '.recipeL');
-                    buildLink ($dinner, '.recipeD');
+                    buildInjectLink ($breakfast, '.recipeB');
+                    buildInjectLink ($lunch, '.recipeL');
+                    buildInjectLink ($dinner, '.recipeD');
                 
                 } else {
                     console.log ('Error! ' + xhr.status);
@@ -58,5 +62,5 @@ $(document).ready (function (ev) {
 
         xhr.open ('POST', './php/generateCalendar.php');
         xhr.send ();
-    });
+    }
 });

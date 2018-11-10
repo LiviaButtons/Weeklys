@@ -13,7 +13,7 @@
 //
 //    // Create SQL requests - one each for breakfast, lunch, dinner
 //    // randomise results
-//    // only show the first seven (one for each weekday)
+    // only show the first seven (one for each weekday)
 //    $sqlBreakfast = "SELECT DISTINCT idRecette, nomRecette 
 //                     FROM view_recettes
 //                     WHERE typeDeRepas = 'Petit-déjeuner'
@@ -52,9 +52,6 @@
 
     // Encode results and send them back
 //    echo json_encode($resultsB, $resultsL, $resultsD); // send all 3 resulting arrays at once or it'll bug
-//    echo json_encode($resultsB);
-//    echo json_encode($resultsL);
-//    echo json_encode($resultsD);
 
     $fBreakfast = array(
         0 => array (
@@ -149,7 +146,5 @@
         )
     );
 
-//    var_dump ($fBreakfast);
     echo json_encode (array ($fBreakfast, $fLunch, $fDinner));
-
 ?>
