@@ -40,11 +40,9 @@ $(document).ready (function (ev) {
 //                            console.log ($link);
                             
                             // Add the recipe to the appropriate section
-                            $($section).each(function() {
-                                console.log (this);
-                                $(this).html($link);
-                                console.log ('I\'m doing it!');
-                            });
+                            $rSection = $($section).get($x);
+                            console.log($rSection);
+                            $($rSection).html($link);
                         };
                     };
                     
