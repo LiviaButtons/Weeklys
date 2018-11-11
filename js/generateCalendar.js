@@ -62,7 +62,8 @@ $(document).ready (function (ev) {
         xhr.open ('POST', './php/generateCalendar.php');
         
         if ($('#vege').is(':checked')) {
-            xhr.send ($('#vege').val());
+//            xhr.send ($('#vege').val());
+            xhr.send ('vege');
         } else {
             xhr.send ();
         };
