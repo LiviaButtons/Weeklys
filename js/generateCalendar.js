@@ -63,6 +63,8 @@ $(document).ready (function (ev) {
         
         if ($('#vege').is(':checked')) {
             xhr.send ($('#vege').val());
-        }
-    }
+        } else {
+            xhr.send ();
+        };
+    };
 });
