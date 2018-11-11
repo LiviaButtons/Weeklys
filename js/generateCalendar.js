@@ -45,7 +45,6 @@ $(document).ready (function (ev) {
                             
                             // Add the recipe to the appropriate section
                             $rSection = $($section).get($x);
-                            console.log($rSection);
                             $($rSection).html($link);
                         };
                     };
@@ -61,6 +60,9 @@ $(document).ready (function (ev) {
         }
 
         xhr.open ('POST', './php/generateCalendar.php');
-        xhr.send ();
+        
+        if ($('#vege').is(':checked')) {
+            xhr.send ($('#vege').val());
+        }
     }
 });
