@@ -15,13 +15,14 @@
     $input = trim ($input);
     
     // Create SQL request
-    // leaving space for user input
+    // leaving a placeholder for user input
     // compare lowercase to lowercase to ensure matches despite capitalisation
     $sqlSearch = "SELECT DISTINCT idRecette, nomRecette, image
                   FROM view_cook
-                  WHERE LOWER(nomRecette) LIKE LOWER(%:input%)
-                    OR LOWER(ingredient) LIKE LOWER(%:input%)
-                    OR LOWER(typeDeRepas) LIKE LOWER(%:input%)";
+                  WHERE LOWER(nomRecette) LIKE CONCAT('%', LOWER(:input), '%')
+                    OR LOWER(ingredient) LIKE CONCAT('%', LOWER(:input), '%')
+                    OR LOWER(typeDeRepas) LIKE CONCAT('%', LOWER(:input), '%')
+                    OR LOWER(categorie) LIKE CONCAT('%', LOWER(:input), '%')";
     
     // Prepare the request (send to server)
     $statement = $pdo->prepare ($sqlSearch);
@@ -33,13 +34,13 @@
     $statement->execute();
 
     // Something not working?
-     var_dump ($statement->errorInfo());
+//    var_dump ($statement->errorInfo());
 
 
     // Put results into a table
     $searchResults = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     // Encode results and send them back
-//    echo json_encode($searchResults);
-    var_dump ($searchResults);
+    $textResults = json_encode($searchResults);
+    echo $textResults;
 ?>
