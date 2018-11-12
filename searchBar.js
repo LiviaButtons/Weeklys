@@ -8,6 +8,7 @@ $(document).ready (function (event) {
         $searchTerm = $('input[type="text"][name="searchField"]').val();
         
         if ($searchTerm != '' && $searchTerm != undefined) {
+            $(searchTerm) = $searchTerm.text();
             console.log $searchTerm;
             search($searchTerm);
         } else {

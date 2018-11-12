@@ -11,7 +11,8 @@
         die ('Erreur: '.$e->getMessage());
     }
     
-    echo ($_GET['query']);
+    $input = strip_tags ($_GET['query']);
+    $input = trim ($input);
     
     // Create SQL request
     // leaving space for user input
@@ -26,7 +27,7 @@
     $statement = $pdo->prepare ($sqlSearch);
 
     // Inject user input into the query
-    $statement->bindValue(':input', $_GET['query'], PDO::PARAM_STR);
+    $statement->bindValue(':input', $input, PDO::PARAM_STR);
     
     // Execute the request in the server
     $statement->execute();
