@@ -8,9 +8,9 @@ $(document).ready (function (event) {
         $searchTerm = $('input[type="text"][name="searchField"]').val();
         
         if ($searchTerm != '' && $searchTerm != undefined) {
-            $(searchTerm) = $searchTerm.text();
-            console.log $searchTerm;
-            search($searchTerm);
+            $searchTerm = $searchTerm.text();
+//            search($searchTerm);
+            window.location.replace('./recipes.html?query=' + $searchTerm);
         } else {
             $('input[type="text"][name="searchField"]').attr('placeholder', 'Please type something!');
         }
@@ -22,16 +22,10 @@ $(document).ready (function (event) {
                 if (xhr.status == 200) {
                     $results = JSON.parse(xhr.responseText);
 //                    console.log (xhr.responseText);
-                    console.log ($results);
+//                    console.log ($results);
                     
-                    function search ($query) {
-                        $results = JSON.parse(xhr.responseText);
+//                    function search ($query) {
                         
-                        if ($results[0] = '') {
-                            window.location.assign('./recipes.html');
-                        } else {
-                            window.location.assign('./recipes.html?query=' + $query)
-                        }
                     };                
                 } else {
                     console.log ('Error! ' + xhr.status);

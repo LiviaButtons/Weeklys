@@ -1,4 +1,13 @@
 <?php
+    // NEVER keep this file in cache
+    header ('Cache-Control: no-cache');
+    // otherwise, it risks executing this PHP page again
+    // with previously used values, instead of executing it from scratch
+
+    // generate/expect JSON, NOT HTML or text
+    header ('Content-Type: application/json');
+    // telling PHP what type of data to produce
+
     // use the config file
     require_once('./config/config.php');
     
@@ -41,6 +50,5 @@
     $searchResults = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     // Encode results and send them back
-    $textResults = json_encode($searchResults);
-    echo $textResults;
+    echo json_encode($searchResults);
 ?>
