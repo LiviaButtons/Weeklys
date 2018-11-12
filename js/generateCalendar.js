@@ -33,12 +33,10 @@ $(document).ready (function (ev) {
                         for ($x = 0; $x < 7; $x++) {
                             // create new link a
                             $link = document.createElement('a');
-                            // build URL
-                            // remove spaces from recipe name to do so
+                            // build URL, removingspaces from recipe name to do so
                             $url = $arr[$x].nomRecette.replace(/\s/g, '');
                             
-                            
-                            // give link necessary atpassing info in GET to ensure landing on correct recipe page
+                            // give link necessary attributes
                             $($link).attr({
                                 'href': './recipes.html?nomRecette=' + $url,
                                 'alt': $arr[$x].nomRecette
