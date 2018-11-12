@@ -35,8 +35,10 @@ $(document).ready (function (ev) {
                             
                             // build URL passing info in GET
                             // to ensure landing on correct recipe page
+                            $url = $arr[$x].nomRecette.replace(/\s/g, '');
+                            
                             $($link).attr({
-                                'href': './recipes.html?idRecette=' + $arr[$x].idRecette,
+                                'href': './recipes.html?nomRecette=' + $url,
                                 'alt': $arr[$x].nomRecette
                             });
                             
@@ -45,7 +47,6 @@ $(document).ready (function (ev) {
                             
                             // Add the recipe to the appropriate section
                             $rSection = $($section).get($x);
-                            console.log($rSection);
                             $($rSection).html($link);
                         };
                     };
@@ -61,6 +62,11 @@ $(document).ready (function (ev) {
         }
 
         xhr.open ('POST', './php/generateCalendar.php');
-        xhr.send ();
-    }
+        
+        if ($('#vege').is(':checked')) {
+            xhr.send ($('#vege').val());
+        } else {
+            xhr.send ();
+        };
+    };
 });
