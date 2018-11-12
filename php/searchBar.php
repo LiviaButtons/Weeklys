@@ -11,33 +11,33 @@
         die ('Erreur: '.$e->getMessage());
     }
     
-    echo ($_GET['searchTerm']);
+    echo ($_GET['query']);
     
-    // Create SQL requests - one each for breakfast, lunch, dinner
+    // Create SQL request
     // leaving space for user input
         $sqlSearch = "SELECT DISTINCT idRecette, nomRecette, image
-                         FROM view_recettes
+                         FROM view_cook
                          WHERE nomRecette LIKE % . input . %
                             OR ingredient LIKE % . :input . %
                             OR typeDeRepas LIKE % . :input . %
                             OR categorie LIKE % . :input . %";
     
     // Prepare the request (send to server)
-//    $statement = $pdo->prepare ($sqlSearch);
+    $statement = $pdo->prepare ($sqlSearch);
 
     // Inject user input into the query
-    $sqlSearch->bindValue (':input', $_GET['searchTerm'], PDO::PARAM_STR);
+    $statement->bindValue(':input', $_GET['query'], PDO::PARAM_STR);
 
     // Execute the request in the server
-//    $statement->execute();
+    $statement->execute();
 
     // Something not working?
-     var_dump ($statement->errorInfo());
+//     var_dump ($statement->errorInfo());
 
 
     // Put results into a table
-//    $searchResults = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $searchResults = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     // Encode results and send them back
-//    echo json_encode($searchResultsB);
+    echo json_encode($searchResults);
 ?>

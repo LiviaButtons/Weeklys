@@ -16,17 +16,22 @@ $(document).ready (function (event) {
         
         let xhr = new XMLHttpRequest;
 
-        xhr.onreadystatechange = function (e) {
+        xhr.onreadystatechange = function (ev) {
             if (xhr.readyState == 4) {
                 if (xhr.status == 200) {
                     $results = JSON.parse(xhr.responseText);
 //                    console.log (xhr.responseText);
-//                    console.log ($results);
+                    console.log ($results);
                     
-                    function search =
-                
-                    //window.location.assign('./recipes.html?query=' + $searchTerm);
-                
+                    function search ($query) {
+                        $results = JSON.parse(xhr.responseText);
+                        
+                        if ($results[0] = '') {
+                            window.location.assign('./recipes.html');
+                        } else {
+                            window.location.assign('./recipes.html?query=' + $query)
+                        }
+                    };                
                 } else {
                     console.log ('Error! ' + xhr.status);
                 }
@@ -34,7 +39,7 @@ $(document).ready (function (event) {
         }
 
         xhr.open ('GET', './php/searchBar.php?query=' + $searchTerm);
-        xhr.send ();
+        xhr.send ($searchTerm);
         
     });
 });

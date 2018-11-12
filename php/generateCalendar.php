@@ -19,40 +19,40 @@
     // randomise results
     // only show the first seven (one for each weekday)
 //        $sqlBreakfast = "SELECT DISTINCT idRecette, nomRecette
-//                         FROM view_recettes
+//                         FROM view_cook
 //                         WHERE typeDeRepas = 'Petit-déjeuner'
-//                         AND categorie = 'Légumes'
+//                         AND categorie = 'Végétarien'
 //                         ORDER BY rand()
 //                         LIMIT 7";
 //        
 //        $sqlLunch = "SELECT DISTINCT idRecette, nomRecette
-//                     FROM view_recettes
+//                     FROM view_cook
 //                     WHERE typeDeRepas = 'Déjeuner'
-//                     AND categorie = 'Légumes'
+//                     AND categorie = 'Végétarien'
 //                     ORDER BY rand()
 //                     LIMIT 7";
 //        
 //        $sqlDinner = "SELECT DISTINCT idRecette, nomRecette
-//                     FROM view_recettes
+//                     FROM view_cook
 //                     WHERE typeDeRepas = 'Dîner'
-//                     AND categorie = 'Légumes'
+//                     AND categorie = 'Végétarien'
 //                     ORDER BY rand()
 //                     LIMIT 7";
 //    } else {
     // Vegetarian is NOT checked
     // thus choose any random 7 recipes from the right category
 //    $sqlBreakfast = "SELECT DISTINCT idRecette, nomRecette 
-//                     FROM view_recettes
+//                     FROM view_cook
 //                     WHERE typeDeRepas = 'Petit-déjeuner'
 //                     ORDER BY rand() 
 //                     LIMIT 7";
 //    $sqlLunch = "SELECT DISTINCT idRecette, nomRecette 
-//                 FROM view_recettes
+//                 FROM view_cook
 //                 WHERE typeDeRepas = 'Déjeuner'
 //                 ORDER BY rand()
 //                 LIMIT 7";
 //    $sqlDinner = "SELECT DISTINCT idRecette, nomRecette 
-//                  FROM view_recettes
+//                  FROM view_cook
 //                  WHERE typeDeRepas = 'Dîner'
 //                  ORDER BY rand()
 //                  LIMIT 7";
