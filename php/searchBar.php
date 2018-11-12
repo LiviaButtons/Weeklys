@@ -1,42 +1,53 @@
 <?php
+    header ('Cache-Control: no-cache'); // don't keep this file in cache
+    header ('Content-Type: application/json'); // generate/expect JSON, NOT HTML or text
+
     // use the config file
-//    require_once('./config/config.php');
+    require_once('./config/config.php');
     
     // Create connection to the database
-//    try {
-//        $pdo = new PDO(MYSQL_DSN, DB_USER, DB_PWD);
-//    }
+    try {
+        $pdo = new PDO(MYSQL_DSN, DB_USER, DB_PWD);
+    }
     //die if it doesn't work
-//    catch (Exception $e){
-//        die ('Erreur: '.$e->getMessage());
-//    }
+    catch (Exception $e){
+        die ('Erreur: '.$e->getMessage());
+    }
     
-    
-    // Create SQL requests - one each for breakfast, lunch, dinner
-    // leaving space for user input
+    if (isset ($_GET['query']) && $_GET['query'] != '') {
+        $input = strip_tags ($_GET['query']); // remove any tags
+        $input = trim ($input); // trim spaces
+        
+        // regular and special characters that could cause issues with match
+        $special = array ('à', 'è', 'é', 'ò', 'ù', 'â', 'ê', 'î', 'ô', 'û', 'ë', 'ï', 'ç', 'É', 'À', 'È', 'Ù', 'Â', 'Ê', 'Î', 'Ô', 'Û', 'Ë', 'Ï', 'Ç', 'Ä', 'ä', 'Ö', 'ö', 'Ü', 'ü', 'ß', 'Œ', 'œ', 'e', 'a', 'i', 'o', 'u', 'c');
+        $input = str_replace ($special, '_', $input); // replace them with wildcard _ 
+
+        // Create SQL request leaving a placeholder for user input
+        // compare lowercase to lowercase to ensure matches despite capitalisation
+        // add wildcard on either end so it doesn't need exact match
         $sqlSearch = "SELECT DISTINCT idRecette, nomRecette, image
-                         FROM view_recettes
-                         WHERE nomRecette LIKE % . :input
-                            OR ingredient LIKE % . :input
-                            OR typeDeRepas LIKE % . :input
-                            OR categorie LIKE % . :input";
-    
-    // Prepare the request (send to server)
-//    $statement = $pdo->prepare ($sqlSearch);
+                      FROM view_cook
+                      WHERE LOWER(nomRecette) LIKE CONCAT('%', LOWER(:input), '%')
+                        OR LOWER(ingredient) LIKE CONCAT('%', LOWER(:input), '%')
+                        OR LOWER(typeDeRepas) LIKE CONCAT('%', LOWER(:input), '%')
+                        OR LOWER(categorie) LIKE CONCAT('%', LOWER(:input), '%')";
 
-    // Inject user input into the query
-    $sqlSearch->bindParam ($_POST['searchField'], :input, PDO::PARAM_STR);
+        // Prepare the request (send to server)
+        $statement = $pdo->prepare ($sqlSearch);
 
-    // Execute the request in the server
-//    $statement->execute();
+        // Inject user input into the query
+        $statement->bindValue(':input', $input, PDO::PARAM_STR);
 
-    // Something not working?
-//     var_dump ($statement->errorInfo());
+        // Execute the request in the server
+        $statement->execute();
 
+        // Something not working?
+    //    var_dump ($statement->errorInfo());
 
-    // Put results into a table
-//    $searchResults = $statement->fetchAll(PDO::FETCH_ASSOC);
+        // Put results into a table
+        $searchResults = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-    // Encode results and send them back
-//    echo json_encode($searchResultsB);
+        // Encode results and send them back
+        echo json_encode($searchResults);
+    }
 ?>
