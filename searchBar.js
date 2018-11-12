@@ -5,6 +5,15 @@ $(document).ready (function (event) {
     $('.searchButton').on("click", function (e) {
         e.preventDefault;
         
+        $searchTerm = $('input[type="text"][name="searchField"]').val();
+        
+        if ($searchTerm != '' && $searchTerm != undefined) {
+            console.log $searchTerm;
+            search($searchTerm);
+        } else {
+            $('input[type="text"][name="searchField"]').attr('placeholder', 'Please type something!');
+        }
+        
         let xhr = new XMLHttpRequest;
 
         xhr.onreadystatechange = function (e) {
@@ -14,7 +23,9 @@ $(document).ready (function (event) {
 //                    console.log (xhr.responseText);
 //                    console.log ($results);
                     
-                    // Split the results into relevant categories            
+                    function search =
+                
+                    //window.location.assign('./recipes.html?query=' + $searchTerm);
                 
                 } else {
                     console.log ('Error! ' + xhr.status);
@@ -22,7 +33,7 @@ $(document).ready (function (event) {
             }
         }
 
-        xhr.open ('POST', './php/searchBar.php');
+        xhr.open ('GET', './php/searchBar.php?query=' + $searchTerm);
         xhr.send ();
         
     });
