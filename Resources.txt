@@ -134,5 +134,7 @@ https://www.marmiton.org/recettes/recette_porridge-ou-home-made-oatmeal_82705.as
 https://www.marmiton.org/recettes/recette_oeufs-brouilles-a-la-truffe_24192.aspx 39
 https://www.marmiton.org/recettes/recette_pain-perdu_10975.aspx 40
 https://www.marmiton.org/recettes/recette_kanelbulle-viennoiserie-suedoise-a-la-cannelle_82810.aspx 41
-
+SOUPES
+https://www.marmiton.org/recettes/recette_soupe-de-champignons_24874.aspx 42
+https://www.marmiton.org/recettes/recette_soupe-au-potiron_18643.aspx 43
 
