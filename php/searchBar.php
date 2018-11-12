@@ -15,29 +15,30 @@
     
     // Create SQL request
     // leaving space for user input
-        $sqlSearch = "SELECT DISTINCT idRecette, nomRecette, image
-                         FROM view_cook
-                         WHERE nomRecette LIKE % . input . %
-                            OR ingredient LIKE % . :input . %
-                            OR typeDeRepas LIKE % . :input . %
-                            OR categorie LIKE % . :input . %";
+    // compare lowercase to lowercase to ensure matches despite capitalisation
+    $sqlSearch = "SELECT DISTINCT idRecette, nomRecette, image
+                  FROM view_cook
+                  WHERE LOWER(nomRecette) LIKE LOWER(%:input%)
+                    OR LOWER(ingredient) LIKE LOWER(%:input%)
+                    OR LOWER(typeDeRepas) LIKE LOWER(%:input%)";
     
     // Prepare the request (send to server)
     $statement = $pdo->prepare ($sqlSearch);
 
     // Inject user input into the query
     $statement->bindValue(':input', $_GET['query'], PDO::PARAM_STR);
-
+    
     // Execute the request in the server
     $statement->execute();
 
     // Something not working?
-//     var_dump ($statement->errorInfo());
+     var_dump ($statement->errorInfo());
 
 
     // Put results into a table
     $searchResults = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     // Encode results and send them back
-    echo json_encode($searchResults);
+//    echo json_encode($searchResults);
+    var_dump ($searchResults);
 ?>
