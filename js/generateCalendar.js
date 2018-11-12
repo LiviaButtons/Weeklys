@@ -35,8 +35,10 @@ $(document).ready (function (ev) {
                             
                             // build URL passing info in GET
                             // to ensure landing on correct recipe page
+                            $url = $arr[$x].nomRecette.replace(/\s/g, '');
+                            
                             $($link).attr({
-                                'href': './recipes.html?idRecette=' + $arr[$x].idRecette,
+                                'href': './recipes.html?nomRecette=' + $url,
                                 'alt': $arr[$x].nomRecette
                             });
                             
