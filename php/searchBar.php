@@ -1,12 +1,6 @@
 <?php
-    // NEVER keep this file in cache
-    header ('Cache-Control: no-cache');
-    // otherwise, it risks executing this PHP page again
-    // with previously used values, instead of executing it from scratch
-
-    // generate/expect JSON, NOT HTML or text
-    header ('Content-Type: application/json');
-    // telling PHP what type of data to produce
+    header ('Cache-Control: no-cache'); // don't keep this file in cache
+    header ('Content-Type: application/json'); // generate/expect JSON, NOT HTML or text
 
     // use the config file
     require_once('./config/config.php');
@@ -20,8 +14,13 @@
         die ('Erreur: '.$e->getMessage());
     }
     
-    $input = strip_tags ($_GET['query']);
-    $input = trim ($input);
+    $input = strip_tags ($_GET['query']); // remove any tags
+    $input = trim ($input); // trim spaces
+
+    $special = array ('à', 'è', 'é', 'ò', 'ù', 'â', 'ê', 'î', 'ô', 'û', 'ë', 'ï', 'ç', 'É', 'À', 'È', 'Ù', 'Â', 'Ê', 'Î', 'Ô', 'Û', 'Ë', 'Ï', 'Ç', 'Ä', 'ä', 'Ö', 'ö', 'Ü', 'ü', 'ß', 'Œ', 'œ', 'e', 'a', 'i', 'o', 'u', 'c');
+    $input = str_replace ($special, '_', $input); 
+    // replace special characters for better match
+    // and also letters that (in French) commonly exist as special characters
     
     // Create SQL request
     // leaving a placeholder for user input
@@ -44,7 +43,6 @@
 
     // Something not working?
 //    var_dump ($statement->errorInfo());
-
 
     // Put results into a table
     $searchResults = $statement->fetchAll(PDO::FETCH_ASSOC);
