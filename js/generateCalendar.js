@@ -28,25 +28,25 @@ $(document).ready (function (ev) {
                     $lunch = $results[1];
                     $dinner = $results[2];
                     
-                    function buildInjectLink ($arr, $section) {
+                    function buildInjectLink (arr, section) {
                         // build loop for 7 instances (7 weekday)
                         for ($x = 0; $x < 7; $x++) {
                             // create new link a
                             $link = document.createElement('a');
                             // build URL, removingspaces from recipe name to do so
-                            $url = $arr[$x].nomRecette.replace(/\s/g, '');
+                            $url = arr[$x].nomRecette.replace(/\s/g, '');
                             
                             // give link necessary attributes
                             $($link).attr({
                                 'href': './recipes.html?nomRecette=' + $url,
-                                'alt': $arr[$x].nomRecette
+                                'alt': arr[$x].nomRecette
                             });
                             
                             // Inside the link, show the name of the recipe
-                            $($link).html($arr[$x].nomRecette);  
+                            $($link).html(arr[$x].nomRecette);  
                             
                             // Add the recipe to the appropriate section
-                            $rSection = $($section).get($x);
+                            $rSection = $(section).get($x);
                             $($rSection).html($link);
                         };
                     };
