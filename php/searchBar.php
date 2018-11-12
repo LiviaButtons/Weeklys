@@ -14,39 +14,40 @@
         die ('Erreur: '.$e->getMessage());
     }
     
-    $input = strip_tags ($_GET['query']); // remove any tags
-    $input = trim ($input); // trim spaces
+    if (isset ($_GET['query']) && $_GET['query'] != '') {
+        $input = strip_tags ($_GET['query']); // remove any tags
+        $input = trim ($input); // trim spaces
+        
+        // regular and special characters that could cause issues with match
+        $special = array ('à', 'è', 'é', 'ò', 'ù', 'â', 'ê', 'î', 'ô', 'û', 'ë', 'ï', 'ç', 'É', 'À', 'È', 'Ù', 'Â', 'Ê', 'Î', 'Ô', 'Û', 'Ë', 'Ï', 'Ç', 'Ä', 'ä', 'Ö', 'ö', 'Ü', 'ü', 'ß', 'Œ', 'œ', 'e', 'a', 'i', 'o', 'u', 'c');
+        $input = str_replace ($special, '_', $input); // replace them with wildcard _ 
 
-    $special = array ('à', 'è', 'é', 'ò', 'ù', 'â', 'ê', 'î', 'ô', 'û', 'ë', 'ï', 'ç', 'É', 'À', 'È', 'Ù', 'Â', 'Ê', 'Î', 'Ô', 'Û', 'Ë', 'Ï', 'Ç', 'Ä', 'ä', 'Ö', 'ö', 'Ü', 'ü', 'ß', 'Œ', 'œ', 'e', 'a', 'i', 'o', 'u', 'c');
-    $input = str_replace ($special, '_', $input); 
-    // replace special characters for better match
-    // and also letters that (in French) commonly exist as special characters
-    
-    // Create SQL request
-    // leaving a placeholder for user input
-    // compare lowercase to lowercase to ensure matches despite capitalisation
-    $sqlSearch = "SELECT DISTINCT idRecette, nomRecette, image
-                  FROM view_cook
-                  WHERE LOWER(nomRecette) LIKE CONCAT('%', LOWER(:input), '%')
-                    OR LOWER(ingredient) LIKE CONCAT('%', LOWER(:input), '%')
-                    OR LOWER(typeDeRepas) LIKE CONCAT('%', LOWER(:input), '%')
-                    OR LOWER(categorie) LIKE CONCAT('%', LOWER(:input), '%')";
-    
-    // Prepare the request (send to server)
-    $statement = $pdo->prepare ($sqlSearch);
+        // Create SQL request leaving a placeholder for user input
+        // compare lowercase to lowercase to ensure matches despite capitalisation
+        // add wildcard on either end so it doesn't need exact match
+        $sqlSearch = "SELECT DISTINCT idRecette, nomRecette, image
+                      FROM view_cook
+                      WHERE LOWER(nomRecette) LIKE CONCAT('%', LOWER(:input), '%')
+                        OR LOWER(ingredient) LIKE CONCAT('%', LOWER(:input), '%')
+                        OR LOWER(typeDeRepas) LIKE CONCAT('%', LOWER(:input), '%')
+                        OR LOWER(categorie) LIKE CONCAT('%', LOWER(:input), '%')";
 
-    // Inject user input into the query
-    $statement->bindValue(':input', $input, PDO::PARAM_STR);
-    
-    // Execute the request in the server
-    $statement->execute();
+        // Prepare the request (send to server)
+        $statement = $pdo->prepare ($sqlSearch);
 
-    // Something not working?
-//    var_dump ($statement->errorInfo());
+        // Inject user input into the query
+        $statement->bindValue(':input', $input, PDO::PARAM_STR);
 
-    // Put results into a table
-    $searchResults = $statement->fetchAll(PDO::FETCH_ASSOC);
+        // Execute the request in the server
+        $statement->execute();
 
-    // Encode results and send them back
-    echo json_encode($searchResults);
+        // Something not working?
+    //    var_dump ($statement->errorInfo());
+
+        // Put results into a table
+        $searchResults = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        // Encode results and send them back
+        echo json_encode($searchResults);
+    }
 ?>
