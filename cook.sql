@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 09, 2018 at 02:16 PM
+-- Generation Time: Nov 12, 2018 at 05:48 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -43,7 +43,8 @@ INSERT INTO `t_categorie` (`idCategorie`, `nomCategorie`) VALUES
 (3, 'Légumes'),
 (4, 'Accompagnement'),
 (5, 'Soupe'),
-(6, 'Autre');
+(6, 'Autre'),
+(7, 'Végétarien');
 
 -- --------------------------------------------------------
 
@@ -69,8 +70,76 @@ INSERT INTO `t_categorierecette` (`idCategorieRecette`, `idCategorie`, `idRecett
 (6, 6, 39),
 (7, 6, 40),
 (8, 6, 41),
-(39, 3, 5),
-(41, 3, 10);
+(39, 1, 5),
+(41, 2, 10),
+(43, 1, 12),
+(44, 1, 6),
+(45, 1, 7),
+(46, 2, 8),
+(47, 1, 9),
+(48, 1, 11),
+(49, 1, 13),
+(50, 1, 14),
+(51, 3, 15),
+(52, 7, 15),
+(53, 7, 16),
+(54, 4, 15),
+(55, 1, 17),
+(56, 2, 18),
+(57, 4, 19),
+(58, 3, 19),
+(59, 7, 19),
+(60, 3, 20),
+(61, 7, 20),
+(62, 4, 20),
+(63, 7, 21),
+(64, 4, 21),
+(65, 3, 21),
+(66, 4, 22),
+(67, 7, 22),
+(68, 7, 23),
+(69, 3, 23),
+(70, 4, 23),
+(71, 3, 24),
+(72, 7, 24),
+(73, 7, 25),
+(74, 3, 25),
+(75, 3, 26),
+(76, 7, 26),
+(77, 7, 27),
+(78, 3, 27),
+(79, 4, 27),
+(80, 3, 28),
+(81, 7, 28),
+(82, 4, 29),
+(83, 3, 29),
+(84, 7, 29),
+(85, 4, 30),
+(86, 3, 30),
+(87, 7, 30),
+(88, 4, 31),
+(89, 3, 31),
+(90, 7, 31),
+(91, 4, 32),
+(92, 3, 32),
+(93, 7, 32),
+(94, 3, 33),
+(95, 7, 33),
+(96, 4, 34),
+(97, 3, 34),
+(98, 7, 34),
+(99, 4, 35),
+(100, 3, 35),
+(101, 7, 35),
+(102, 4, 36),
+(103, 3, 36),
+(104, 7, 36),
+(105, 5, 42),
+(106, 3, 42),
+(107, 7, 42),
+(108, 5, 43),
+(109, 3, 43),
+(110, 7, 43);
 
 -- --------------------------------------------------------
 
@@ -79,7 +148,7 @@ INSERT INTO `t_categorierecette` (`idCategorieRecette`, `idCategorie`, `idRecett
 --
 
 CREATE TABLE `t_etapes` (
-  `idEtapes` tinyint(3) UNSIGNED NOT NULL,
+  `idEtapes` smallint(5) UNSIGNED NOT NULL,
   `idRecette` int(10) UNSIGNED NOT NULL,
   `descriptEtapes` mediumtext COLLATE utf8mb4_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
@@ -317,7 +386,47 @@ INSERT INTO `t_etapes` (`idEtapes`, `idRecette`, `descriptEtapes`) VALUES
 (252, 39, 'Lorsque les œufs sont bien crémeux, incorporer la crème fraîche froide pour arrêter la cuisson des œufs. '),
 (253, 39, 'Bien mélanger une dernière fois et servir aussitôt. '),
 (254, 40, 'Fouetter les oeufs avec le sucre et le lait. '),
-(255, 40, 'Y tremper les tranches de pain. ');
+(255, 40, 'Y tremper les tranches de pain. '),
+(256, 43, 'Tailler les légumes en gros dés. Les faire suer dans le beurre. '),
+(257, 43, 'Mouiller avec 1,5 l d\'eau. Ajouter l\'ail écrasé et le bouquet garni. Cuire 1 heure.'),
+(258, 43, 'Passer au moulin à légume ou au mixer. Ajouter la crème fraîche, et servir chaud. '),
+(259, 42, 'Dans une cocotte, faire revenir dans un peu de beurre : les champignons, les pommes de terres, l\'oignon émincé et l\'ail émincé.'),
+(260, 42, 'Laisser revenir quelques minutes pour faire \"suer\" les champignons en remuant bien. '),
+(261, 42, 'Une fois le tout revenu, mettre un peu plus d\'eau que le niveau de légumes et laisser frémir à feu doux en mélangeant de temps en temps. '),
+(262, 42, 'Ajouter sel, poivre, muscade et persil ainsi que le bouillon émietté. '),
+(263, 42, 'Une fois la soupe cuite, ajouter la crème mélanger et mixer la soupe.'),
+(264, 42, 'Servir chaud. '),
+(265, 42, 'Une bonne soupe automnale que vous pouvez accompagner de croûtons de pain grillé. '),
+(266, 40, 'Deux solutions pour la cuisson : les cuire à la poêle dans du beurre en les faisant dorer de chaque côté, ou, les cuire au four : beurrer légèrement un plat à gratin, y répartir les tranches, verser le reste du mélange (ajouter du sucre si envie), laisser cuire à 180°C (thermostat 6) jusqu\'à que les tranches soient dorées. '),
+(267, 41, 'Emietter la levure dans un récipient. '),
+(268, 41, 'Ajouter le lait tiède'),
+(269, 41, 'Préparer la pâte : dans un saladier, verser le sel, le sucre et la farine. '),
+(270, 41, 'Ajouter le beurre fondu. '),
+(271, 41, 'Mélanger et ajouter progressivement le mélange de lait et levure. '),
+(272, 41, 'Travailler la pâte jusqu\'à ce qu\'elle soit souple. '),
+(273, 41, 'Laisser reposer sous un torchon environ 30 minutes. '),
+(274, 41, 'Préchauffer le four à 225°C (thermostat 7-8).'),
+(275, 41, 'Pendant ce temps, préparer la garniture : dans un saladier mélanger le beurre, le sucre et la cannelle. '),
+(276, 41, 'Etaler la pâte au rouleau à pâtisserie jusqu\'à l\'obtention d\'un rectangle de 30 X 45 cm. '),
+(277, 41, 'Répartir la garniture sur le rectangle de pâte'),
+(278, 41, 'Plier la pâte en deux. '),
+(279, 41, 'Découper en bande d\'environ 2 cm de large. '),
+(280, 41, 'Étirer et tordre les bandes découpées et mettre en forme pour obtenir des noeuds. '),
+(281, 41, 'Déposer sur une plaque avec du papier sulfurisé.'),
+(282, 41, 'Laisser lever sous un torchon pendant environ 30 minutes. '),
+(283, 41, 'Badigeonner les kannelbulles avec l\'œuf et parsemer de sucre en perle dessus. '),
+(284, 41, 'Disposer au milieu du four 8-10 minutes. '),
+(285, 41, 'Laisser tiédir sur une grille. '),
+(286, 8, 'Faire tremper les champignons dans de l\'eau chaude 20 mn. Les couper en lanières de 5 mm et les remettre dans l\'eau en attendant. '),
+(287, 8, 'Emincer les carottes en bâtonnets de 5 mm de côté et de 5 cm de long. '),
+(288, 8, 'Emincer l\'oignon comme la carotte. '),
+(289, 8, 'Préparer la pâte à beignets: remplir un verre de 20 cl de farine, la verser dans un saladier. '),
+(290, 8, 'Casser l\'oeuf dans le verre et compléter avec de l\'eau. Mélanger le contenu du verre, puis verser progressivement sur la farine en remuant avec des baguettes, une fourchette ou un fouet pour les moins patients. '),
+(291, 8, 'Mettre tous les ingrédients dans la pâte (y compris les lamelles d\'encornet cru et les crevettes), remuer. Former des tas entre deux cuillères à soupe, égoutter un peu et faire glisser dans un bain de friture chaud. Cuire 5 mn et égoutter sur du papier absorbant'),
+(292, 8, 'Servir chaud. '),
+(293, 8, 'Pour la sauce, on râpe le daïkon dans un bol et on recouvre de sauce Tempura. On laisse macérer de 30 min à 1 heure. '),
+(294, 8, '*Un Daïkon : est un gros radis blanc asiatique. '),
+(295, 8, 'Note de l\'auteur:\r\nLa sauce Tempura se trouve dans les épiceries spécialisées et parfois dans des supermarchés. On peut la remplacer par un mélange de sauce soja (Japonaise! le goût est très différent) et de saké un peu dilué à l\'eau. Les champignons parfumés sont courants (en France). Le daïkon est difficile à trouver mais on a un excellent résultat avec le radis noir (un peu piquant).\r\nCette recette m\'a été apprise par un ami japonais. Ce plat est d\'une finesse remarquable et je ne me lasse pas d\'en manger. ');
 
 -- --------------------------------------------------------
 
@@ -367,17 +476,12 @@ INSERT INTO `t_ingredient` (`idIngredient`, `nomIngredient`) VALUES
 (30, 'laurier'),
 (31, 'persil'),
 (32, 'sel'),
-(33, 'pomme de terre'),
+(33, 'pommes de terre'),
 (34, 'farine'),
 (35, 'huile d\'olive'),
 (36, 'épinards'),
 (37, 'citron'),
 (38, 'pignons de pin'),
-(39, 'farine'),
-(40, 'huile d\'olive'),
-(41, 'épinards'),
-(42, 'citron'),
-(43, 'pignons de pin'),
 (44, 'tomate'),
 (45, 'mozzarella'),
 (46, 'basilic'),
@@ -397,7 +501,7 @@ INSERT INTO `t_ingredient` (`idIngredient`, `nomIngredient`) VALUES
 (60, 'agneau'),
 (61, 'concentré de tomates'),
 (62, 'bouillon de légumes'),
-(63, 'bouillon de viandes'),
+(63, 'bouillon de viande'),
 (64, 'gros sel'),
 (65, 'épices à couscous'),
 (66, 'riz long grain'),
@@ -408,7 +512,7 @@ INSERT INTO `t_ingredient` (`idIngredient`, `nomIngredient`) VALUES
 (71, 'langoustine'),
 (72, 'poivron vert'),
 (73, 'chorizo'),
-(74, 'petit pois'),
+(74, 'petits pois'),
 (75, 'artichaut'),
 (76, 'épices à paella'),
 (77, 'lard'),
@@ -473,7 +577,8 @@ INSERT INTO `t_ingredient` (`idIngredient`, `nomIngredient`) VALUES
 (136, 'truffe'),
 (137, 'sucre de canne'),
 (138, 'pain'),
-(139, 'canelle');
+(139, 'canelle'),
+(140, 'potiron');
 
 -- --------------------------------------------------------
 
@@ -486,7 +591,7 @@ CREATE TABLE `t_ingredientrecette` (
   `idIngredient` int(11) UNSIGNED NOT NULL,
   `idRecette` int(10) UNSIGNED NOT NULL,
   `ingredientQuantite` smallint(4) UNSIGNED NOT NULL,
-  `ingredientMesure` varchar(10) COLLATE utf8mb4_bin NOT NULL
+  `ingredientMesure` varchar(16) COLLATE utf8mb4_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
@@ -494,25 +599,25 @@ CREATE TABLE `t_ingredientrecette` (
 --
 
 INSERT INTO `t_ingredientrecette` (`idIngredientRecette`, `idIngredient`, `idRecette`, `ingredientQuantite`, `ingredientMesure`) VALUES
-(1, 1, 2, 1, 'rouleau(s)'),
+(1, 1, 2, 1, 'rouleau(x)'),
 (2, 2, 2, 2, 'tranche(s)'),
 (3, 3, 2, 100, 'g'),
 (4, 4, 2, 2, 'c à soupe'),
 (5, 5, 2, 1, 'botte(s)'),
-(6, 6, 2, 1, ''),
+(6, 6, 2, 1, 'jaune(s)'),
 (7, 7, 4, 4, 'c à soupe'),
 (8, 8, 4, 4, 'c à soupe'),
 (9, 9, 4, 4, 'c à soupe'),
 (10, 10, 4, 10, 'feuille(s)'),
 (11, 5, 4, 1, 'botte(s)'),
 (12, 11, 4, 4, 'c à soupe'),
-(13, 12, 4, 0, ''),
+(13, 12, 4, 1, 'gousse(s)'),
 (14, 13, 4, 50, 'feuille(s)'),
 (15, 14, 4, 500, 'g'),
-(16, 1, 5, 1, 'rouleau(s)'),
+(16, 1, 5, 1, 'rouleau(x)'),
 (17, 15, 5, 200, 'g'),
-(18, 16, 5, 120, 'g (égoutté'),
-(19, 17, 5, 1, ''),
+(18, 16, 5, 120, 'g'),
+(19, 17, 5, 1, 'pièce(s)'),
 (20, 18, 5, 3, 'entier(s)'),
 (21, 19, 5, 20, 'cl'),
 (22, 20, 5, 100, 'g'),
@@ -525,7 +630,7 @@ INSERT INTO `t_ingredientrecette` (`idIngredientRecette`, `idIngredient`, `idRec
 (29, 27, 6, 2, 'branche(s)'),
 (30, 17, 6, 1, 'pièce(s)'),
 (31, 12, 6, 1, 'gousse(s)'),
-(32, 125, 6, 1, ''),
+(32, 125, 6, 1, 'bouquet(s)'),
 (33, 21, 6, 0, ''),
 (34, 47, 7, 6, 'pièce(s)'),
 (35, 48, 7, 1, 'pièce(s)'),
@@ -536,12 +641,12 @@ INSERT INTO `t_ingredientrecette` (`idIngredientRecette`, `idIngredient`, `idRec
 (40, 32, 7, 0, ''),
 (41, 50, 8, 4, 'pièce(s)'),
 (42, 51, 8, 8, 'pièce(s)'),
-(43, 17, 8, 1, ''),
+(43, 17, 8, 1, 'pièce(s)'),
 (44, 52, 8, 1, 'poignée(s)'),
 (45, 24, 8, 1, 'pièce(s)'),
 (46, 126, 8, 2, 'pièce(s)'),
 (47, 34, 8, 150, 'g'),
-(48, 18, 8, 1, ''),
+(48, 18, 8, 1, 'entier(s)'),
 (49, 9, 8, 0, ''),
 (50, 55, 8, 10, 'cl'),
 (51, 53, 8, 1, 'pièce(s)'),
@@ -549,31 +654,31 @@ INSERT INTO `t_ingredientrecette` (`idIngredientRecette`, `idIngredient`, `idRec
 (53, 60, 9, 1, 'kg'),
 (54, 24, 9, 8, 'pièce(s)'),
 (55, 26, 9, 8, 'pièce(s)'),
-(56, 17, 9, 12, ''),
+(56, 17, 9, 12, 'pièce(s)'),
 (57, 33, 9, 10, 'pièce(s)'),
 (58, 12, 9, 8, 'gousse(s)'),
 (59, 61, 9, 75, 'g'),
 (60, 62, 9, 500, 'ml'),
 (61, 64, 9, 3, 'c à café'),
-(62, 125, 9, 1, ''),
+(62, 125, 9, 1, 'bouquet(s)'),
 (63, 34, 9, 1, 'c à soupe'),
 (64, 35, 9, 3, 'c à soupe'),
-(65, 31, 9, 1, 'bouquet'),
+(65, 31, 9, 1, 'bouquet(s)'),
 (66, 65, 9, 0, ''),
 (67, 66, 10, 1, 'kg'),
 (68, 67, 10, 1, 'kg'),
-(69, 68, 10, 500, 'gr'),
+(69, 68, 10, 500, 'g'),
 (70, 69, 10, 1, 'kg'),
 (71, 70, 10, 1, 'kg'),
 (72, 71, 10, 12, 'pièce(s)'),
 (73, 35, 10, 35, 'cl'),
 (74, 17, 10, 2, 'pièce(s)'),
-(75, 12, 10, 4, 'gousses(s)'),
+(75, 12, 10, 4, 'gousse(s)'),
 (76, 44, 10, 6, 'pièce(s)'),
 (77, 48, 10, 1, 'pièce(s)'),
 (78, 72, 10, 1, 'pièce(s)'),
-(79, 73, 10, 1, 'entier'),
-(80, 74, 10, 0, ''),
+(79, 73, 10, 1, 'entier(s)'),
+(80, 74, 10, 1, 'pte boîte'),
 (81, 76, 10, 0, ''),
 (82, 21, 10, 0, ''),
 (83, 32, 10, 0, ''),
@@ -581,7 +686,7 @@ INSERT INTO `t_ingredientrecette` (`idIngredientRecette`, `idIngredient`, `idRec
 (85, 17, 11, 2, 'pièce(s)'),
 (86, 77, 11, 1, 'tranche(s)'),
 (87, 61, 11, 1, 'pte boite'),
-(88, 125, 11, 1, ''),
+(88, 125, 11, 1, 'bouquet(s)'),
 (89, 63, 11, 1, 'cube'),
 (90, 12, 11, 2, 'gousse(s)'),
 (91, 24, 11, 6, 'pièce(s)'),
@@ -621,7 +726,7 @@ INSERT INTO `t_ingredientrecette` (`idIngredientRecette`, `idIngredient`, `idRec
 (125, 128, 15, 160, 'g'),
 (126, 16, 15, 100, 'g'),
 (127, 103, 15, 2, 'tranche(s)'),
-(128, 45, 15, 40, 'gr'),
+(128, 45, 15, 40, 'g'),
 (129, 104, 15, 4, 'pièce(s)'),
 (130, 29, 15, 1, 'pincée(s)'),
 (131, 31, 15, 1, 'c à soupe'),
@@ -646,7 +751,7 @@ INSERT INTO `t_ingredientrecette` (`idIngredientRecette`, `idIngredient`, `idRec
 (150, 37, 18, 0, ''),
 (151, 118, 18, 0, ''),
 (152, 119, 18, 0, ''),
-(153, 12, 18, 0, ''),
+(153, 12, 18, 1, 'gousse(s)'),
 (154, 81, 18, 0, ''),
 (155, 21, 18, 0, ''),
 (156, 32, 18, 0, ''),
@@ -678,7 +783,7 @@ INSERT INTO `t_ingredientrecette` (`idIngredientRecette`, `idIngredient`, `idRec
 (182, 32, 23, 0, ''),
 (183, 21, 23, 0, ''),
 (184, 112, 24, 200, 'g'),
-(185, 113, 24, 1, 'boîte'),
+(185, 113, 24, 1, 'en boîte'),
 (186, 17, 24, 1, 'pièce(s)'),
 (187, 37, 24, 1, 'pièce(s)'),
 (188, 80, 24, 0, ''),
@@ -712,7 +817,7 @@ INSERT INTO `t_ingredientrecette` (`idIngredientRecette`, `idIngredient`, `idRec
 (216, 56, 28, 25, 'cl'),
 (217, 57, 28, 1, 'bûche(s)'),
 (218, 5, 28, 1, 'branche(s)'),
-(219, 49, 28, 1, 'noisette(s'),
+(219, 49, 28, 1, 'noisette(s)'),
 (220, 58, 29, 600, 'g'),
 (221, 18, 29, 2, 'entier(s)'),
 (222, 4, 29, 2, 'c à soupe'),
@@ -726,9 +831,9 @@ INSERT INTO `t_ingredientrecette` (`idIngredientRecette`, `idIngredient`, `idRec
 (230, 17, 30, 4, 'pièce(s)'),
 (231, 98, 30, 500, 'g'),
 (232, 99, 30, 800, 'g'),
-(234, 132, 30, 2, 'gr bte(s)'),
+(234, 132, 30, 2, 'gr boîte(s)'),
 (235, 12, 30, 3, 'gousse(s)'),
-(236, 45, 30, 0, 'tranche(s)'),
+(236, 45, 30, 10, 'tranche(s)'),
 (237, 35, 30, 0, ''),
 (238, 49, 30, 0, ''),
 (239, 32, 30, 0, ''),
@@ -807,7 +912,35 @@ INSERT INTO `t_ingredientrecette` (`idIngredientRecette`, `idIngredient`, `idRec
 (312, 34, 41, 175, 'cl'),
 (313, 133, 41, 180, 'g'),
 (314, 139, 41, 3, 'c à café'),
-(315, 18, 41, 1, 'entier(s)');
+(315, 18, 41, 1, 'entier(s)'),
+(316, 16, 42, 1, 'barquette(s)'),
+(317, 33, 42, 4, 'pièce(s)'),
+(318, 17, 42, 1, 'pièce(s)'),
+(319, 12, 42, 4, 'gousse(s)'),
+(320, 19, 42, 20, 'cl'),
+(321, 59, 42, 0, ''),
+(322, 21, 42, 0, 'selon goût'),
+(323, 32, 42, 0, 'selon goût'),
+(324, 31, 42, 0, 'selon goût'),
+(325, 140, 43, 1, 'kg'),
+(326, 24, 43, 300, 'g'),
+(327, 17, 43, 200, 'g'),
+(328, 25, 43, 200, 'g'),
+(329, 49, 43, 0, ''),
+(330, 12, 43, 3, 'gousse(s)'),
+(331, 125, 43, 1, 'bouquet(s)'),
+(332, 4, 43, 40, 'cl'),
+(333, 32, 43, 0, 'selon goût'),
+(341, 33, 31, 1, 'kg'),
+(342, 17, 31, 4, 'pièce(s)'),
+(343, 97, 31, 4, 'pièce(s)'),
+(344, 35, 31, 0, ''),
+(345, 20, 31, 0, ''),
+(346, 21, 31, 0, ''),
+(347, 32, 31, 0, ''),
+(348, 135, 38, 5, 'c à soupe'),
+(349, 56, 38, 25, 'cl'),
+(350, 133, 38, 2, 'c à soupe');
 
 -- --------------------------------------------------------
 
@@ -817,6 +950,7 @@ INSERT INTO `t_ingredientrecette` (`idIngredientRecette`, `idIngredient`, `idRec
 
 CREATE TABLE `t_recette` (
   `idRecette` int(10) UNSIGNED NOT NULL,
+  `Code` int(4) NOT NULL,
   `nom` varchar(100) COLLATE utf8mb4_bin NOT NULL,
   `image` varchar(100) COLLATE utf8mb4_bin NOT NULL,
   `difficulte` tinyint(4) NOT NULL,
@@ -832,46 +966,48 @@ CREATE TABLE `t_recette` (
 -- Dumping data for table `t_recette`
 --
 
-INSERT INTO `t_recette` (`idRecette`, `nom`, `image`, `difficulte`, `cout`, `duree`, `tempsDePrep`, `tempsDeCuisson`, `tempsDeRepos`, `cooking`) VALUES
-(2, 'Feuilleté rapide jambon fromage', '2.jpg', 1, 1, 25, 5, 20, 0, 1),
-(4, 'Gyoza (Ravioli Chinois à la Japonaise)', '4.jpg', 2, 3, 50, 40, 10, 0, 1),
-(5, 'Quiche très facile', '5.jpg', 1, 1, 40, 0, 0, 0, 1),
-(6, 'Pot-au-feu', '6.jpg', 2, 2, 150, 30, 120, 0, 1),
-(7, 'Filets de poulet à la crème de poivrons', '7.jpg', 1, 1, 45, 15, 30, 0, 1),
-(8, 'Beignets tempura au calamar', '8.jpg', 1, 2, 35, 30, 5, 0, 1),
-(9, 'Navarin d\'agneau', '9.jpg', 2, 2, 140, 20, 120, 0, 1),
-(10, 'Véritable paëlla espagnole', '10.jpg', 2, 2, 90, 0, 0, 0, 1),
-(11, 'Boeuf braisé aux carottes', '11.jpg', 1, 1, 80, 20, 60, 0, 1),
-(12, 'Bo Bun', '12.jpg', 1, 2, 40, 20, 20, 0, 1),
-(13, 'Cuisses de poulet au four', '13.jgp', 1, 1, 45, 10, 35, 0, 1),
-(14, 'Wrap à l\'italienne', '14.jpg', 1, 1, 5, 5, 0, 0, 0),
-(15, 'Tomate Burger', '15.jpg', 1, 1, 25, 15, 10, 0, 0),
-(16, 'Aubergines à la carbonara', '16.jpg', 1, 1, 25, 10, 15, 0, 1),
-(17, 'Brochettes de veau mariné', '17.jpg', 1, 2, 35, 15, 20, 0, 1),
-(18, 'Thon grillé marinade méditerranéenne', '18.jpg', 1, 1, 15, 10, 5, 0, 1),
-(19, 'Pomme de terre au four', '19.jpg', 1, 1, 55, 10, 45, 0, 1),
-(20, 'Zoodle de butternut', '20.jpg', 2, 1, 45, 30, 15, 0, 1),
-(21, 'Poêlée d\'aubergines au chèvre', '21.jpg', 1, 1, 35, 5, 30, 0, 1),
-(22, 'Pâtes alsaciennes', '22.jpg', 2, 1, 30, 15, 15, 0, 1),
-(23, 'Dauphinois de courgettes', '23.jpg', 2, 2, 80, 20, 60, 0, 1),
-(24, 'Taboulé express', '24.jpg', 2, 1, 10, 10, 0, 0, 0),
-(25, 'Couscous de printemps', '25.jpg', 1, 2, 55, 20, 35, 0, 0),
-(26, 'Chaussons aux épinards', '26.jpg', 1, 1, 140, 60, 20, 60, 1),
-(27, 'Tomates mozzarella au four', '27.jpg', 1, 1, 45, 15, 30, 0, 1),
-(28, 'Clafoutis salé au chèvre', '28.jpg', 1, 1, 45, 15, 30, 0, 1),
-(29, 'Gratin de courge facile', '29.jpg', 1, 1, 60, 30, 30, 0, 1),
-(30, 'Moussaka végétarienne', '30.jpg', 1, 1, 120, 60, 60, 0, 1),
-(31, 'Tian de pommes de terre et courgettes', '31.jpg', 1, 1, 65, 20, 45, 0, 1),
-(32, 'Ratatouille', '32.jpg', 1, 2, 80, 25, 55, 0, 1),
-(33, 'Pizza végétarienne aux légumes grillés et aux herbes', '33.jpg', 1, 1, 27, 15, 12, 0, 1),
-(34, 'Aubergine à la parmesane', '34.jpg', 1, 1, 75, 45, 30, 0, 1),
-(35, 'Aubergines à la Parmigiana', '35.jpg', 1, 1, 90, 30, 60, 0, 1),
-(36, 'Tagliatelles au mascarpone et petits pois', '36.jpg', 1, 2, 35, 20, 15, 0, 1),
-(37, 'Pancakes rapides', '37.jpg', 1, 1, 20, 10, 10, 0, 1),
-(38, 'Home made oatmeal', '38.jpg', 1, 1, 19, 2, 17, 0, 1),
-(39, 'Oeufs brouillés', '39.jpg', 1, 2, 20, 5, 15, 0, 1),
-(40, 'Pain perdu', '40.jpg', 2, 2, 30, 15, 15, 0, 1),
-(41, 'Kanelbulle (viennoiserie suédoise à la cannelle)', '41.jpg', 1, 2, 70, 60, 10, 0, 1);
+INSERT INTO `t_recette` (`idRecette`, `Code`, `nom`, `image`, `difficulte`, `cout`, `duree`, `tempsDePrep`, `tempsDeCuisson`, `tempsDeRepos`, `cooking`) VALUES
+(2, 1523, 'Feuilleté rapide jambon fromage', '2.jpg', 1, 1, 25, 5, 20, 0, 1),
+(4, 4523, 'Gyoza (Ravioli Chinois à la Japonaise)', '4.jpg', 2, 3, 50, 40, 10, 0, 1),
+(5, 9632, 'Quiche très facile', '5.jpg', 1, 1, 40, 0, 0, 0, 1),
+(6, 6853, 'Pot-au-feu', '6.jpg', 2, 2, 150, 30, 120, 0, 1),
+(7, 3645, 'Filets de poulet à la crème de poivrons', '7.jpg', 1, 1, 45, 15, 30, 0, 1),
+(8, 7841, 'Beignets tempura au calamar', '8.jpg', 1, 2, 35, 30, 5, 0, 1),
+(9, 8659, 'Navarin d\'agneau', '9.jpg', 2, 2, 140, 20, 120, 0, 1),
+(10, 9965, 'Véritable paëlla espagnole', '10.jpg', 2, 2, 90, 0, 0, 0, 1),
+(11, 5847, 'Boeuf braisé aux carottes', '11.jpg', 1, 1, 80, 20, 60, 0, 1),
+(12, 5587, 'Bo Bun', '12.jpg', 1, 2, 40, 20, 20, 0, 1),
+(13, 6651, 'Cuisses de poulet au four', '13.jgp', 1, 1, 45, 10, 35, 0, 1),
+(14, 3566, 'Wrap à l\'italienne', '14.jpg', 1, 1, 5, 5, 0, 0, 0),
+(15, 3347, 'Tomate Burger', '15.jpg', 1, 1, 25, 15, 10, 0, 0),
+(16, 1244, 'Aubergines à la carbonara', '16.jpg', 1, 1, 25, 10, 15, 0, 1),
+(17, 1112, 'Brochettes de veau mariné', '17.jpg', 1, 2, 35, 15, 20, 0, 1),
+(18, 2245, 'Thon grillé marinade méditerranéenne', '18.jpg', 1, 1, 15, 10, 5, 0, 1),
+(19, 5445, 'Pomme de terre au four', '19.jpg', 1, 1, 55, 10, 45, 0, 1),
+(20, 5226, 'Zoodle de butternut', '20.jpg', 2, 1, 45, 30, 15, 0, 1),
+(21, 7880, 'Poêlée d\'aubergines au chèvre', '21.jpg', 1, 1, 35, 5, 30, 0, 1),
+(22, 2150, 'Pâtes alsaciennes', '22.jpg', 2, 1, 30, 15, 15, 0, 1),
+(23, 2003, 'Dauphinois de courgettes', '23.jpg', 2, 2, 80, 20, 60, 0, 1),
+(24, 9477, 'Taboulé express', '24.jpg', 2, 1, 10, 10, 0, 0, 0),
+(25, 6566, 'Couscous de printemps', '25.jpg', 1, 2, 55, 20, 35, 0, 0),
+(26, 3631, 'Chaussons aux épinards', '26.jpg', 1, 1, 140, 60, 20, 60, 1),
+(27, 3002, 'Tomates mozzarella au four', '27.jpg', 1, 1, 45, 15, 30, 0, 1),
+(28, 4255, 'Clafoutis salé au chèvre', '28.jpg', 1, 1, 45, 15, 30, 0, 1),
+(29, 5401, 'Gratin de courge facile', '29.jpg', 1, 1, 60, 30, 30, 0, 1),
+(30, 2100, 'Moussaka végétarienne', '30.jpg', 1, 1, 120, 60, 60, 0, 1),
+(31, 3700, 'Tian de pommes de terre et courgettes', '31.jpg', 1, 1, 65, 20, 45, 0, 1),
+(32, 3482, 'Ratatouille', '32.jpg', 1, 2, 80, 25, 55, 0, 1),
+(33, 7511, 'Pizza végétarienne aux légumes grillés et aux herbes', '33.jpg', 1, 1, 27, 15, 12, 0, 1),
+(34, 2958, 'Aubergine à la parmesane', '34.jpg', 1, 1, 75, 45, 30, 0, 1),
+(35, 8344, 'Aubergines à la Parmigiana', '35.jpg', 1, 1, 90, 30, 60, 0, 1),
+(36, 9924, 'Tagliatelles au mascarpone et petits pois', '36.jpg', 1, 2, 35, 20, 15, 0, 1),
+(37, 5983, 'Pancakes rapides', '37.jpg', 1, 1, 20, 10, 10, 0, 1),
+(38, 7815, 'Home made oatmeal', '38.jpg', 1, 1, 19, 2, 17, 0, 1),
+(39, 4880, 'Oeufs brouillés', '39.jpg', 1, 2, 20, 5, 15, 0, 1),
+(40, 9783, 'Pain perdu', '40.jpg', 2, 2, 30, 15, 15, 0, 1),
+(41, 5470, 'Kanelbulle (viennoiserie suédoise à la cannelle)', '41.jpg', 1, 2, 70, 60, 10, 0, 1),
+(42, 2053, 'Soupe aux champignons', '42.jpg', 1, 1, 40, 15, 25, 0, 1),
+(43, 9568, 'Soupe au potiron', '43.jpg', 1, 1, 85, 25, 60, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -922,7 +1058,150 @@ INSERT INTO `t_repasrecette` (`idRepasRecette`, `idRepas`, `idRecette`) VALUES
 (10, 3, 6),
 (11, 2, 8),
 (12, 3, 9),
-(13, 2, 7);
+(13, 2, 7),
+(14, 2, 12),
+(15, 3, 13),
+(16, 2, 14),
+(17, 2, 15),
+(18, 3, 17),
+(19, 3, 2),
+(20, 3, 4),
+(21, 3, 5),
+(22, 2, 6),
+(23, 3, 7),
+(24, 3, 8),
+(25, 2, 9),
+(26, 3, 10),
+(27, 2, 11),
+(28, 3, 12),
+(29, 2, 13),
+(31, 3, 15),
+(32, 3, 16),
+(33, 2, 17),
+(34, 2, 18),
+(35, 2, 18),
+(36, 2, 19),
+(37, 3, 19),
+(38, 2, 20),
+(39, 3, 20),
+(40, 2, 21),
+(41, 3, 21),
+(42, 2, 22),
+(43, 3, 22),
+(44, 2, 23),
+(45, 3, 23),
+(46, 2, 24),
+(47, 3, 24),
+(48, 2, 25),
+(49, 3, 25),
+(50, 2, 26),
+(51, 3, 26),
+(52, 2, 27),
+(53, 3, 27),
+(54, 2, 28),
+(55, 3, 28),
+(56, 2, 29),
+(57, 3, 29),
+(58, 2, 30),
+(59, 3, 30),
+(60, 2, 31),
+(61, 3, 31),
+(62, 2, 32),
+(63, 3, 32),
+(64, 2, 33),
+(65, 3, 33),
+(66, 2, 34),
+(67, 3, 34),
+(68, 2, 35),
+(69, 3, 35),
+(70, 2, 36),
+(71, 3, 36),
+(72, 2, 42),
+(73, 3, 42),
+(74, 2, 43),
+(75, 3, 43),
+(76, 1, 40),
+(77, 1, 41);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `t_temps`
+--
+
+CREATE TABLE `t_temps` (
+  `idTemps` int(10) UNSIGNED NOT NULL,
+  `dureeTemps` varchar(50) COLLATE utf8mb4_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+--
+-- Dumping data for table `t_temps`
+--
+
+INSERT INTO `t_temps` (`idTemps`, `dureeTemps`) VALUES
+(1, 'moins de 30 min'),
+(2, 'moins de 1h'),
+(3, 'moins de 1h30'),
+(4, 'plus de 1h30');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `t_tempsrecette`
+--
+
+CREATE TABLE `t_tempsrecette` (
+  `idTempsRecette` int(10) UNSIGNED NOT NULL,
+  `idTemps` int(10) UNSIGNED NOT NULL,
+  `idRecette` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `t_tempsrecette`
+--
+
+INSERT INTO `t_tempsrecette` (`idTempsRecette`, `idTemps`, `idRecette`) VALUES
+(1, 1, 2),
+(2, 2, 4),
+(3, 2, 5),
+(4, 4, 6),
+(5, 2, 7),
+(6, 2, 8),
+(7, 4, 9),
+(8, 3, 10),
+(9, 3, 11),
+(10, 2, 12),
+(11, 2, 13),
+(12, 1, 14),
+(13, 1, 15),
+(14, 1, 16),
+(15, 2, 17),
+(16, 1, 18),
+(17, 2, 19),
+(18, 2, 20),
+(19, 2, 21),
+(20, 1, 22),
+(21, 3, 23),
+(22, 1, 24),
+(23, 2, 25),
+(24, 4, 26),
+(25, 2, 27),
+(26, 2, 28),
+(27, 2, 29),
+(28, 4, 30),
+(29, 3, 31),
+(30, 3, 32),
+(31, 1, 33),
+(32, 3, 34),
+(33, 3, 35),
+(34, 2, 36),
+(35, 1, 37),
+(36, 1, 38),
+(37, 1, 39),
+(38, 1, 40),
+(39, 3, 41),
+(40, 2, 42),
+(41, 3, 43);
 
 --
 -- Indexes for dumped tables
@@ -984,6 +1263,20 @@ ALTER TABLE `t_repasrecette`
   ADD KEY `idRecette` (`idRecette`);
 
 --
+-- Indexes for table `t_temps`
+--
+ALTER TABLE `t_temps`
+  ADD PRIMARY KEY (`idTemps`);
+
+--
+-- Indexes for table `t_tempsrecette`
+--
+ALTER TABLE `t_tempsrecette`
+  ADD PRIMARY KEY (`idTempsRecette`),
+  ADD KEY `idTemps` (`idTemps`),
+  ADD KEY `idRecette` (`idRecette`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -991,49 +1284,61 @@ ALTER TABLE `t_repasrecette`
 -- AUTO_INCREMENT for table `t_categorie`
 --
 ALTER TABLE `t_categorie`
-  MODIFY `idCategorie` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idCategorie` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `t_categorierecette`
 --
 ALTER TABLE `t_categorierecette`
-  MODIFY `idCategorieRecette` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `idCategorieRecette` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
 
 --
 -- AUTO_INCREMENT for table `t_etapes`
 --
 ALTER TABLE `t_etapes`
-  MODIFY `idEtapes` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=256;
+  MODIFY `idEtapes` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=296;
 
 --
 -- AUTO_INCREMENT for table `t_ingredient`
 --
 ALTER TABLE `t_ingredient`
-  MODIFY `idIngredient` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=140;
+  MODIFY `idIngredient` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=141;
 
 --
 -- AUTO_INCREMENT for table `t_ingredientrecette`
 --
 ALTER TABLE `t_ingredientrecette`
-  MODIFY `idIngredientRecette` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=316;
+  MODIFY `idIngredientRecette` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=351;
 
 --
 -- AUTO_INCREMENT for table `t_recette`
 --
 ALTER TABLE `t_recette`
-  MODIFY `idRecette` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `idRecette` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `t_repas`
 --
 ALTER TABLE `t_repas`
-  MODIFY `idRepas` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idRepas` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `t_repasrecette`
 --
 ALTER TABLE `t_repasrecette`
-  MODIFY `idRepasRecette` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `idRepasRecette` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+
+--
+-- AUTO_INCREMENT for table `t_temps`
+--
+ALTER TABLE `t_temps`
+  MODIFY `idTemps` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `t_tempsrecette`
+--
+ALTER TABLE `t_tempsrecette`
+  MODIFY `idTempsRecette` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- Constraints for dumped tables
@@ -1065,6 +1370,13 @@ ALTER TABLE `t_ingredientrecette`
 ALTER TABLE `t_repasrecette`
   ADD CONSTRAINT `t_repasrecette_ibfk_1` FOREIGN KEY (`idRepas`) REFERENCES `t_repas` (`idRepas`),
   ADD CONSTRAINT `t_repasrecette_ibfk_2` FOREIGN KEY (`idRecette`) REFERENCES `t_recette` (`idRecette`);
+
+--
+-- Constraints for table `t_tempsrecette`
+--
+ALTER TABLE `t_tempsrecette`
+  ADD CONSTRAINT `t_tempsrecette_ibfk_1` FOREIGN KEY (`idRecette`) REFERENCES `t_recette` (`idRecette`),
+  ADD CONSTRAINT `t_tempsrecette_ibfk_2` FOREIGN KEY (`idTemps`) REFERENCES `t_temps` (`idTemps`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
