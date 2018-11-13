@@ -14,42 +14,67 @@
         die ('Erreur: '.$e->getMessage());
         $pdo = null;
     }
-    
-    // SQL queries -- first half
-    $sqlBreakfast = "SELECT DISTINCT idRecette, nomRecette 
-                     FROM view_cook
-                     WHERE typeDeRepas = 'Petit-déjeuner'";
-    $sqlLunch = "SELECT DISTINCT idRecette, nomRecette 
-                 FROM view_cook
-                 WHERE typeDeRepas = 'Déjeuner'";
-    $sqlDinner = "SELECT DISTINCT idRecette, nomRecette 
-                  FROM view_cook
-                  WHERE typeDeRepas = 'Dîner'";
+
+    // SQL queries
+    $sqlStart = "SELECT DISTINCT idRecette, nomRecette
+                 FROM view_cook";
+    $sqlB = " WHERE typeDeRepas = 'Petit-déjeuner'";
+    $sqlL = " WHERE typeDeRepas = 'Déjeuner'";
+    $sqlD = " WHERE typeDeRepas = 'Dîner'";
+    $sqlVege = " AND categorie = 'Végétarien'"; 
+    $sqlEnd = " ORDER BY rand()
+                LIMIT 7";
+    $sqlSoloEnd = " ORDER BY rand()
+                 LIMIT 1";
+
+    // adapt for meal category
+    $sqlBreakfast = $sqlStart . $sqlB;
+    $sqlLunch =  $sqlStart . $sqlL;
+    $sqlDinner =  $sqlStart . $sqlD;
     
     // if there's a value set in POST (AKA vegetarian is checked)
     if (isset ($_POST["vege"]) && !empty($_POST["vege"])) {
     // adapt sql queries
-        $sqlBreakfast .= " AND categorie = 'Végétarien'
-                          ORDER BY rand()
-                          LIMIT 7";
-        
-        $sqlLunch = " AND categorie = 'Végétarien'
-                     ORDER BY rand()
-                     LIMIT 7";
-        
-        $sqlDinner = " AND categorie = 'Végétarien'
-                      ORDER BY rand()
-                      LIMIT 7";
+        $sqlBreakfast .= $sqlVege;
+        $sqlLunch .= $sqlVege;
+        $sqlDinner .=  $sqlVege;
     } 
     
-    // Complete SQL queries
-    // by retrieving only 7 results, at random
-    $sqlBreakfast .= " ORDER BY rand()
-                      LIMIT 7";
-    $sqlLunch .= " ORDER BY rand()
-                      LIMIT 7";
-    $sqlDinner .= " ORDER BY rand()
-                LIMIT 7";
+    // complete SQL queries with for all 7 
+    $sqlBreakfast .= $sqlEnd;
+    $sqlLunch .= $sqlEnd;
+    $sqlDinner .= $sqlEnd;
+    
+    // if you received a value for either breakfast, lunch or dinner
+    // that means somebody clicked to regenerate a single recipe
+    if (isset ($_POST["Petit-déjeuner"]) || isset ($_POST["Déjeuner"]) || isset ($_POST["Dîner"])) {
+        
+        // start building solo query
+        $sqlSolo = $sqlStart;
+        
+        // adapt to retrieve correct meal cateogry
+        if (isset ($_POST["Petit-déjeuner"])) {
+            $sqlSolo .= $sqlB;
+        } else if (isset ($_POST["Déjeuner"])) {
+            $sqlSolo .= $sqlL;
+        } else if (isset ($_POST["Dîner"])) {
+            $sqlSolo .= $sqlD;  
+        }
+        
+        // if vegetarian is set, ensure new recipe is vegetarian also
+        if (isset ($_POST["vege"]) && !empty($_POST["vege"])) {
+                $sqlSolo .= $sqlVege;
+        }
+        
+        // complete solo query
+        $sqlSolo .= $sqlSoloEnd;
+        
+        // execute it, put results into table, send them back
+        $statementS = $pdo->prepare ($sqlSolo);
+        $statementS->execute();
+        $resultsS = $statementS->fetchAll(PDO::FETCH_ASSOC);
+        echo json_encode($resultsS);
+    }
 
     // Prepare the request (send to server)
     $statementB = $pdo->prepare ($sqlBreakfast);

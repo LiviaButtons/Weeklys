@@ -394,6 +394,7 @@ header .dbSearch button {
 }
 
 .mealtime {
+    min-height: 180px !important; 
     background-color: rgb(240, 201, 72, 0.2);
 }
 
@@ -734,6 +735,7 @@ footer .contactForm > button {
     .mealtime > h5 {
         padding-top: 0;
         margin-top: 0;
+        margin-bottom: 5px;
     }
     
     .recipe {

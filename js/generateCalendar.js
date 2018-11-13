@@ -12,11 +12,16 @@ $(document).ready (function (ev) {
         getDisplayData();
     });
     
+    $('.fa-sync-alt').on("click", function (e) {
+        $clickedSymbol = e.target;
+        $sibling = $clickedSymbol.previousElementSibling.className;
+        swapRecipe($sibling);
+    })
     
     function getDisplayData () {
         let xhr = new XMLHttpRequest;
 
-        xhr.onreadystatechange = function (e) {
+        xhr.onreadystatechange = function (event) {
             if (xhr.readyState == 4) {
                 if (xhr.status == 200) {
                     $results = JSON.parse(xhr.responseText);
@@ -27,6 +32,7 @@ $(document).ready (function (ev) {
                     $breakfast = $results[0];
                     $lunch = $results[1];
                     $dinner = $results[2];
+                    console.log 
                     
                     function buildInjectLink (arr, section) {
                         // build loop for 7 instances (7 weekday)
@@ -70,4 +76,46 @@ $(document).ready (function (ev) {
             xhr.send ();
         };
     };
+    
+    function swapRecipe (sibling) {
+//        console.log (sibling);        
+        let xhr = new XMLHttpRequest();
+        
+        xhr.onreadystatechange = function (event) {
+            if (xhr.readyState == 4) {
+                if (xhr.status == 200) {
+                    $results = JSON.parse(xhr.responseText);
+                    console.log ($results);
+                    
+                    $newLink = document.createElement('a');
+                    $newUrl = $results[0].nomRecette.replace(/\s/g, '');
+                    $($newLink).attr({
+                        'href': './recipes.html?nomRecette=' + $newUrl,
+                        'alt': $results[0].nomRecette
+                    });
+                    $($newLink).html($results[0].nomRecette);
+                    
+                    console.log ($newLink);
+                    
+                    $(sibling).html($newLink);
+                
+                } else {
+                    console.log ('Error! ' + xhr.status);
+                }
+            }
+        }
+
+        xhr.open ('POST', './php/generateCalendar.php');
+        
+        if (sibling === "recipe recipeB") {
+            xhr.send ("Petit-déjeuner");
+            console.log ("sending breakfast");
+        } else if (sibling === "recipe recipeL") {
+            xhr.send ("Déjeuner");
+            console.log ("sending lunch");
+        } else {
+            xhr.send ("Dîner");
+            console.log ("sending dinner");
+        }
+    }
 });
