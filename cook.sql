@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2018 at 05:48 PM
+-- Generation Time: Nov 13, 2018 at 02:09 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -139,7 +139,29 @@ INSERT INTO `t_categorierecette` (`idCategorieRecette`, `idCategorie`, `idRecett
 (107, 7, 42),
 (108, 5, 43),
 (109, 3, 43),
-(110, 7, 43);
+(110, 7, 43),
+(111, 6, 44),
+(112, 6, 45),
+(113, 6, 46),
+(114, 6, 47),
+(115, 6, 48),
+(116, 6, 49),
+(117, 6, 50),
+(118, 6, 51),
+(119, 6, 52),
+(120, 7, 37),
+(121, 7, 38),
+(122, 7, 40),
+(123, 7, 39),
+(124, 7, 41),
+(125, 7, 44),
+(126, 7, 45),
+(127, 7, 46),
+(128, 7, 48),
+(129, 7, 49),
+(130, 7, 50),
+(131, 7, 51),
+(132, 7, 52);
 
 -- --------------------------------------------------------
 
@@ -426,7 +448,85 @@ INSERT INTO `t_etapes` (`idEtapes`, `idRecette`, `descriptEtapes`) VALUES
 (292, 8, 'Servir chaud. '),
 (293, 8, 'Pour la sauce, on râpe le daïkon dans un bol et on recouvre de sauce Tempura. On laisse macérer de 30 min à 1 heure. '),
 (294, 8, '*Un Daïkon : est un gros radis blanc asiatique. '),
-(295, 8, 'Note de l\'auteur:\r\nLa sauce Tempura se trouve dans les épiceries spécialisées et parfois dans des supermarchés. On peut la remplacer par un mélange de sauce soja (Japonaise! le goût est très différent) et de saké un peu dilué à l\'eau. Les champignons parfumés sont courants (en France). Le daïkon est difficile à trouver mais on a un excellent résultat avec le radis noir (un peu piquant).\r\nCette recette m\'a été apprise par un ami japonais. Ce plat est d\'une finesse remarquable et je ne me lasse pas d\'en manger. ');
+(295, 8, 'Note de l\'auteur:\r\nLa sauce Tempura se trouve dans les épiceries spécialisées et parfois dans des supermarchés. On peut la remplacer par un mélange de sauce soja (Japonaise! le goût est très différent) et de saké un peu dilué à l\'eau. Les champignons parfumés sont courants (en France). Le daïkon est difficile à trouver mais on a un excellent résultat avec le radis noir (un peu piquant).\r\nCette recette m\'a été apprise par un ami japonais. Ce plat est d\'une finesse remarquable et je ne me lasse pas d\'en manger. '),
+(296, 44, 'mettre dans un mixer les bananes coupées en morceaux et la chair des kiwis. '),
+(297, 44, 'Presser les oranges et rajouter le jus dans le mixer. '),
+(298, 44, 'Rajouter le lait de soja (il peut être nature ou vanillé). '),
+(299, 44, 'Note de l\'auteur:\r\nC\'est facile, c\'est bon et c\'est une façon très vitaminée de commencer la journée! '),
+(300, 45, 'Dans une jatte, pétrissez tous les ingrédients ensemble jusqu\'à obtenir une boule de pâte. '),
+(301, 45, 'Si vous souhaitez faire différents biscuits avec cette même pâte, ne mettez pas les ingrédients optionnels. '),
+(302, 45, 'Enveloppez la pâte dans du film transparent et mettre au frigo pour une dizaine de minutes au moins. '),
+(303, 45, 'Préchauffez votre four à 200°C et placez du papier sulfurisé sur une plaque de cuisson. '),
+(304, 45, 'Sortez la pâte du frigo et, si vous le souhaitez, séparez la pâte en plusieurs parts pour y ajouter les ingrédients optionnels. '),
+(305, 45, 'Formez de petites boules de pâtes que vous écraserez dans la paume avant de placer sur la plaque. '),
+(306, 45, 'Placez au four pour environ 10 minutes, selon votre four. Restez à proximité des biscuits. Ils doivent être à peine dorés pour restez moelleux ou bien dorés pour être un peu plus croquants. '),
+(307, 45, 'Il s\'agit d\'une pâte sablée modifiée afin de l\'adapter au petit déjeuner (moins de sucre, moins de beurre et plus de céréales non raffinées). Si vous souhaitez obtenir des biscuits plus \"plaisir\", vous pouvez remplacer le yaourt par du beurre et le miel par du sucre. Mais c\'est un peu lourd pour le petit déjeuner...'),
+(308, 46, 'Tamiser la farine, la levure et la cannelle. '),
+(309, 46, 'Ajouter le sucre + la margarine fondue. '),
+(310, 46, 'Ajouter les oeufs battus un par un. '),
+(311, 46, 'Ajouter le lait. '),
+(312, 46, 'Couper la banane en rondelles, les pruneaux en morceaux, faire mariner dans une cuillère à soupe de rhum + 1 d\'eau. '),
+(313, 46, 'Ecraser la banane avec les pruneaux. '),
+(314, 46, 'Ajouter à la pâte, rajouter la noix de coco et les 3 noix décortiquées.'),
+(315, 46, 'Cuire 40 mn à 200°C . '),
+(316, 46, 'Servir tiède ou toasté avec du chèvre.'),
+(317, 47, 'Couper les pains muffins en 2. Faire cuire les oeufs et le bacon dans une poêle beurrée. '),
+(318, 47, 'Pendant ce temps faire chauffer les muffins dans un grille-pain. '),
+(319, 47, 'Retourner les oeufs afin de les faire légèrement cuire de l\'autre côté. '),
+(320, 47, 'Enfin faire fondre les tranches de fromage sur le bacon.'),
+(321, 47, 'Déposer l\'oeuf puis le bacon et enfin la tranches de fromage entre les 2 tranches de muffins. '),
+(322, 48, 'Dosez le lait et versez-le dans une casserole adaptée.'),
+(323, 48, 'Ajoutez le sucre. '),
+(324, 48, 'Portez à ébullition. '),
+(325, 48, 'Pendant ce temps, écrasez les 3 gâteaux briochés dans le bol. Vous pouvez laisser de gros morceaux qui s\'imbiberont de lait. '),
+(326, 48, 'Ajoutez le tapioca et mettre à petits feux'),
+(327, 48, 'Lorsque le tapioca remonte à la surface, il est prêt. '),
+(328, 48, 'Selon votre goût vous pouvez le laisser encore un peu afin qu\'il soit bien consistant. '),
+(329, 48, 'Verser le contenu de la casserole dans le bol et remuez. '),
+(330, 48, 'Régalez-vous! '),
+(331, 48, 'Note de l\'auteur:\r\nLa texture doit être un peu \"gluante\" c\'est normal, et délicieux ! '),
+(332, 49, 'Insérer les ingrédients un par un (jusqu\'à l\'oeuf), dans l\'ordre rédigé pour réaliser la pâte, mélanger à chaque fois.'),
+(333, 49, 'Couper la poire en petits morceaux. '),
+(334, 49, 'Mettre un peu de jus de citron au fond de la poêle pour éviter des matières grasses. '),
+(335, 49, 'Verser la moitié de la préparation. Patienter 1 minute. '),
+(336, 49, 'Ajouter la moitié des poires. Mélanger comme pour des oeufs brouillés.'),
+(337, 49, 'Voilà c\'est prêt :) Refaire pareil avec l\'autre moitié. '),
+(338, 49, 'Note de l\'auteur:\r\nVous pouvez soit le manger directement chaud (effet bouillie), sinon le laisser refroidir et l\'aspect sera plus solide. Bon appétit ! '),
+(339, 50, 'Mélangez le beurre fondu avec le miel, les yaourts et les 4 oeufs battus. '),
+(340, 50, 'Bien émulsionner puis, ajoutez la farine de maïs, la levure et le sel.'),
+(341, 50, 'Faîtes cuire environ 30 min à 150°C (thermostat 5) dans un plat rectangulaire. '),
+(342, 50, 'Découpez des carrés une fois cuit. '),
+(343, 50, 'Note de l\'auteur:\r\nD\'une belle couleur jaune, au goût original, peu sucré, idéal pour le petit déjeuner, avec beurre et confiture. '),
+(344, 51, 'Je recommande l’utilisation d’une machine à pain pour pétrir, ce qui permet de gagner du temps et de l’énergie ! '),
+(345, 51, 'Faire fondre le beurre durant 30 sec et le laisser refroidir (au moins tiédir).'),
+(346, 51, 'Dans la cuve de la machine à pain, ajouter dans l’ordre : '),
+(347, 51, '1 – les œufs '),
+(348, 51, '2 – le lait '),
+(349, 51, '3 – la fleur d’oranger '),
+(350, 51, '4 - le sucre'),
+(351, 51, '5 – la pincée de sel'),
+(352, 51, '6 – la farine '),
+(353, 51, '7 - la levure fraîche émiettée (la recouvrir d’un peu de farine) '),
+(354, 51, 'et enfin, le beurre. '),
+(355, 51, 'Lancer le programme « pâte seule », de 2 heures le plus souvent. '),
+(356, 51, 'Une fois fini, sortir la pâte, la partager en 3 pâtons égaux. Faire une tresse (éviter de fariner, la pâte doit rester légèrement collante car sinon elle s’assèche et lèvera moins bien). Ajuster le moule coulissant autour ou laisser sans moule (la brioche sera plus large et donc moins haute). '),
+(357, 51, 'Placer la brioche sur la plaque du four recouverte de papier sulfurisé ou sur une plaque silicone pour ceux qui sont équipés. '),
+(358, 51, 'Laisser lever la brioche à température ambiante pendant 1 à 2 heures (selon chaleur de votre pièce). Au besoin, la recouvrir d’un torchon humide. '),
+(359, 51, 'Badigeonner à l’aide d’un jaune d’œuf mélangé à un tout petit peu de lait (ou d’eau) le dessus de la brioche. '),
+(360, 51, 'Disséminer un peu de sucre perlé.'),
+(361, 51, 'Faire cuire à 210°C (thermostat 7) durant 30 min. '),
+(362, 51, 'Ensuite, une fois hors du four, laisser refroidir 10 minutes, démouler et la placer sur une grille. '),
+(363, 51, 'Le mieux est d’attendre qu’elle ait complètement refroidi pour la couper. '),
+(364, 51, 'Pour les pépites de chocolat, les ajouter après avoir formé les 3 pâtons. '),
+(365, 51, 'On peut varier le parfum avec de l\'amande amère.'),
+(366, 51, 'Note de l\'auteur:\r\nIdéale pour accompagner le petit déjeuner ou le gouter et a l\'avantage d\'être peu sucrée. '),
+(377, 52, 'EXPLICATIONS POUR FAIRE LA BRIOCHE EN MACHINE A PAIN : '),
+(378, 52, 'Délayer la gousse de vanille et ses graines dans le lait tiède, laisser un peu infuser. '),
+(379, 52, 'Retirer la gousse et mettre le lait vanillé dans la cuve. '),
+(380, 52, 'Ajouter les autres ingrédients : crème, eau de fleur d\'oranger, beurre, sucre, sel, en terminant par la farine puis la levure (attention, elle ne doit pas entrer en contact avec les liquides). '),
+(381, 52, 'Mettre sur programme \"brioche\", ou \"sucré\" ou sur tout autre programme permettant de faire de la brioche.'),
+(382, 52, 'Cuire et déguster une fois refroidi. '),
+(383, 52, 'Note de l\'auteur:\r\nVous pouvez ajouter 1 cuillère à soupe d\'eau de vie (kirsch par exemple) à la pâte. Chez moi cette brioche a eut beaucoup de succès ! attention à bien faire lever la brioche pour qu\'elle soit bien aérée. A vos fourneaux! ');
 
 -- --------------------------------------------------------
 
@@ -578,7 +678,41 @@ INSERT INTO `t_ingredient` (`idIngredient`, `nomIngredient`) VALUES
 (137, 'sucre de canne'),
 (138, 'pain'),
 (139, 'canelle'),
-(140, 'potiron');
+(140, 'potiron'),
+(141, 'vanille'),
+(143, 'eau de fleur d\'oranger'),
+(144, 'levure de boulanger'),
+(145, 'sucre perlé'),
+(146, 'miel'),
+(147, 'levure chimique'),
+(148, 'yaourt nature'),
+(149, 'farine de maIs'),
+(150, 'poire'),
+(151, 'lait écrémé'),
+(152, 'fromage blanc'),
+(153, 'stévia en poudre'),
+(154, 'avoine'),
+(155, 'tapioca'),
+(156, 'biscuits briochés'),
+(157, 'pains muffins'),
+(158, 'fromage'),
+(159, 'bacon'),
+(160, 'farine à gateaux'),
+(161, 'farine complète'),
+(162, 'sucre vanillé'),
+(163, 'margarine'),
+(164, 'banane'),
+(165, 'pruneau'),
+(166, 'noix de coco rapée'),
+(167, 'noix'),
+(168, 'arôme vanille'),
+(169, 'amandes effilés'),
+(170, 'noix concassées'),
+(171, 'pépites de chocolat'),
+(172, 'kiwi'),
+(173, 'orange'),
+(174, 'lait de soja'),
+(175, 'sucre roux');
 
 -- --------------------------------------------------------
 
@@ -940,7 +1074,80 @@ INSERT INTO `t_ingredientrecette` (`idIngredientRecette`, `idIngredient`, `idRec
 (347, 32, 31, 0, ''),
 (348, 135, 38, 5, 'c à soupe'),
 (349, 56, 38, 25, 'cl'),
-(350, 133, 38, 2, 'c à soupe');
+(350, 133, 38, 2, 'c à soupe'),
+(351, 174, 44, 25, 'cl'),
+(352, 164, 44, 2, 'pièce(s)'),
+(353, 172, 44, 4, 'pièce(s)'),
+(354, 173, 44, 2, 'pièce(s)'),
+(355, 34, 46, 150, 'g'),
+(356, 161, 46, 150, 'g'),
+(357, 133, 46, 50, 'g'),
+(358, 146, 46, 50, 'g'),
+(359, 18, 46, 1, 'entier(s)'),
+(360, 49, 46, 100, 'g'),
+(361, 148, 46, 100, 'g'),
+(362, 162, 46, 1, 'sachet(s)'),
+(363, 168, 46, 1, 'c à café'),
+(364, 169, 46, 0, 'selon goût'),
+(365, 170, 46, 0, 'selon goût'),
+(366, 171, 46, 0, 'selon goût'),
+(367, 154, 46, 80, 'g'),
+(368, 160, 46, 60, 'g'),
+(369, 161, 46, 100, 'g'),
+(370, 175, 46, 90, 'g'),
+(371, 162, 46, 1, 'sachet(s)'),
+(372, 18, 46, 2, 'entier(s)'),
+(373, 56, 46, 70, 'ml'),
+(374, 163, 46, 20, 'g'),
+(375, 134, 46, 1, 'sachet(s)'),
+(376, 139, 46, 0, 'selon goût'),
+(377, 164, 46, 1, 'pièce(s)'),
+(378, 165, 46, 50, 'g'),
+(379, 166, 46, 0, 'selon goût'),
+(380, 167, 46, 3, 'pièce(s)'),
+(381, 157, 47, 4, 'pièce(s)'),
+(382, 18, 47, 4, 'entier(s)'),
+(383, 103, 47, 4, 'tranche(s)'),
+(384, 158, 47, 4, 'fine tranche(s)'),
+(385, 56, 48, 20, 'cl'),
+(386, 155, 48, 3, 'c à soupe'),
+(387, 156, 48, 3, 'pièce(s)'),
+(388, 146, 48, 1, 'c à soupe'),
+(389, 154, 49, 3, 'c à soupe'),
+(390, 153, 49, 5, 'g'),
+(391, 96, 49, 1, 'pot(s)'),
+(392, 151, 49, 5, 'c à soupe'),
+(393, 32, 49, 1, 'pincée(s)'),
+(394, 18, 49, 1, 'entier(s)'),
+(395, 150, 49, 1, 'pièce(s)'),
+(396, 37, 49, 1, 'pièce(s)'),
+(397, 149, 50, 250, 'g'),
+(398, 18, 50, 4, 'entier(s)'),
+(399, 32, 50, 1, 'pincée(s)'),
+(400, 49, 50, 100, 'g'),
+(401, 148, 50, 2, 'pot(s)'),
+(402, 147, 50, 1, 'sachet(s)'),
+(403, 146, 50, 1, 'c à soupe'),
+(404, 18, 51, 3, 'entier(s)'),
+(405, 144, 51, 10, 'g'),
+(406, 56, 51, 20, 'cl'),
+(407, 32, 51, 1, 'pincée'),
+(408, 133, 51, 65, 'g'),
+(409, 143, 51, 20, 'g'),
+(410, 49, 51, 80, 'g'),
+(411, 171, 51, 1, 'poignée(s)'),
+(412, 34, 51, 560, 'g'),
+(413, 145, 51, 1, 'c à soupe'),
+(414, 34, 52, 275, 'g'),
+(415, 32, 52, 1, 'c à café'),
+(416, 18, 52, 1, 'entier(s)'),
+(417, 133, 52, 55, 'g'),
+(418, 49, 52, 55, 'g'),
+(419, 144, 52, 1, 'sachet(s)'),
+(420, 4, 52, 1, 'c à soupe'),
+(421, 56, 52, 63, 'ml'),
+(422, 141, 52, 1, 'gousse(s)'),
+(423, 143, 52, 1, 'c à café');
 
 -- --------------------------------------------------------
 
@@ -1007,7 +1214,16 @@ INSERT INTO `t_recette` (`idRecette`, `Code`, `nom`, `image`, `difficulte`, `cou
 (40, 9783, 'Pain perdu', '40.jpg', 2, 2, 30, 15, 15, 0, 1),
 (41, 5470, 'Kanelbulle (viennoiserie suédoise à la cannelle)', '41.jpg', 1, 2, 70, 60, 10, 0, 1),
 (42, 2053, 'Soupe aux champignons', '42.jpg', 1, 1, 40, 15, 25, 0, 1),
-(43, 9568, 'Soupe au potiron', '43.jpg', 1, 1, 85, 25, 60, 0, 1);
+(43, 9568, 'Soupe au potiron', '43.jpg', 1, 1, 85, 25, 60, 0, 1),
+(44, 3114, 'Smoothie vitaminé', '44.jpg', 1, 1, 10, 10, 0, 0, 0),
+(45, 3119, 'Biscuits aux céréales', '45.jpg', 1, 1, 25, 15, 10, 0, 1),
+(46, 3175, 'Cake du petit déjeuner', '46.jp', 1, 1, 55, 15, 40, 0, 1),
+(47, 3165, 'Egg Mcmuffin', '47.jpg', 1, 1, 13, 10, 3, 0, 1),
+(48, 3122, 'Tapioca du petit dejeuner', '48.jpg', 1, 1, 15, 5, 10, 0, 1),
+(49, 3147, 'Petit déjeuner allégé à l\'avoine et aux poires', '49.jpg', 1, 1, 10, 5, 5, 0, 1),
+(50, 3180, 'Gâteau de maïs', '50.jpg', 1, 1, 40, 15, 25, 0, 1),
+(51, 3102, 'Brioche tressée', '51.jpg', 2, 1, 240, 90, 30, 120, 1),
+(52, 3153, 'La gâche vendéenne', '52.jpg', 2, 1, 55, 10, 45, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -1121,7 +1337,16 @@ INSERT INTO `t_repasrecette` (`idRepasRecette`, `idRepas`, `idRecette`) VALUES
 (74, 2, 43),
 (75, 3, 43),
 (76, 1, 40),
-(77, 1, 41);
+(77, 1, 41),
+(78, 1, 44),
+(79, 1, 45),
+(80, 1, 46),
+(81, 1, 47),
+(82, 1, 48),
+(83, 1, 49),
+(84, 1, 50),
+(85, 1, 51),
+(86, 1, 52);
 
 -- --------------------------------------------------------
 
@@ -1201,7 +1426,16 @@ INSERT INTO `t_tempsrecette` (`idTempsRecette`, `idTemps`, `idRecette`) VALUES
 (38, 1, 40),
 (39, 3, 41),
 (40, 2, 42),
-(41, 3, 43);
+(41, 3, 43),
+(51, 1, 44),
+(52, 1, 45),
+(53, 2, 46),
+(54, 1, 47),
+(55, 1, 48),
+(56, 1, 49),
+(57, 2, 50),
+(58, 4, 51),
+(59, 2, 52);
 
 --
 -- Indexes for dumped tables
@@ -1290,31 +1524,31 @@ ALTER TABLE `t_categorie`
 -- AUTO_INCREMENT for table `t_categorierecette`
 --
 ALTER TABLE `t_categorierecette`
-  MODIFY `idCategorieRecette` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
+  MODIFY `idCategorieRecette` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
 
 --
 -- AUTO_INCREMENT for table `t_etapes`
 --
 ALTER TABLE `t_etapes`
-  MODIFY `idEtapes` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=296;
+  MODIFY `idEtapes` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=384;
 
 --
 -- AUTO_INCREMENT for table `t_ingredient`
 --
 ALTER TABLE `t_ingredient`
-  MODIFY `idIngredient` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=141;
+  MODIFY `idIngredient` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=176;
 
 --
 -- AUTO_INCREMENT for table `t_ingredientrecette`
 --
 ALTER TABLE `t_ingredientrecette`
-  MODIFY `idIngredientRecette` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=351;
+  MODIFY `idIngredientRecette` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=424;
 
 --
 -- AUTO_INCREMENT for table `t_recette`
 --
 ALTER TABLE `t_recette`
-  MODIFY `idRecette` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `idRecette` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT for table `t_repas`
@@ -1326,7 +1560,7 @@ ALTER TABLE `t_repas`
 -- AUTO_INCREMENT for table `t_repasrecette`
 --
 ALTER TABLE `t_repasrecette`
-  MODIFY `idRepasRecette` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `idRepasRecette` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
 
 --
 -- AUTO_INCREMENT for table `t_temps`
@@ -1338,7 +1572,7 @@ ALTER TABLE `t_temps`
 -- AUTO_INCREMENT for table `t_tempsrecette`
 --
 ALTER TABLE `t_tempsrecette`
-  MODIFY `idTempsRecette` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `idTempsRecette` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- Constraints for dumped tables
