@@ -50,14 +50,14 @@ $(document).ready(function (event) {
                     message : $userMsg 
                 },
                 success: function (data) {
-                    console.log (data)
+//                    console.log (data)
                     // perhaps check condition that it returns result: OK
                     $msg = 'Success! Your message has been sent.'
                     $('.contactMessage').html($msg);
                 }, 
                 error: function (xhr, status, errorMsg) {
-                    console.log ('Status: ' + status);
-                    console.log ('Error: ' + errorMsg);
+//                    console.log ('Status: ' + status);
+//                    console.log ('Error: ' + errorMsg);
                     $('.contactMessage').html('Whoops, there was a technical issue.');
                 },
                 complete: function (xhr, status) {
