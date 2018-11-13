@@ -53,6 +53,7 @@ $(document).ready(function (event) {
                     console.log (data)
                     // perhaps check condition that it returns result: OK
                     $msg = 'Success! Your message has been sent.'
+                    $('.contactMessage').html($msg);
                 }, 
                 error: function (xhr, status, errorMsg) {
                     console.log ('Status: ' + status);

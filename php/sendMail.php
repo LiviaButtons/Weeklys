@@ -2,10 +2,6 @@
 header ('Cache-Control: no-cache'); // don't save any info (risks sending request with old data)
 header ('Content-Type: application/json'); // tell PHP what kind of data to expect & output
 
-$_POST['email'] = "email@email.com";
-$_POST['message'] = "your mum is fat";
-
-
 //if a values were received in POST
 if (isset ($_POST['email'], $_POST['message'])) {
     // pass them through basic validation
