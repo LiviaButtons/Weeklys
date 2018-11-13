@@ -12,9 +12,13 @@ $(document).ready (function (ev) {
         getDisplayData();
     });
     
+    $('#vege').on("click", function (e) {
+        getDisplayData();
+    });
+    
     $('.fa-sync-alt').on("click", function (e) {
         $clickedSymbol = e.target;
-        $sibling = $clickedSymbol.previousElementSibling.className;
+        $sibling = $clickedSymbol.previousElementSibling;
         swapRecipe($sibling);
     })
     
@@ -72,22 +76,22 @@ $(document).ready (function (ev) {
         
         if ($('#vege').is(':checked')) {
 //            xhr.send ($('#vege').val());
-            xhr.send ('vege');
+            xhr.send ('vege=true&gen=whole');
         } else {
-            xhr.send ();
+            xhr.send ('gen=whole');
         };
     };
     
-    function swapRecipe (sibling) {
-//        console.log (sibling);        
+    function swapRecipe (sibling) {     
         let xhr = new XMLHttpRequest();
         
         xhr.onreadystatechange = function (event) {
             if (xhr.readyState == 4) {
                 if (xhr.status == 200) {
                     $results = JSON.parse(xhr.responseText);
-                    console.log ($results);
+//                    console.log ($results);
                     
+                    // create new link, build URL, give link attributes
                     $newLink = document.createElement('a');
                     $newUrl = $results[0].nomRecette.replace(/\s/g, '');
                     $($newLink).attr({
@@ -96,8 +100,7 @@ $(document).ready (function (ev) {
                     });
                     $($newLink).html($results[0].nomRecette);
                     
-                    console.log ($newLink);
-                    
+                    // inject new recipe + link into relevant section
                     $(sibling).html($newLink);
                 
                 } else {
@@ -109,31 +112,14 @@ $(document).ready (function (ev) {
         xhr.open ('POST', './php/generateCalendar.php');
         xhr.setRequestHeader ('Content-type', 'application/x-www-form-urlencoded');
         
-        if (sibling == "recipe recipeB") {
-//            $meal = "meal = Petit-déjeuner";
-            xhr.send ("breakfast")
-        } else if (sibling == "recipe recipeL") {
-//            $meal = "Déjeuner";
-            xhr.send ("lunch");
-        } else if (sibling == "recipe recipeD") {
-//            $meal = "Dîner";
-            xhr.send ("dinner");
+        // check whether the clicked element is from breakfast, lunch or dinner
+        // send information over accordingly
+        if (sibling.className === "recipe recipeB") {
+            xhr.send ("meal=breakfast");
+        } else if (sibling.className === "recipe recipeL") {
+            xhr.send ("meal=lunch");
+        } else {
+            xhr.send ("meal=dinner");
         }
-        
-//        if (sibling === "recipe recipeB") {
-////            $meal = "Petit-déjeuner";
-//            xhr.send ("breakfast");
-//            console.log ("sending breakfast");
-//        } else if (sibling === "recipe recipeL") {
-////            $meal = "Déjeuner";
-////            xhr.send (JSON.stringify ({meal: "Déjeuner"}));
-//            xhr.send ("lunch");
-//            console.log ("sending lunch");
-//        } else {
-////            $meal = "Dîner";
-////            xhr.send (JSON.stringify ({meal: "Dîner"}));
-//            xhr.send ("dinner");
-//            console.log ("sending dinner");
-//        }
     }
 });

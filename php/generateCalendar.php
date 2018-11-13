@@ -28,7 +28,7 @@
                  LIMIT 1";
     
     // if we want to generate the whole calendar
-//    if (something) {
+    if (isset ($_POST["gen"]) && !empty($_POST["gen"])) {
         // build queries for entire calendar
         $sqlBreakfast = $sqlStart . $sqlB;
         $sqlLunch =  $sqlStart . $sqlL;
@@ -68,29 +68,26 @@
         $resultsD = $statementD->fetchAll(PDO::FETCH_ASSOC);
 
         // Encode results and send them back
-//        echo json_encode(array($resultsB, $resultsL, $resultsD)); 
+        echo json_encode(array($resultsB, $resultsL, $resultsD)); 
         // send an array containing all 3 result arrays, or it'll bug
-//    }
+    }
+
     
-//    echo $_POST['other'];
-    
-    // if you received a value for either breakfast, lunch or dinner
+    // if you received a value for a specific meal
     // that means somebody clicked to regenerate a single recipe
-//    $_POST['meal'] = 'Petit-déjeuner';
-    
-    if (isset ($_POST["breakfast"]) || (isset ($_POST["lunch"])) || isset ($_POST["dinner"])) {
+    if (isset($_POST["meal"])) {
         // start building solo query
         $sqlSolo = $sqlStart;
         
         // adapt to retrieve correct meal cateogry
-//        if ($_POST["meal"] == "Petit-déjeuner") {
-        if (isset ($_POST["breakfast"])) {
+        if ($_POST["meal"] == "breakfast") {
+//        if (isset ($_POST["breakfast"])) {
             $sqlSolo .= $sqlB;
-//        } else if ($_POST["meal"] == "Déjeuner") {
-        } else if (isset ($_POST["lunch"])) {
+        } else if ($_POST["meal"] == "lunch") {
+//        } else if (isset ($_POST["lunch"])) {
             $sqlSolo .= $sqlL;
-//        } else if ($_POST["meal"] == "Dîner") {
-        } else if (isset ($_POST["dinner"])) {
+        } else if ($_POST["meal"] == "dinner") {
+//        } else if (isset ($_POST["dinner"])) {
             $sqlSolo .= $sqlD;  
         }
         
@@ -108,5 +105,4 @@
         $resultsS = $statementS->fetchAll(PDO::FETCH_ASSOC);
         echo json_encode($resultsS);
     }
-
 ?>
