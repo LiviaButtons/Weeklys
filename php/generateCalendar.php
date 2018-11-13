@@ -15,7 +15,7 @@
         $pdo = null;
     }
 
-    // SQL queries
+    // general SQL queries building blocks
     $sqlStart = "SELECT DISTINCT idRecette, nomRecette
                  FROM view_cook";
     $sqlB = " WHERE typeDeRepas = 'Petit-déjeuner'";
@@ -26,38 +26,71 @@
                 LIMIT 7";
     $sqlSoloEnd = " ORDER BY rand()
                  LIMIT 1";
+    
+    // if we want to generate the whole calendar
+//    if (something) {
+        // build queries for entire calendar
+        $sqlBreakfast = $sqlStart . $sqlB;
+        $sqlLunch =  $sqlStart . $sqlL;
+        $sqlDinner =  $sqlStart . $sqlD;
+        
+        // if there's a value set in POST (AKA vegetarian is checked)
+        if (isset ($_POST["vege"]) && !empty($_POST["vege"])) {
+        // adapt sql queries
+            $sqlBreakfast .= $sqlVege;
+            $sqlLunch .= $sqlVege;
+            $sqlDinner .=  $sqlVege;
+        } 
 
-    // adapt for meal category
-    $sqlBreakfast = $sqlStart . $sqlB;
-    $sqlLunch =  $sqlStart . $sqlL;
-    $sqlDinner =  $sqlStart . $sqlD;
+        // complete SQL queries with for all 7 
+        $sqlBreakfast .= $sqlEnd;
+        $sqlLunch .= $sqlEnd;
+        $sqlDinner .= $sqlEnd;
+
+        // Prepare the request (send to server)
+        $statementB = $pdo->prepare ($sqlBreakfast);
+        $statementL = $pdo->prepare ($sqlLunch);
+        $statementD = $pdo->prepare ($sqlDinner);
+
+        // Execute the request in the server
+        $statementB->execute();
+        $statementL->execute();
+        $statementD->execute();
+
+        // Something not working?
+    //     var_dump ($statementB->errorInfo());
+    //     var_dump ($statementL->errorInfo());
+    //     var_dump ($statementD->errorInfo());
+
+        // Put results into a table
+        $resultsB = $statementB->fetchAll(PDO::FETCH_ASSOC);
+        $resultsL = $statementL->fetchAll(PDO::FETCH_ASSOC);
+        $resultsD = $statementD->fetchAll(PDO::FETCH_ASSOC);
+
+        // Encode results and send them back
+//        echo json_encode(array($resultsB, $resultsL, $resultsD)); 
+        // send an array containing all 3 result arrays, or it'll bug
+//    }
     
-    // if there's a value set in POST (AKA vegetarian is checked)
-    if (isset ($_POST["vege"]) && !empty($_POST["vege"])) {
-    // adapt sql queries
-        $sqlBreakfast .= $sqlVege;
-        $sqlLunch .= $sqlVege;
-        $sqlDinner .=  $sqlVege;
-    } 
-    
-    // complete SQL queries with for all 7 
-    $sqlBreakfast .= $sqlEnd;
-    $sqlLunch .= $sqlEnd;
-    $sqlDinner .= $sqlEnd;
+//    echo $_POST['other'];
     
     // if you received a value for either breakfast, lunch or dinner
     // that means somebody clicked to regenerate a single recipe
-    if (isset ($_POST["Petit-déjeuner"]) || isset ($_POST["Déjeuner"]) || isset ($_POST["Dîner"])) {
-        
+//    $_POST['meal'] = 'Petit-déjeuner';
+    
+    if (isset ($_POST["breakfast"]) || (isset ($_POST["lunch"])) || isset ($_POST["dinner"])) {
         // start building solo query
         $sqlSolo = $sqlStart;
         
         // adapt to retrieve correct meal cateogry
-        if (isset ($_POST["Petit-déjeuner"])) {
+//        if ($_POST["meal"] == "Petit-déjeuner") {
+        if (isset ($_POST["breakfast"])) {
             $sqlSolo .= $sqlB;
-        } else if (isset ($_POST["Déjeuner"])) {
+//        } else if ($_POST["meal"] == "Déjeuner") {
+        } else if (isset ($_POST["lunch"])) {
             $sqlSolo .= $sqlL;
-        } else if (isset ($_POST["Dîner"])) {
+//        } else if ($_POST["meal"] == "Dîner") {
+        } else if (isset ($_POST["dinner"])) {
             $sqlSolo .= $sqlD;  
         }
         
@@ -76,27 +109,4 @@
         echo json_encode($resultsS);
     }
 
-    // Prepare the request (send to server)
-    $statementB = $pdo->prepare ($sqlBreakfast);
-    $statementL = $pdo->prepare ($sqlLunch);
-    $statementD = $pdo->prepare ($sqlDinner);
-
-    // Execute the request in the server
-    $statementB->execute();
-    $statementL->execute();
-    $statementD->execute();
-
-    // Something not working?
-//     var_dump ($statementB->errorInfo());
-//     var_dump ($statementL->errorInfo());
-//     var_dump ($statementD->errorInfo());
-
-    // Put results into a table
-    $resultsB = $statementB->fetchAll(PDO::FETCH_ASSOC);
-    $resultsL = $statementL->fetchAll(PDO::FETCH_ASSOC);
-    $resultsD = $statementD->fetchAll(PDO::FETCH_ASSOC);
-
-    // Encode results and send them back
-    echo json_encode(array($resultsB, $resultsL, $resultsD)); 
-    // send an array containing all 3 result arrays, or it'll bug
 ?>

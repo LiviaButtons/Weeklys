@@ -68,6 +68,7 @@ $(document).ready (function (ev) {
         }
 
         xhr.open ('POST', './php/generateCalendar.php');
+        xhr.setRequestHeader ('Content-type', 'application/x-www-form-urlencoded');
         
         if ($('#vege').is(':checked')) {
 //            xhr.send ($('#vege').val());
@@ -106,16 +107,33 @@ $(document).ready (function (ev) {
         }
 
         xhr.open ('POST', './php/generateCalendar.php');
+        xhr.setRequestHeader ('Content-type', 'application/x-www-form-urlencoded');
         
-        if (sibling === "recipe recipeB") {
-            xhr.send ("Petit-déjeuner");
-            console.log ("sending breakfast");
-        } else if (sibling === "recipe recipeL") {
-            xhr.send ("Déjeuner");
-            console.log ("sending lunch");
-        } else {
-            xhr.send ("Dîner");
-            console.log ("sending dinner");
+        if (sibling == "recipe recipeB") {
+//            $meal = "meal = Petit-déjeuner";
+            xhr.send ("breakfast")
+        } else if (sibling == "recipe recipeL") {
+//            $meal = "Déjeuner";
+            xhr.send ("lunch");
+        } else if (sibling == "recipe recipeD") {
+//            $meal = "Dîner";
+            xhr.send ("dinner");
         }
+        
+//        if (sibling === "recipe recipeB") {
+////            $meal = "Petit-déjeuner";
+//            xhr.send ("breakfast");
+//            console.log ("sending breakfast");
+//        } else if (sibling === "recipe recipeL") {
+////            $meal = "Déjeuner";
+////            xhr.send (JSON.stringify ({meal: "Déjeuner"}));
+//            xhr.send ("lunch");
+//            console.log ("sending lunch");
+//        } else {
+////            $meal = "Dîner";
+////            xhr.send (JSON.stringify ({meal: "Dîner"}));
+//            xhr.send ("dinner");
+//            console.log ("sending dinner");
+//        }
     }
 });
