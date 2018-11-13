@@ -28,15 +28,14 @@ $(document).ready (function (ev) {
         xhr.onreadystatechange = function (event) {
             if (xhr.readyState == 4) {
                 if (xhr.status == 200) {
-                    $results = JSON.parse(xhr.responseText);
-//                    console.log (xhr.responseText);
+//                    $results = JSON.parse(xhr.responseText);
+                    console.log (xhr.responseText);
 //                    console.log ($results);
                     
                     // Split the results into relevant categories
                     $breakfast = $results[0];
                     $lunch = $results[1];
                     $dinner = $results[2];
-                    console.log 
                     
                     function buildInjectLink (arr, section) {
                         // build loop for 7 instances (7 weekday)
@@ -75,10 +74,11 @@ $(document).ready (function (ev) {
         xhr.setRequestHeader ('Content-type', 'application/x-www-form-urlencoded');
         
         if ($('#vege').is(':checked')) {
-//            xhr.send ($('#vege').val());
-            xhr.send ('vege=true&gen=whole');
+            xhr.send ('gen=whole&vege=true');
+            console.log ('gen=whole&vege=true');
         } else {
             xhr.send ('gen=whole');
+            console.log ('bla');
         };
     };
     
@@ -88,7 +88,8 @@ $(document).ready (function (ev) {
         xhr.onreadystatechange = function (event) {
             if (xhr.readyState == 4) {
                 if (xhr.status == 200) {
-                    $results = JSON.parse(xhr.responseText);
+                    console.log (xhr.responseText);
+//                    $results = JSON.parse(xhr.responseText);
 //                    console.log ($results);
                     
                     // create new link, build URL, give link attributes
