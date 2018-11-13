@@ -461,14 +461,14 @@ footer > div {
     align-items: center;
 }
 
-footer > div > div {
+footer .socialButtons {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-footer > div > div > div {
+footer .socialButtons > div {
     width: 100%; 
     display: flex;
     flex-direction: row;
@@ -478,32 +478,36 @@ footer > div > div > div {
 footer .contactForm {
     width: 100%;
     margin-top: 30px;
+}
+
+footer .contactForm > div {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
 }
 
-footer .contactForm > input[type=text], 
-footer .contactForm > textarea, 
-footer .contactForm > button {
+footer .contactForm > div > input[type=text], 
+footer .contactForm > div > textarea, 
+footer .contactForm > div > button {
     width: 100%;
     padding: 10px;
     margin: 10px;    
     border-radius: 5px;
 }
 
-footer .contactForm > input[type=text], 
-footer .contactForm > textarea {
+footer .contactForm > div > input[type=text], 
+footer .contactForm > div > textarea {
     border: 1px solid transparent;
     background-color: #e3e3e3;
 }
 
-footer .contactForm > textarea {
+footer .contactForm > div > textarea {
     height: 150px;
     resize: none;
 }
 
-footer .contactForm > button {
+footer .contactForm > div > button {
     border: 1px solid transparent;
     background-color: #FFF;
 }
@@ -788,7 +792,7 @@ footer .contactForm > button {
     /* ---------------------------- */
     /* ---------- footer ---------- */
     footer > div {
-        flex-flow: row wrap;
+        flex-direction: column;
     }
     
     footer > div .socialButtons {
@@ -805,25 +809,29 @@ footer .contactForm > button {
     
     footer > div .contactForm {
         width: 70%;
+    }
+    
+    footer > div .contactForm > div {
+        display: flex;
         flex-direction: row;
     }
     
-    footer .contactForm input[type=text],
-    footer .contactForm textarea,
-    footer .contactForm #contactButton {
+    footer .contactForm > div > input[type=text],
+    footer .contactForm > div > textarea,
+    footer .contactForm > div > #contactButton {
         width: 30%;
     }
     
-    footer .contactForm textarea {
+    footer .contactForm > div > textarea {
         height: 40px;
     }
     
-    footer .contactForm > button {
+    footer .contactForm > div > button {
         -webkit-transition: background-color 1s;
         transition: background-color 1s, border 1s, color 1s;
     }
 
-    footer .contactForm > button:hover {
+    footer .contactForm > div > button:hover {
         cursor: pointer;
         border: 1px solid #FFF;
         background-color: transparent;
