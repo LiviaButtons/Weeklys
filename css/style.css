@@ -71,6 +71,10 @@ h6 {
     text-transform: uppercase;
 }
 
+h5 {
+    color: #869e40;
+}
+
 
 /* --------------------------------------------- */
 /* -------------------- Header ----------------- */
@@ -411,6 +415,7 @@ header .dbSearch button {
 
 .recipe > a {
     text-decoration: none;
+    color: #303030;
 }
 
 .lunch {
@@ -691,6 +696,7 @@ footer .contactForm > button {
     #mealPlan .form button {
         width: 30%;
         transition-property: background-color;
+        align-self: center;
         transition-duration: 1s;
     }
     
@@ -702,7 +708,7 @@ footer .contactForm > button {
     }
     
     #mealPlan .calendarShare {
-        width: 40%;
+        width: 10%;
         display: flex;
         justify-content: flex-end;
     }
@@ -710,7 +716,6 @@ footer .contactForm > button {
     #mealPlan .calendarShare > span {
         padding: 10px;
     }
-    
     
     .fa-chevron-right,
     .fa-chevron-left {
@@ -736,6 +741,10 @@ footer .contactForm > button {
         padding-top: 0;
         margin-top: 0;
         margin-bottom: 5px;
+    }
+    
+    .mealtime .fa-sync-alt:hover {
+        cursor: pointer;
     }
     
     .recipe {

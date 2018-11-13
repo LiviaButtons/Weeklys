@@ -1,5 +1,6 @@
 /* Code with AJAX to connect to database and retrieve information */
 /* used to populate the meal plan on the homepage w/o reloading page */
+/* and swap individual recipes w/o reloading page */
 /* Author: Livia Bottoni */
 
 $(document).ready (function (ev) {
@@ -7,29 +8,35 @@ $(document).ready (function (ev) {
     getDisplayData();
     
     $('#calendarGenerator').on("click", function (e) {
-        // on button click, load new data
+    // on button click, load new data
         e.preventDefault ();
         getDisplayData();
     });
     
     $('#vege').on("click", function (e) {
+    // on checking/unchecking vegetarian option, load data
         getDisplayData();
     });
     
     $('.fa-sync-alt').on("click", function (e) {
+    // when clicking on reload icon
+        // retrieve which symbol was clicked
         $clickedSymbol = e.target;
+        // retrieve sibling of clicked element (div containing recipe)
         $sibling = $clickedSymbol.previousElementSibling;
+        // launch function to reload that recipe
         swapRecipe($sibling);
     })
     
+    // function for entire calendar
     function getDisplayData () {
         let xhr = new XMLHttpRequest;
 
         xhr.onreadystatechange = function (event) {
             if (xhr.readyState == 4) {
                 if (xhr.status == 200) {
-//                    $results = JSON.parse(xhr.responseText);
-                    console.log (xhr.responseText);
+                    $results = JSON.parse(xhr.responseText);
+//                    console.log (xhr.responseText);
 //                    console.log ($results);
                     
                     // Split the results into relevant categories
@@ -75,21 +82,20 @@ $(document).ready (function (ev) {
         
         if ($('#vege').is(':checked')) {
             xhr.send ('gen=whole&vege=true');
-            console.log ('gen=whole&vege=true');
         } else {
             xhr.send ('gen=whole');
-            console.log ('bla');
         };
     };
     
+    // function for individual recipe
     function swapRecipe (sibling) {     
         let xhr = new XMLHttpRequest();
         
         xhr.onreadystatechange = function (event) {
             if (xhr.readyState == 4) {
                 if (xhr.status == 200) {
-                    console.log (xhr.responseText);
-//                    $results = JSON.parse(xhr.responseText);
+                    $results = JSON.parse(xhr.responseText);
+//                    console.log (xhr.responseText);
 //                    console.log ($results);
                     
                     // create new link, build URL, give link attributes

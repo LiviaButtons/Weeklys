@@ -46,8 +46,6 @@
         $sqlBreakfast .= $sqlEnd;
         $sqlLunch .= $sqlEnd;
         $sqlDinner .= $sqlEnd;
-        
-        echo $sqlBreakfast;
 
         // Prepare the request (send to server)
         $statementB = $pdo->prepare ($sqlBreakfast);
@@ -70,7 +68,7 @@
         $resultsD = $statementD->fetchAll(PDO::FETCH_ASSOC);
 
         // Encode results and send them back
-//        echo json_encode(array($resultsB, $resultsL, $resultsD)); 
+        echo json_encode(array($resultsB, $resultsL, $resultsD)); 
         // send an array containing all 3 result arrays, or it'll bug
     }
 
