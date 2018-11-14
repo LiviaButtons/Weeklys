@@ -501,7 +501,7 @@ footer .contactForm > div > textarea,
 footer .contactForm > div > button {
     width: 100%;
     padding: 10px;
-    margin: 10px;    
+    margin: 10px 0px 10px 0px;    
     border-radius: 5px;
 }
 
@@ -835,6 +835,7 @@ footer .contactForm > div > button {
     footer > div > div .contactForm > div > input[type=text],
     footer .contactForm > div > textarea,
     footer .contactForm > div > #contactButton {
+        height: 40px;
         width: 30%;
     }
     
@@ -845,6 +846,10 @@ footer .contactForm > div > button {
     footer > div > div .contactForm > div > button {
         -webkit-transition: background-color 1s;
         transition: background-color 1s, border 1s, color 1s;
+    }
+    
+    footer > div .contactForm p {
+        text-align: center;
     }
 
     footer > div > div .contactForm > div > button:hover {
