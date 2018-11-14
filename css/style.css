@@ -807,45 +807,47 @@ footer .contactForm > div > button {
     footer > div > div {
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
     
-    footer > div .socialButtons {
+    footer > div > div > .socialButtons {
         width: 20%;
     }
     
-    footer .socialButtons div {
+    footer > div > div .socialButtons div {
         justify-content: center;
     }
     
-    footer .socialButtons div span {
+    footer > div > div .socialButtons div span {
         padding: 10px;
     }
     
-    footer > div .contactForm {
+    footer > div > div .contactForm {
         width: 70%;
     }
     
-    footer > div .contactForm > div {
+    footer > div > div .contactForm > div {
         display: flex;
         flex-direction: row;
     }
     
-    footer .contactForm > div > input[type=text],
+    footer > div > div .contactForm > div > input[type=text],
     footer .contactForm > div > textarea,
     footer .contactForm > div > #contactButton {
         width: 30%;
     }
     
-    footer .contactForm > div > textarea {
+    footer > div > div contactForm > div > textarea {
         height: 40px;
     }
     
-    footer .contactForm > div > button {
+    footer > div > div .contactForm > div > button {
         -webkit-transition: background-color 1s;
         transition: background-color 1s, border 1s, color 1s;
     }
 
-    footer .contactForm > div > button:hover {
+    footer > div > div .contactForm > div > button:hover {
         cursor: pointer;
         border: 1px solid #FFF;
         background-color: transparent;
