@@ -461,6 +461,14 @@ footer > div {
     align-items: center;
 }
 
+footer > div > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
 footer .socialButtons {
     width: 100%;
     display: flex;
@@ -473,6 +481,7 @@ footer .socialButtons > div {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
 footer .contactForm {
@@ -484,7 +493,7 @@ footer .contactForm > div {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
+    align-content: center;
 }
 
 footer .contactForm > div > input[type=text], 
@@ -795,8 +804,13 @@ footer .contactForm > div > button {
         flex-direction: column;
     }
     
+    footer > div > div {
+        display: flex;
+        flex-direction: row;
+    }
+    
     footer > div .socialButtons {
-        width: 30%;
+        width: 20%;
     }
     
     footer .socialButtons div {
