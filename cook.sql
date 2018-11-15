@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 15, 2018 at 09:27 AM
+-- Generation Time: Nov 15, 2018 at 11:59 AM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -1166,64 +1166,65 @@ CREATE TABLE `t_recette` (
   `tempsDePrep` tinyint(3) UNSIGNED NOT NULL,
   `tempsDeCuisson` tinyint(3) UNSIGNED NOT NULL,
   `tempsDeRepos` tinyint(3) UNSIGNED NOT NULL,
-  `cooking` tinyint(1) NOT NULL
+  `cooking` tinyint(1) NOT NULL,
+  `serving` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
 -- Dumping data for table `t_recette`
 --
 
-INSERT INTO `t_recette` (`idRecette`, `Code`, `nom`, `image`, `difficulte`, `cout`, `duree`, `tempsDePrep`, `tempsDeCuisson`, `tempsDeRepos`, `cooking`) VALUES
-(2, 1523, 'Feuilleté rapide jambon fromage', '2.jpg', 1, 1, 25, 5, 20, 0, 1),
-(4, 4523, 'Gyoza (Ravioli Chinois à la Japonaise)', '4.jpg', 2, 3, 50, 40, 10, 0, 1),
-(5, 9632, 'Quiche très facile', '5.jpg', 1, 1, 40, 0, 0, 0, 1),
-(6, 6853, 'Pot-au-feu', '6.jpg', 2, 2, 150, 30, 120, 0, 1),
-(7, 3645, 'Filets de poulet à la crème de poivrons', '7.jpg', 1, 1, 45, 15, 30, 0, 1),
-(8, 7841, 'Beignets tempura au calamar', '8.jpg', 1, 2, 35, 30, 5, 0, 1),
-(9, 8659, 'Navarin d\'agneau', '9.jpg', 2, 2, 140, 20, 120, 0, 1),
-(10, 9965, 'Véritable paëlla espagnole', '10.jpg', 2, 2, 90, 0, 0, 0, 1),
-(11, 5847, 'Boeuf braisé aux carottes', '11.jpg', 1, 1, 80, 20, 60, 0, 1),
-(12, 5587, 'Bo Bun', '12.jpg', 1, 2, 40, 20, 20, 0, 1),
-(13, 6651, 'Cuisses de poulet au four', '13.jpg', 1, 1, 45, 10, 35, 0, 1),
-(14, 3566, 'Wrap à l\'italienne', '14.jpg', 1, 1, 5, 5, 0, 0, 0),
-(15, 3347, 'Tomate Burger', '15.jpg', 1, 1, 25, 15, 10, 0, 0),
-(16, 1244, 'Aubergines à la carbonara', '16.jpg', 1, 1, 25, 10, 15, 0, 1),
-(17, 1112, 'Brochettes de veau mariné', '17.jpg', 1, 2, 35, 15, 20, 0, 1),
-(18, 2245, 'Thon grillé marinade méditerranéenne', '18.jpg', 1, 1, 15, 10, 5, 0, 1),
-(19, 5445, 'Pomme de terre au four', '19.jpg', 1, 1, 55, 10, 45, 0, 1),
-(20, 5226, 'Zoodle de butternut', '20.jpg', 2, 1, 45, 30, 15, 0, 1),
-(21, 7880, 'Poêlée d\'aubergines au chèvre', '21.jpg', 1, 1, 35, 5, 30, 0, 1),
-(22, 2150, 'Pâtes alsaciennes', '22.jpg', 2, 1, 30, 15, 15, 0, 1),
-(23, 2003, 'Dauphinois de courgettes', '23.jpg', 2, 2, 80, 20, 60, 0, 1),
-(24, 9477, 'Taboulé express', '24.jpg', 2, 1, 10, 10, 0, 0, 0),
-(25, 6566, 'Couscous de printemps', '25.jpg', 1, 2, 55, 20, 35, 0, 0),
-(26, 3631, 'Chaussons aux épinards', '26.jpg', 1, 1, 140, 60, 20, 60, 1),
-(27, 3002, 'Tomates mozzarella au four', '27.jpg', 1, 1, 45, 15, 30, 0, 1),
-(28, 4255, 'Clafoutis salé au chèvre', '28.jpg', 1, 1, 45, 15, 30, 0, 1),
-(29, 5401, 'Gratin de courge facile', '29.jpg', 1, 1, 60, 30, 30, 0, 1),
-(30, 2100, 'Moussaka végétarienne', '30.jpg', 1, 1, 120, 60, 60, 0, 1),
-(31, 3700, 'Tian de pommes de terre et courgettes', '31.jpg', 1, 1, 65, 20, 45, 0, 1),
-(32, 3482, 'Ratatouille', '32.jpg', 1, 2, 80, 25, 55, 0, 1),
-(33, 7511, 'Pizza végétarienne aux légumes grillés et aux herbes', '33.jpg', 1, 1, 27, 15, 12, 0, 1),
-(34, 2958, 'Aubergine à la parmesane', '34.jpg', 1, 1, 75, 45, 30, 0, 1),
-(35, 8344, 'Aubergines à la Parmigiana', '35.jpg', 1, 1, 90, 30, 60, 0, 1),
-(36, 9924, 'Tagliatelles au mascarpone et petits pois', '36.jpg', 1, 2, 35, 20, 15, 0, 1),
-(37, 5983, 'Pancakes rapides', '37.jpg', 1, 1, 20, 10, 10, 0, 1),
-(38, 7815, 'Home made oatmeal', '38.jpg', 1, 1, 19, 2, 17, 0, 1),
-(39, 4880, 'Oeufs brouillés', '39.jpg', 1, 2, 20, 5, 15, 0, 1),
-(40, 9783, 'Pain perdu', '40.jpg', 2, 2, 30, 15, 15, 0, 1),
-(41, 5470, 'Kanelbulle (viennoiserie suédoise à la cannelle)', '41.jpg', 1, 2, 70, 60, 10, 0, 1),
-(42, 2053, 'Soupe aux champignons', '42.jpg', 1, 1, 40, 15, 25, 0, 1),
-(43, 9568, 'Soupe au potiron', '43.jpg', 1, 1, 85, 25, 60, 0, 1),
-(44, 3114, 'Smoothie vitaminé', '44.jpg', 1, 1, 10, 10, 0, 0, 0),
-(45, 3119, 'Biscuits aux céréales', '45.jpg', 1, 1, 25, 15, 10, 0, 1),
-(46, 3175, 'Cake du petit déjeuner', '46.jpg', 1, 1, 55, 15, 40, 0, 1),
-(47, 3165, 'Egg Mcmuffin', '47.jpg', 1, 1, 13, 10, 3, 0, 1),
-(48, 3122, 'Tapioca du petit dejeuner', '48.jpg', 1, 1, 15, 5, 10, 0, 1),
-(49, 3147, 'Petit déjeuner allégé à l\'avoine et aux poires', '49.jpg', 1, 1, 10, 5, 5, 0, 1),
-(50, 3180, 'Gâteau de maïs', '50.jpg', 1, 1, 40, 15, 25, 0, 1),
-(51, 3102, 'Brioche tressée', '51.jpg', 2, 1, 240, 90, 30, 120, 1),
-(52, 3153, 'La gâche vendéenne', '52.jpg', 2, 1, 55, 10, 45, 0, 1);
+INSERT INTO `t_recette` (`idRecette`, `Code`, `nom`, `image`, `difficulte`, `cout`, `duree`, `tempsDePrep`, `tempsDeCuisson`, `tempsDeRepos`, `cooking`, `serving`) VALUES
+(2, 1523, 'Feuilleté rapide jambon fromage', '2.jpg', 1, 1, 25, 5, 20, 0, 1, 2),
+(4, 4523, 'Gyoza (Ravioli Chinois à la Japonaise)', '4.jpg', 2, 3, 50, 40, 10, 0, 1, 4),
+(5, 9632, 'Quiche très facile', '5.jpg', 1, 1, 40, 0, 0, 0, 1, 4),
+(6, 6853, 'Pot-au-feu', '6.jpg', 2, 2, 150, 30, 120, 0, 1, 6),
+(7, 3645, 'Filets de poulet à la crème de poivrons', '7.jpg', 1, 1, 45, 15, 30, 0, 1, 4),
+(8, 7841, 'Beignets tempura au calamar', '8.jpg', 1, 2, 35, 30, 5, 0, 1, 4),
+(9, 8659, 'Navarin d\'agneau', '9.jpg', 2, 2, 140, 20, 120, 0, 1, 4),
+(10, 9965, 'Véritable paëlla espagnole', '10.jpg', 2, 2, 90, 0, 0, 0, 1, 12),
+(11, 5847, 'Boeuf braisé aux carottes', '11.jpg', 1, 1, 80, 20, 60, 0, 1, 6),
+(12, 5587, 'Bo Bun', '12.jpg', 1, 2, 40, 20, 20, 0, 1, 4),
+(13, 6651, 'Cuisses de poulet au four', '13.jpg', 1, 1, 45, 10, 35, 0, 1, 4),
+(14, 3566, 'Wrap à l\'italienne', '14.jpg', 1, 1, 5, 5, 0, 0, 0, 4),
+(15, 3347, 'Tomate Burger', '15.jpg', 1, 1, 25, 15, 10, 0, 0, 2),
+(16, 1244, 'Aubergines à la carbonara', '16.jpg', 1, 1, 25, 10, 15, 0, 1, 4),
+(17, 1112, 'Brochettes de veau mariné', '17.jpg', 1, 2, 35, 15, 20, 0, 1, 6),
+(18, 2245, 'Thon grillé marinade méditerranéenne', '18.jpg', 1, 1, 15, 10, 5, 0, 1, 4),
+(19, 5445, 'Pommes de terre au four', '19.jpg', 1, 1, 55, 10, 45, 0, 1, 4),
+(20, 5226, 'Zoodle de butternut', '20.jpg', 2, 1, 45, 30, 15, 0, 1, 4),
+(21, 7880, 'Poêlée d\'aubergines au chèvre', '21.jpg', 1, 1, 35, 5, 30, 0, 1, 4),
+(22, 2150, 'Pâtes alsaciennes', '22.jpg', 2, 1, 30, 15, 15, 0, 1, 4),
+(23, 2003, 'Dauphinois de courgettes', '23.jpg', 2, 2, 80, 20, 60, 0, 1, 4),
+(24, 9477, 'Taboulé express', '24.jpg', 2, 1, 10, 10, 0, 0, 0, 4),
+(25, 6566, 'Couscous de printemps', '25.jpg', 1, 2, 55, 20, 35, 0, 0, 5),
+(26, 3631, 'Chaussons aux épinards', '26.jpg', 1, 1, 140, 60, 20, 60, 1, 2),
+(27, 3002, 'Tomates mozzarella au four', '27.jpg', 1, 1, 45, 15, 30, 0, 1, 4),
+(28, 4255, 'Clafoutis salé au chèvre', '28.jpg', 1, 1, 45, 15, 30, 0, 1, 6),
+(29, 5401, 'Gratin de courge facile', '29.jpg', 1, 1, 60, 30, 30, 0, 1, 4),
+(30, 2100, 'Moussaka végétarienne', '30.jpg', 1, 1, 120, 60, 60, 0, 1, 8),
+(31, 3700, 'Tian de pommes de terre et courgettes', '31.jpg', 1, 1, 65, 20, 45, 0, 1, 6),
+(32, 3482, 'Ratatouille', '32.jpg', 1, 2, 80, 25, 55, 0, 1, 4),
+(33, 7511, 'Pizza végétarienne aux légumes grillés et aux herbes', '33.jpg', 1, 1, 27, 15, 12, 0, 1, 4),
+(34, 2958, 'Aubergine à la parmesane', '34.jpg', 1, 1, 75, 45, 30, 0, 1, 2),
+(35, 8344, 'Aubergines à la Parmigiana', '35.jpg', 1, 1, 90, 30, 60, 0, 1, 4),
+(36, 9924, 'Tagliatelles au mascarpone et petits pois', '36.jpg', 1, 2, 35, 20, 15, 0, 1, 4),
+(37, 5983, 'Pancakes rapides', '37.jpg', 1, 1, 20, 10, 10, 0, 1, 2),
+(38, 7815, 'Home made oatmeal', '38.jpg', 1, 1, 19, 2, 17, 0, 1, 2),
+(39, 4880, 'Oeufs brouillés à la truffe', '39.jpg', 1, 2, 20, 5, 15, 0, 1, 4),
+(40, 9783, 'Pain perdu', '40.jpg', 2, 2, 30, 15, 15, 0, 1, 4),
+(41, 5470, 'Kanelbulle (viennoiserie suédoise à la cannelle)', '41.jpg', 1, 2, 70, 60, 10, 0, 1, 6),
+(42, 2053, 'Soupe aux champignons', '42.jpg', 1, 1, 40, 15, 25, 0, 1, 5),
+(43, 9568, 'Soupe au potiron', '43.jpg', 1, 1, 85, 25, 60, 0, 1, 6),
+(44, 3114, 'Smoothie vitaminé', '44.jpg', 1, 1, 10, 10, 0, 0, 0, 2),
+(45, 3119, 'Biscuits aux céréales', '45.jpg', 1, 1, 25, 15, 10, 0, 1, 8),
+(46, 3175, 'Cake du petit déjeuner', '46.jpg', 1, 1, 55, 15, 40, 0, 1, 4),
+(47, 3165, 'Egg Mcmuffin', '47.jpg', 1, 1, 13, 10, 3, 0, 1, 4),
+(48, 3122, 'Tapioca du petit dejeuner', '48.jpg', 1, 1, 15, 5, 10, 0, 1, 1),
+(49, 3147, 'Petit déjeuner allégé à l\'avoine et aux poires', '49.jpg', 1, 1, 10, 5, 5, 0, 1, 2),
+(50, 3180, 'Gâteau de maïs', '50.jpg', 1, 1, 40, 15, 25, 0, 1, 6),
+(51, 3102, 'Brioche tressée', '51.jpg', 2, 1, 240, 90, 30, 120, 1, 10),
+(52, 3153, 'La gâche vendéenne', '52.jpg', 2, 1, 55, 10, 45, 0, 1, 4);
 
 -- --------------------------------------------------------
 
