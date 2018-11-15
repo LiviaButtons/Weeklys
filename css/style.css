@@ -71,6 +71,13 @@ h6 {
     text-transform: uppercase;
 }
 
+h2 > span {
+    font-family: 'AusthinaBrush';
+/*    color: #869e40;*/
+    text-transform: lowercase;
+    vertical-align: bottom;
+}
+
 h5 {
     color: #869e40;
 }
