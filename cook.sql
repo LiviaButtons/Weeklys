@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 13, 2018 at 02:09 PM
+-- Generation Time: Nov 15, 2018 at 09:27 AM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -677,7 +677,7 @@ INSERT INTO `t_ingredient` (`idIngredient`, `nomIngredient`) VALUES
 (136, 'truffe'),
 (137, 'sucre de canne'),
 (138, 'pain'),
-(139, 'canelle'),
+(139, 'cannelle'),
 (140, 'potiron'),
 (141, 'vanille'),
 (143, 'eau de fleur d\'oranger'),
@@ -1184,7 +1184,7 @@ INSERT INTO `t_recette` (`idRecette`, `Code`, `nom`, `image`, `difficulte`, `cou
 (10, 9965, 'Véritable paëlla espagnole', '10.jpg', 2, 2, 90, 0, 0, 0, 1),
 (11, 5847, 'Boeuf braisé aux carottes', '11.jpg', 1, 1, 80, 20, 60, 0, 1),
 (12, 5587, 'Bo Bun', '12.jpg', 1, 2, 40, 20, 20, 0, 1),
-(13, 6651, 'Cuisses de poulet au four', '13.jgp', 1, 1, 45, 10, 35, 0, 1),
+(13, 6651, 'Cuisses de poulet au four', '13.jpg', 1, 1, 45, 10, 35, 0, 1),
 (14, 3566, 'Wrap à l\'italienne', '14.jpg', 1, 1, 5, 5, 0, 0, 0),
 (15, 3347, 'Tomate Burger', '15.jpg', 1, 1, 25, 15, 10, 0, 0),
 (16, 1244, 'Aubergines à la carbonara', '16.jpg', 1, 1, 25, 10, 15, 0, 1),
@@ -1217,7 +1217,7 @@ INSERT INTO `t_recette` (`idRecette`, `Code`, `nom`, `image`, `difficulte`, `cou
 (43, 9568, 'Soupe au potiron', '43.jpg', 1, 1, 85, 25, 60, 0, 1),
 (44, 3114, 'Smoothie vitaminé', '44.jpg', 1, 1, 10, 10, 0, 0, 0),
 (45, 3119, 'Biscuits aux céréales', '45.jpg', 1, 1, 25, 15, 10, 0, 1),
-(46, 3175, 'Cake du petit déjeuner', '46.jp', 1, 1, 55, 15, 40, 0, 1),
+(46, 3175, 'Cake du petit déjeuner', '46.jpg', 1, 1, 55, 15, 40, 0, 1),
 (47, 3165, 'Egg Mcmuffin', '47.jpg', 1, 1, 13, 10, 3, 0, 1),
 (48, 3122, 'Tapioca du petit dejeuner', '48.jpg', 1, 1, 15, 5, 10, 0, 1),
 (49, 3147, 'Petit déjeuner allégé à l\'avoine et aux poires', '49.jpg', 1, 1, 10, 5, 5, 0, 1),
