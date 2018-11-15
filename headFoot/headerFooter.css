@@ -1,0 +1,546 @@
+/** {
+    box-sizing: border-box;
+    border-collapse: collapse;
+}
+
+html {
+    width: 100%;
+    font-family: "LatoLight", sans-serif;
+    font-size: 1em;
+    line-height: 1.5em;
+    color: #404040;
+}
+
+body, 
+header, 
+main,
+section, 
+footer {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}*/
+
+/*header, section {
+    border-bottom: 1px solid rgb(30, 30, 30, 0.5);
+}*/
+
+header{
+    /*border-bottom: 1px solid rgb(30, 30, 30, 0.5);*/
+    border-bottom: 1px solid #707070;
+    z-index: 999;                  /***************************************rajoute*****/
+}
+
+/*main {
+    margin-top: 90px;
+}*/
+
+.mobileHidden,
+.tabletHidden,
+.hidden {
+    display: none;
+}
+
+/* --------------------------------------------- */
+/* ------------------- fonts ------------------- */
+
+@font-face {
+    font-family: AusthinaBrush;
+    src: url(../assets/fonts/AusthinaBrushCalligraphyScratch/AusthinaBrushCalligraphyScratch.ttf);
+}
+
+@font-face {
+    font-family: Lato;
+    src: url(../assets/fonts/Lato2OFL/Lato-Regular.ttf);
+}
+
+@font-face {
+    font-family: LatoLight;
+    src: url(../assets/fonts/Lato2OFL/Lato-Light.ttf);
+}
+
+@font-face {
+    font-family: LatoBold;
+    src: url(../assets/fonts/Lato2OFL/Lato-Bold.ttf);
+}
+
+
+/* --------------------------------------------- */
+/* ------------------ Headings ----------------- */
+h1,
+h2,
+/*h3,*/
+h4,
+h5,
+h6 {
+    font-family: 'LatoLight';
+    text-transform: uppercase;
+}
+
+
+/* --------------------------------------------- */
+/* -------------------- Header ----------------- */
+header {
+    background-color: #FFF;
+    /*height: 90px; */                            /*reel*******************************/
+    height: 80px;
+    position: fixed;
+    transition: top 0.2s ease-in-out;
+}
+
+.nav-down {
+    position: fixed;
+    top: 0;
+}
+
+.nav-up {
+    top: -90px; /* same as height of header */
+}
+
+header > div {
+    width: 90%;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+header img {
+    width: 75px;           /*****************************modif*/
+    /*width: 80px;*/  
+    margin: 0;
+    padding-right: 10px;
+}
+
+.logoText {
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoText > h1 {
+    padding-bottom: 0;
+    /*margin-bottom: 5px; */                   /*******reel modif en bas***/
+    margin-bottom: 15px;                          /*modif***************/
+}
+
+.logoText > p {
+    font-family: 'AusthinaBrush', cursive;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+header a {
+    text-decoration: none;
+}
+
+#hamMenu {
+    margin-left: 20px;
+}
+
+nav {
+    width: 100%;
+    position: fixed;
+    top: 90px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #303030;
+    color: #FFF;
+    border-bottom: 2px solid rgb(30, 30, 30, 0.5);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    font-size: 1.3em;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul li {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    color: #FFF;
+    font-size: 1.5em;
+    font-family: 'LatoLight';                   /*********************Mis en LatoLight à la place de Lato*/
+}
+
+nav ul li:not(:last-child) {
+    border-bottom: 1px solid #000;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+.active {
+    color: #869e40;
+}
+
+nav ul li:last-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 1.5em;    /**************************************************rajoute*/
+}
+
+nav ul li:last-child a:first-child {
+    padding-right: 20px;
+}
+
+nav ul li:last-child a:last-child {
+    padding-left: 20px;
+    border-left: 0.2px solid #000000;
+}
+
+
+/* --------------------------------------------- */
+/* ------------------ search bar --------------- */
+#intro .dbSearch,
+header .dbSearch {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#intro .dbSearch input[type="text"],
+header .dbSearch input[type="text"] {
+    /*height: 40px;*/                                  /**************reel modif en bas*/
+    height: 35px;
+    padding: 10px;
+    margin-right: 0;
+    border: 1px solid transparent;
+    /*border-top-left-radius: 5px;  */                           /********reel en bas modif**/
+    border-top-left-radius: 40px;
+    /*border-bottom-left-radius: 5px;  */                                      /********reel en bas modif**/
+    border-bottom-left-radius: 40px;
+}
+
+#intro .dbSearch {
+    margin-bottom: 30px;
+}
+
+#intro .dbSearch input[type="text"] {
+    width: calc(90% - 50px);
+    width: -moz-calc(90% - 50px); /* Firefox */
+    width: -webkit-calc(90% - 50px); /* Safari */
+    width: -o-calc(90% - 50px); /* Opera */
+    background: rgba(255, 255, 255, 0.7);
+}
+
+#intro .dbSearch {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+header .dbSearch input[type="text"] {
+    background-color: #e3e3e3;
+}
+
+#intro .dbSearch button,
+header .dbSearch button {
+    color: #FFF;
+    background: rgba(134, 158, 64, 0.7);
+    min-width: 50px;
+    padding: 11px;
+    margin-left: 0;
+    border: 1px solid transparent;
+    /*border-top-right-radius: 5px;*/
+    border-top-right-radius: 40px;
+    /*border-bottom-right-radius: 5px;*/
+    border-bottom-right-radius: 40px;
+    height: 35px; /**********************************rajoute*/
+}
+
+
+
+
+/* --------------------------------------------- */
+/* ------------------ footer ------------------- */
+footer {
+    background-color: #303030;
+    color: #FFF;
+}
+
+footer > div {
+    width: 90%;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer > div > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer > div > div > div {
+    width: 100%; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+footer .contactForm {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+footer .contactForm > input[type=text], 
+footer .contactForm > textarea, 
+footer .contactForm > button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px;    
+    border-radius: 5px;
+}
+
+footer .contactForm > input[type=text], 
+footer .contactForm > textarea {
+    border: 1px solid transparent;
+    background-color: #e3e3e3;
+}
+
+footer .contactForm > textarea {
+    height: 150px;
+    resize: none;
+}
+
+footer .contactForm > button {
+    border: 1px solid transparent;
+    background-color: #FFF;
+}
+
+.error {
+    border: 1px solid #FF0000 !important;
+}
+
+.copyright {
+    font-size: 0.8em;
+}
+
+
+/* --------------------------------------------- */
+/* --------------------- small ----------------- */
+
+@media (max-width: 500px) {
+    header .logoText h1 {
+        font-size: 2em;
+    }
+    
+    header .logoText p {
+        font-size: 0.8em;
+    }
+    
+    header .logoImg {
+        width: 85px;
+        margin-left: 0px;
+    }
+    
+    header .logoImg img {
+        width: 85px;
+    }
+    
+    header .logoText {
+        margin-left: 0px;
+    }
+}
+
+
+/* --------------------------------------------- */
+/* --------------- big screens ----------------- */
+@media (min-width: 1100px) {
+    .desktopShow {
+        display: flex !important;
+    }
+    
+    #hamMenu {
+        display: none;
+    }
+    
+    nav {
+        width: 30%;
+        position: inherit;
+        background-color: #FFF;
+        border: none;
+    }
+    
+    nav ul {
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        margin: 0;
+    }
+    
+    nav ul li {
+        font-size: 1.1em;
+        border: none;
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: 30px;
+        margin-right: 30px;
+        border: none !important;
+    }
+    
+    nav ul li a {
+        color: #303030;
+        transition-property: color;
+        transition-duration: 1s;
+    }
+
+    nav ul li:last-child {
+        margin-right: 0;
+    }
+    
+    nav ul li:last-child a {
+        padding: 0;
+        margin: 0;
+        font-size: 0.6em;
+    }
+    
+    nav ul li:last-child a:first-child {
+        padding-right: 5px;
+    }
+    
+    nav ul li:last-child a:last-child {
+        padding-left: 5px;
+        border-left: 0.2px solid #303030;
+    }
+    
+    nav ul li a:hover {
+        color: #869e40;
+    }
+}
+
+
+/* --------------------------------------------- */
+/* ----------------- desktop ------------------- */
+
+@media (min-width: 850px) {
+    /* ---------------------------- */
+    /* ---------- general --------- */
+    .tabletHidden,
+    .desktopHidden {
+        display: none;
+    }
+
+    .mobileHidden,
+    .tabletShow {
+        display: flex;
+    }
+
+    .tabletHidden {
+        display: none;
+    }
+    
+    /* ---------------------------- */
+    /* ----------- Header --------- */
+    header .logo {
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .logoImg {
+        padding-right: 25px;
+    }
+    
+    .logoText {
+        padding-left: 25px;
+    }
+
+    
+    /* ---------------------------- */
+    /* ---------- search ---------- */
+    header .dbSearch input {
+        order: -1;
+        align-self: center;
+        width: 200px;
+    }
+    
+    header .dbSearch button {
+        transition-property: background-color;
+        transition-duration: 1s;
+    }
+    
+    header .dbSearch button:hover {
+        background-color: #FFF;
+        color: #869e40;
+        border: 1px solid #869e40;
+        cursor: pointer;
+    }
+   
+   
+    /* ---------------------------- */
+    /* ---------- footer ---------- */
+    footer > div {
+        flex-flow: row wrap;
+    }
+    
+    footer > div .socialButtons {
+        width: 30%;
+    }
+    
+    footer .socialButtons div {
+        justify-content: center;
+    }
+    
+    footer .socialButtons div span {
+        padding: 10px;
+    }
+    
+    footer > div .contactForm {
+        width: 70%;
+        flex-direction: row;
+    }
+    
+    footer .contactForm input[type=text],
+    footer .contactForm textarea,
+    footer .contactForm #contactButton {
+        width: 30%;
+    }
+    
+    footer .contactForm textarea {
+        height: 40px;
+    }
+    
+    footer .contactForm > button {
+        -webkit-transition: background-color 1s;
+        transition: background-color 1s, border 1s, color 1s;
+    }
+
+    footer .contactForm > button:hover {
+        cursor: pointer;
+        border: 1px solid #FFF;
+        background-color: transparent;
+        color: #FFF;
+    }
+}
