@@ -2,27 +2,37 @@
 // Author: Livia Bottoni
 
 $(document).ready (function (event) {
-//    if ($('#search1').val() != '') {
-        $searchArray = ['result1', 'result2', 'result3', 'result4']
-        
-        $( "#search1" ).autocomplete({
-//            source: $searchArray
-            source: './php/searchBar.php',
-            appendTo: "#autosearch",
-            autofocus: true,
-            delay: 200,
-            minLength: 2
-        });
-//    } else if ($('#search2').val() != '') {
-        $( "#search2" ).autocomplete({
-            source: './php/searchBar.php',
-            appendTo: "intro > .dbSearch",
-            autofocus: true,
-            delay: 200,
-            minLength: 2
-        });  
-//    };
+    // launch autocomplete
+    $( "#search1" ).autocomplete({
+        source: './php/searchBar.php',
+        appendTo: "#autosearch",
+        delay: 500,
+        // when an autocomplete link is selected
+        select: function (event, ui) {
+            // prevent default behaviour (to display value)
+            event.preventDefault(); 
+            // 
+            $(this).val(ui.item.value);    
+//            console.log (ui.item.name);
+            // navigate to that recipe's page
+            window.location.href= './recettes.php?code=' + ui.item.name;
+        }
+    });
+
+
+    $( "#search2" ).autocomplete({
+        source: './php/searchBar.php',
+        appendTo: "intro > .dbSearch",
+        delay: 500,
+        // when an autocomplete link is selected
+        select: function (event, ui) {
+            event.preventDefault();
+            // navigate to that recipe's page
+            window.location.href= './recettes.php?code=' + ui.item.value;
+        }
+    });  
     
+    // launch regular search
     $('.searchButton').on("click", function (e) {
 //        console.log (e.target);
         $clickedButton = e.target;

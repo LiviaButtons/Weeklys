@@ -83,7 +83,7 @@
         $arr = array();
         for ($i = 0; $i < count($autoList); $i++) {
 //            $arr[$i]->name = $autoList[$i].nomRecette;
-            array_push($arr, array('value'=>$autoList[$i]['idRecette'], 'name'=>$autoList[$i]['nomRecette']));
+            array_push($arr, array('value'=>$autoList[$i]['nomRecette'], 'name'=>$autoList[$i]['idRecette'],));
 //            echo $autoList[$i]['nomRecette'];
         }
 //        var_dump ($arr);
