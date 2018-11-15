@@ -3,19 +3,18 @@
 
 $(document).ready (function (event) {
     $('.searchButton').on("click", function (e) {
-        e.preventDefault;
-//        
 //        console.log (e.target);
         $clickedButton = e.target;
         
-        if ($clickedButton.hasAttribute('id', 'searchButton1')) {
+        // if they clicked button1, take input1's value
+        if ($clickedButton.id == 'searchButton1') {;
             $searchTerm = $('#search1').val();
-        } else {
+        } else if ($clickedButton.id == 'searchButton2') {
+        // if they clicked button2, take inptu2's value
             $searchTerm = $('#search2').val();
         }
 
-//        console.log ($searchTerm);
-        
+        // if you received a search term, execute search function
         if ($searchTerm != '') {
             search($searchTerm);
         } else {
@@ -34,10 +33,13 @@ $(document).ready (function (event) {
                     $searchResults = JSON.parse(xhr.responseText);
 //                    console.log (xhr.responseText);
                     
+                    // if you connected to the DB successfully
+                    // redirect page to recipe with query in GET
                     window.location.href = './recipes.html?query=' + searchTerm;          
                     
+                    // No results, show message, yes results, show results
                     if ($searchResults.length < 1) {
-                        console.log ('Sorry, no results for your search terms.');
+                        console.log ('Aucun résultat pour votre recherche avec le terme ' + searchTerm + '. Voici toutes nos recettes !');
                     } else {
                         console.log ($searchResults);
                     }
@@ -52,7 +54,5 @@ $(document).ready (function (event) {
 //        xhr.open ('GET', './php/searchBar.php?query=' + searchTerm);
         xhr.setRequestHeader ('Content-type', 'application/x-www-form-urlencoded');
         xhr.send ('query=' + searchTerm);
-//        xhr.send ('query=gyoza');
-//        xhr.send ();
     }
 });
