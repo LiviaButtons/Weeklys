@@ -17,7 +17,7 @@
 
     // general SQL queries building blocks
     $sqlStart = "SELECT DISTINCT idRecette, nomRecette
-                 FROM view_cook";
+                 FROM view_recettes";
     $sqlB = " WHERE typeDeRepas = 'Petit-déjeuner'";
     $sqlL = " WHERE typeDeRepas = 'Déjeuner'";
     $sqlD = " WHERE typeDeRepas = 'Dîner'";

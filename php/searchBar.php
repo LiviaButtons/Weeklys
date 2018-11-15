@@ -30,7 +30,7 @@
         // compare lowercase to lowercase to ensure matches despite capitalisation
         // add wildcard on either end so it doesn't need exact match
         $sqlSearch = "SELECT DISTINCT idRecette, nomRecette, image
-                      FROM view_cook
+                      FROM view_recettes
                       WHERE LOWER(nomRecette) LIKE CONCAT('%', LOWER(:input), '%')
                         OR LOWER(ingredient) LIKE CONCAT('%', LOWER(:input), '%')
                         OR LOWER(typeDeRepas) LIKE CONCAT('%', LOWER(:input), '%')
