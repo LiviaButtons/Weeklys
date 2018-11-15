@@ -21,6 +21,12 @@
         <!-- CSS Stylesheets -->
         <link rel="stylesheet" href="./css/normalize.css">
         <link rel="stylesheet" href="./css/fontawesome-all.min.css">
+<!--
+        <link rel="stylesheet" href="./css/jquery-ui.min.css">
+        <link rel="stylesheet" href="./css/jquery-ui.structure.min.css">
+        <link rel="stylesheet" href="./css/jquery-ui.theme.min.css">
+-->
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
         <link rel="stylesheet" href="./css/style.css">
         
         <!-- Fav Icon -->
@@ -44,7 +50,7 @@
                     </div>
                 </div>
                 
-                <div class="dbSearch mobileHidden tabletHidden">
+                <div id="auto1" class="dbSearch ui-widget mobileHidden tabletHidden">
                     <input id="search1" name="searchField" class="mobileHidden searchInput" type="text" placeholder="Recherche...">
                     <button id="searchButton1" class="fas fa-search mobileHidden searchButton"></button>
                 </div>
@@ -69,9 +75,10 @@
         <main>
             <section id="intro">
                 <div>
-                    <div class="dbSearch desktopHidden">
+                    <div id="auto2" class="dbSearch desktopHidden">
                         <input id="search2" name="searchField" class="desktopHidden searchInput" type="text" placeholder="Search for recipes, ingredients...">
                         <button id="searchButton2" class="fas fa-search desktopHidden searchButton"></button>
+                        <div id="autoSearch"></div>
                     </div>
                     
                     <div class="overlayText">

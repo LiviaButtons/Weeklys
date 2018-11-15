@@ -2,6 +2,28 @@
 // Author: Livia Bottoni
 
 $(document).ready (function (event) {
+    if ($('#search1').val() != '') {
+        $searchArray = ['result1', 'result2', 'result3', 'result4']
+        $results = [{'result1': 'name1'}, {'result2': 'name2'}, {'result3': 'name3'}, {'result4': 'name4'}];
+        
+        $( "#search1" ).autocomplete({
+            source: $results,
+//            source: './php/searchBar.php',
+//            appendTo: "#autosearch",
+//            autofocus: true,
+//            delay: 200,
+//            minLength: 2
+        });
+    } else if ($('#search2').val() != '') {
+        $( "#search2" ).autocomplete({
+            source: './php/searchBar.php',
+            appendTo: "intro > .dbSearch",
+            autofocus: true,
+            delay: 200,
+            minLength: 2
+        });  
+    };
+    
     $('.searchButton').on("click", function (e) {
 //        console.log (e.target);
         $clickedButton = e.target;
@@ -35,13 +57,16 @@ $(document).ready (function (event) {
                     
                     // if you connected to the DB successfully
                     // redirect page to recipe with query in GET
-                    window.location.href = './recipes.html?query=' + searchTerm;          
+                    // removing spaces from query first
+                    $noSpaceSearch = searchTerm.replace(/\s/g, '');
+                    window.location.href = './recipes.html?query=' + $noSpaceSearch;          
                     
                     // No results, show message, yes results, show results
                     if ($searchResults.length < 1) {
                         console.log ('Aucun résultat pour votre recherche avec le terme ' + searchTerm + '. Voici toutes nos recettes !');
                     } else {
                         console.log ($searchResults);
+                        return $searchResults;
                     }
                 
                 } else {
