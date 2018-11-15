@@ -4,9 +4,17 @@
 $(document).ready (function (event) {
     $('.searchButton').on("click", function (e) {
         e.preventDefault;
+//        
+//        console.log (e.target);
+        $clickedButton = e.target;
         
-        $searchTerm = $('.searchInput').val();
-        console.log ($searchTerm);
+        if ($clickedButton.hasAttribute('id', 'searchButton1')) {
+            $searchTerm = $('#search1').val();
+        } else {
+            $searchTerm = $('#search2').val();
+        }
+
+//        console.log ($searchTerm);
         
         if ($searchTerm != '') {
             search($searchTerm);
@@ -25,9 +33,14 @@ $(document).ready (function (event) {
                 if (xhr.status == 200) {
                     $searchResults = JSON.parse(xhr.responseText);
 //                    console.log (xhr.responseText);
-//                    console.log ($searchResults);
                     
-                    window.location.href = './recipes.html?query=' + searchTerm;          
+                    if ($searchResults.length < 1) {
+                        console.log ('Sorry, no results for your search terms.');
+                    } else {
+                        console.log ($searchResults);
+                    }
+                    
+//                    window.location.href = './recipes.html?query=' + searchTerm;          
                 
                 } else {
                     console.log ('Error! ' + xhr.status);
