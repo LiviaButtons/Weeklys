@@ -14,8 +14,11 @@
         die ('Erreur: '.$e->getMessage());
     }
     
-    if (isset ($_GET['query']) && $_GET['query'] != '') {
-        $input = strip_tags ($_GET['query']); // remove any tags
+//    var_dump ($_POST);
+//    echo $_POST['query'];
+    
+    if (isset ($_POST['query']) && $_POST['query'] != '') {
+        $input = strip_tags ($_POST['query']); // remove any tags
         $input = trim ($input); // trim spaces
         
         // regular and special characters that could cause issues with match
@@ -42,7 +45,7 @@
         $statement->execute();
 
         // Something not working?
-    //    var_dump ($statement->errorInfo());
+//        var_dump ($statement->errorInfo());
 
         // Put results into a table
         $searchResults = $statement->fetchAll(PDO::FETCH_ASSOC);
