@@ -26,9 +26,13 @@ $(document).ready (function (event) {
         delay: 500,
         // when an autocomplete link is selected
         select: function (event, ui) {
-            event.preventDefault();
+            // prevent default behaviour (to display value)
+            event.preventDefault(); 
+            // 
+            $(this).val(ui.item.value);    
+//            console.log (ui.item.name);
             // navigate to that recipe's page
-            window.location.href= './recettes.php?code=' + ui.item.value;
+            window.location.href= './recettes.php?code=' + ui.item.name;
         }
     });  
     
