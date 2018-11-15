@@ -1,0 +1,205 @@
+* {
+    box-sizing: border-box;
+    border-collapse: collapse;
+}
+
+html {
+    width: 100%;
+    font-family: "LatoLight", sans-serif;
+    font-size: 1em;
+    line-height: 1em;
+    color: #404040;
+}
+
+body, header, main, section, footer {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/*FONTS*/
+
+@font-face {
+    font-family: AusthinaBrush;
+    src: url(../assets/fonts/AusthinaBrushCalligraphyScratch/AusthinaBrushCalligraphyScratch.ttf);
+}
+
+@font-face {
+    font-family: Lato;
+    src: url(../assets/fonts/Lato2OFL/Lato-Regular.ttf);
+}
+
+@font-face {
+    font-family: LatoLight;
+    src: url(../assets/fonts/Lato2OFL/Lato-Light.ttf);
+}
+
+@font-face {
+    font-family: LatoBold;
+    src: url(../assets/fonts/Lato2OFL/Lato-Bold.ttf);
+}
+
+body{
+    margin-top: 155px;
+    font-family: LatoLight;
+}
+
+main{
+    margin-bottom: 80px;
+    margin-top: 80px;
+}
+
+main > div {
+    width: 90%;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+/*    flex-direction: row;*/
+    justify-content: space-between;
+/*    align-items:center;*/
+}
+
+#titreRecette {
+    width: 90%;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+/*    flex-direction: row;*/
+    justify-content: space-between;
+    align-items:center;
+    margin-bottom: 70px;
+    margin-top: 80px;
+}
+
+
+h2 {
+    font-family: 'LatoLight';
+    text-transform: uppercase;
+    font-size: 1.6em;
+}
+
+h3 {
+    font-family: 'LatoLight';
+    text-transform: uppercase;
+    font-size: 1.3em;
+}
+
+/*A VOIR*/
+#nomRecette {
+    
+    justify-content: center;
+}
+
+
+div.calendarShare span {
+    margin-left: 30px;
+}
+
+div.calendarShare span:hover{
+/*    color: #F0C948;*/
+    border-bottom: 2px solid  #F0C948;
+/*    transform: scale(2,2);
+    */
+    
+    
+}
+
+div.calendarShare a span,
+div.calendarShare span {
+    color: #707070;    
+}
+
+
+
+/*LES SECTIONS*/
+
+/*SECTION 1*/
+#section1{
+    width: 65%;
+    font-family: Lato;
+/*    background-color: blue;*/
+}
+
+#imageRecette{
+/*    background-color: aqua;*/
+    height: auto;
+/*    width: 700px;*/
+    margin-bottom: 40px;
+
+}
+
+#etapeRecette{
+/*    background-color: beige;*/
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#imageRecette > img {
+    height: auto;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 5px;
+    
+}
+
+/*SECTION 2*/
+
+#section2{
+    width: 25%;
+    font-family: Lato;
+/*    background-color: red;*/
+}
+
+#contenuTemps{
+    background-color: #EBEBEB;
+/*    border: 1px solid #707070;*/
+    border-radius: 5px;
+    padding: 10px; 
+    margin-bottom: 20px;
+}
+#contenuTemps p {
+/*    padding: 0;*/
+    margin: 0;
+    margin-bottom: 7px;
+}
+
+#contenuIngredient{
+    background-color: #F0C948;
+    border: 1px solid #F0C948;
+    border-radius: 5px;
+    padding: 10px; 
+    margin-bottom: 20px;
+}
+
+#portion{
+    background-color: #EBEBEB;
+/*    border: 1px solid #707070;*/
+    border-radius: 5px;
+    padding: 10px; 
+    margin-bottom: 20px;
+    
+}
+
+option{
+    text-align: center;
+}
+
+select{
+    padding: 10px;
+    width: 70%;
+}
+button.serving {
+    background-color: #DE606E;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid ;
+    border-radius: 5px;
+    margin-top: 7px;
+    cursor: pointer;
+}
