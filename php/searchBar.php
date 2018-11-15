@@ -16,6 +16,7 @@
     
 //    var_dump ($_POST);
 //    echo $_POST['query'];
+//    $_POST['query'] = 'gyoza';
     
     if (isset ($_POST['query']) && $_POST['query'] != '') {
         $input = strip_tags ($_POST['query']); // remove any tags
@@ -51,6 +52,14 @@
         $searchResults = $statement->fetchAll(PDO::FETCH_ASSOC);
 
         // Encode results and send them back
-        echo json_encode($searchResults);
+        
+        // if successfull (AKA find more than one result)
+//        if (count($searchResults) > 0) {
+//            header("Location: ../recipes.html?query=" . $_POST['query']);
+            echo json_encode($searchResults);
+//        } else {
+//            header("Location: ../recipes.html");
+//            echo ('Pas de résultats pour la recherche de ' . $_POST['query'] . '. Voici toutes nos recettes !');
+//        }
     }
 ?>

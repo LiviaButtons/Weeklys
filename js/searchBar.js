@@ -20,7 +20,7 @@ $(document).ready (function (event) {
             search($searchTerm);
         } else {
             // Else, tell user to enter a search term
-            $('.searchInput').attr('placeholder', 'Please type something!');
+            $('.searchInput').attr('placeholder', 'Tapez quelque-chose !');
         }
     });
     
@@ -34,13 +34,13 @@ $(document).ready (function (event) {
                     $searchResults = JSON.parse(xhr.responseText);
 //                    console.log (xhr.responseText);
                     
+                    window.location.href = './recipes.html?query=' + searchTerm;          
+                    
                     if ($searchResults.length < 1) {
                         console.log ('Sorry, no results for your search terms.');
                     } else {
                         console.log ($searchResults);
                     }
-                    
-//                    window.location.href = './recipes.html?query=' + searchTerm;          
                 
                 } else {
                     console.log ('Error! ' + xhr.status);
