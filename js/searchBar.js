@@ -2,19 +2,18 @@
 // Author: Livia Bottoni
 
 $(document).ready (function (event) {
-    if ($('#search1').val() != '') {
+//    if ($('#search1').val() != '') {
         $searchArray = ['result1', 'result2', 'result3', 'result4']
-        $results = [{'result1': 'name1'}, {'result2': 'name2'}, {'result3': 'name3'}, {'result4': 'name4'}];
         
         $( "#search1" ).autocomplete({
-            source: $results,
-//            source: './php/searchBar.php',
-//            appendTo: "#autosearch",
-//            autofocus: true,
-//            delay: 200,
-//            minLength: 2
+//            source: $searchArray
+            source: './php/searchBar.php',
+            appendTo: "#autosearch",
+            autofocus: true,
+            delay: 200,
+            minLength: 2
         });
-    } else if ($('#search2').val() != '') {
+//    } else if ($('#search2').val() != '') {
         $( "#search2" ).autocomplete({
             source: './php/searchBar.php',
             appendTo: "intro > .dbSearch",
@@ -22,7 +21,7 @@ $(document).ready (function (event) {
             delay: 200,
             minLength: 2
         });  
-    };
+//    };
     
     $('.searchButton').on("click", function (e) {
 //        console.log (e.target);

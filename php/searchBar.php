@@ -17,8 +17,8 @@
 
 
     // Create SQL request leaving a placeholder for user input
-        // compare lowercase to lowercase to ensure matches despite capitalisation
-        // add wildcard on either end so it doesn't need exact match
+    // compare lowercase to lowercase to ensure matches despite capitalisation
+    // add wildcard on either end so it doesn't need exact match
     $sqlSelect = "SELECT DISTINCT";
     $sqlFrom = "FROM view_recettes
                 WHERE LOWER(nomRecette) LIKE CONCAT('%', LOWER(:input), '%')
@@ -73,13 +73,21 @@
         $input = trim($input); // remove spaces
         $input = str_replace ($special, '_', $input); // replace chars
         
-        $autoSQL = $sqlSelect . ' nomRecette ' . $sqlFrom . ' LIMIT 5';
+        $autoSQL = $sqlSelect . ' idRecette, nomRecette ' . $sqlFrom . ' LIMIT 5';
         
         $statement = $pdo->prepare ($autoSQL);
         $statement->bindValue (':input', $input, PDO::PARAM_STR);
         $statement->execute();
         $autoList = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-        echo json_encode($autoList);
+        
+        $arr = array();
+        for ($i = 0; $i < count($autoList); $i++) {
+//            $arr[$i]->name = $autoList[$i].nomRecette;
+            array_push($arr, array('value'=>$autoList[$i]['idRecette'], 'name'=>$autoList[$i]['nomRecette']));
+//            echo $autoList[$i]['nomRecette'];
+        }
+//        var_dump ($arr);
+//        echo json_encode($autoList);
+        echo json_encode($arr);
     }
 ?>
