@@ -22,7 +22,7 @@ footer {
 }
 
 header, section {
-    border-bottom: 2px solid rgb(30, 30, 30, 0.5);
+    border-bottom: 1px solid rgb(30, 30, 30, 0.5);
 }
 
 main {
@@ -91,7 +91,7 @@ h5 {
 /* -------------------- Header ----------------- */
 header {
     background-color: #FFF;
-    height: 90px;
+    height: 80px;
     position: fixed;
     transition: top 0.2s ease-in-out;
 }
@@ -102,7 +102,7 @@ header {
 }
 
 .nav-up {
-    top: -90px; /* same as height of header */
+    top: -80px; /* same as height of header */
 }
 
 header > div {
@@ -125,7 +125,7 @@ header .logo {
 }
 
 header img {
-    width: 85px;
+    width: 75px;
     margin: 0;
     padding-right: 10px;
 }
@@ -140,7 +140,7 @@ header img {
 
 .logoText > h1 {
     padding-bottom: 0;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 
 .logoText > p {
@@ -185,7 +185,7 @@ nav ul li {
     text-transform: uppercase;
     color: #FFF;
     font-size: 1.5em;
-    font-family: 'Lato';
+    font-family: 'LatoLight';
 }
 
 nav ul li:not(:last-child) {
@@ -205,6 +205,7 @@ nav ul li:last-child {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    font-size: 1.5em;
 }
 
 nav ul li:last-child a:first-child {
@@ -230,12 +231,12 @@ header .dbSearch {
 
 #intro .dbSearch input[type="text"],
 header .dbSearch input[type="text"] {
-    height: 40px;
+    height: 35px;
     padding: 10px;
     margin-right: 0;
     border: 1px solid transparent;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
 }
 
 #intro .dbSearch {
@@ -261,14 +262,15 @@ header .dbSearch input[type="text"] {
 
 #intro .dbSearch button,
 header .dbSearch button {
+    height: 35px;
     color: #FFF;
     background: rgba(134, 158, 64, 0.7);
     min-width: 50px;
     padding: 11px;
     margin-left: 0;
     border: 1px solid transparent;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
 }
 
 
