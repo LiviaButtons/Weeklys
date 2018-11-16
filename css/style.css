@@ -514,8 +514,32 @@ footer .contactForm > div > button {
 
 footer .contactForm > div > input[type=text], 
 footer .contactForm > div > textarea {
-    border: 1px solid transparent;
-    background-color: #e3e3e3;
+    border: 1px solid #e3e3e3;
+    background-color: transparent;
+    color: #e3e3e3;
+}
+
+footer .contactForm > div > input[type=text]::placeholder,
+footer .contactForm > div > textarea::placeholder {
+    color: #e3e3e3;
+}
+
+:-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #e3e3e3;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #e3e3e3;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #e3e3e3;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #e3e3e3;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color:    #e3e3e3;
 }
 
 footer .contactForm > div > textarea {
@@ -524,12 +548,17 @@ footer .contactForm > div > textarea {
 }
 
 footer .contactForm > div > button {
-    border: 1px solid transparent;
-    background-color: #FFF;
+    border: 1px solid #FFF;
+    background-color: transparent;
+    color: #FFF;
+}
+
+.contactMessage {
+    min-height: 30px; /* so there's no jump when the message appears */
 }
 
 .error {
-    border: 1px solid #FF0000 !important;
+    border: 1px solid #FF0000 !important; /* class added to contactForm input in JS if input doesn't pass validation */
 }
 
 .copyright {
@@ -861,8 +890,8 @@ footer .contactForm > div > button {
 
     footer > div > div .contactForm > div > button:hover {
         cursor: pointer;
-        border: 1px solid #FFF;
-        background-color: transparent;
-        color: #FFF;
+        color: #303030;
+        border: 1px solid transparent;
+        background-color: #FFF;
     }
 }
