@@ -374,11 +374,14 @@ header .dbSearch button {
 .mealCat {
     width: 40px;
     border: 3px solid #FFF;
-    padding: 10px;
+    padding: 5px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+/*    justify-content: center;*/
+    justify-content: flex-end;
+/*    justify-content: space-around;*/
+/*    align-items: center;*/
+    align-items: flex-start;
 }
 
 .mealCat:not(:nth-of-type(1)) {
