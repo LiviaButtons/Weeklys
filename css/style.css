@@ -261,25 +261,32 @@ header .dbSearch button {
 }
 
 
-/* styling autocomplete element */
+/* styling autocomplete ul element */
 .ui-menu,
 .ui-widget, 
 .ui-widget-content,
 .ui-autocomplete,
 .ui-front {
-    background-color: rgb(255, 255, 255, 0.7);
+    font-size: 1em;
+    font-family: 'Lato', sans-serif;
+    background-color: rgb(227, 227, 227, 0.7);
 /*    padding: 5px;*/
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
+    position: fixed;
     top: -2px;   
 }
 
-.ui-menu-item {
+/* autocomplete list with links */
+.ui-menu-item,
+.ui-menu-item > div {
+/*    background-color: rgb(227, 227, 227, 0.7);*/
     padding: 5px;
 }
 
-.ui-menu-item:hover {
-    background-color: rgb(0, 0, 255, 0.7);
+.ui-menu-item > div:hover {
+/*    background-color: rgb(227, 227, 227, 0.8);*/
+    background-color: #e3e3e3;
     border: none;
 }
 

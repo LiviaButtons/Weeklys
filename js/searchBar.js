@@ -2,8 +2,8 @@
 // Author: Livia Bottoni
 
 $(document).ready (function (event) {
-    // launch autocomplete
-    $( "#search1" ).autocomplete({
+// launch autocomplete
+    $("#search1").autocomplete({
         source: './php/searchBar.php',
         appendTo: "#autosearch",
         delay: 500,
@@ -13,12 +13,10 @@ $(document).ready (function (event) {
             event.preventDefault(); 
             // 
             $(this).val(ui.item.value);    
-//            console.log (ui.item.name);
             // navigate to that recipe's page
             window.location.href= './recettes.php?code=' + ui.item.name;
         }
     });
-
 
     $( "#search2" ).autocomplete({
         source: './php/searchBar.php',
@@ -30,13 +28,12 @@ $(document).ready (function (event) {
             event.preventDefault(); 
             // 
             $(this).val(ui.item.value);    
-//            console.log (ui.item.name);
             // navigate to that recipe's page
             window.location.href= './recettes.php?code=' + ui.item.name;
         }
     });  
     
-    // launch regular search
+// launch regular search
     $('.searchButton').on("click", function (e) {
 //        console.log (e.target);
         $clickedButton = e.target;
