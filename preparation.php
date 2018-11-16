@@ -85,14 +85,9 @@ if (isset($_GET['code'])){
         <link rel="stylesheet" href="./css/normalize.css">
         <link rel="stylesheet" href="./css/fontawesome-all.min.css">
         <link rel="stylesheet" href="./css/jquery-ui.min.css">
-        <link rel="stylesheet" href="./css/style.css">
-    
-    
-    <link rel="stylesheet" href="./css/preparation.css">
-    <link rel="stylesheet" href="./css/style_print_recette.css">
-    
-    
-    <link rel="stylesheet" href="./headFoot/headerFooter.css">
+        <link rel="stylesheet" href="./css/preparation.css">
+        <link rel="stylesheet" href="./css/style_print_recette.css">
+        <link rel="stylesheet" href="./headFoot/headerFooter.css">
     
     
     
@@ -152,10 +147,10 @@ if (isset($_GET['code'])){
         <h2 id="nomRecette"><?php echo $result[0]['nomRecette'];?></h2>
        
         
-        <div class="calendarShare mobileHidden noprint">
-            <!--<span><img src="./assets/favicon/if_Share_853347.png" alt=""></span>-->
+        <!--<div class="calendarShare mobileHidden noprint">
+            <span><img src="./assets/favicon/if_Share_853347.png" alt=""></span>
             <span><a href="javascript:window.print()"><img src="./assets/favicon/if_Noun_Project_100Icon_10px_grid-28_296916.png" alt=""></a></span>
-        </div>
+        </div>-->
    </div>
    
    
