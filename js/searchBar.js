@@ -14,7 +14,7 @@ $(document).ready (function (event) {
             // 
             $(this).val(ui.item.value);    
             // navigate to that recipe's page
-            window.location.href= './recettes.php?code=' + ui.item.name;
+            window.location.href= './preparation.php?code=' + ui.item.name;
         }
     });
 
@@ -29,7 +29,7 @@ $(document).ready (function (event) {
             // 
             $(this).val(ui.item.value);    
             // navigate to that recipe's page
-            window.location.href= './recettes.php?code=' + ui.item.name;
+            window.location.href= './preparation.php?code=' + ui.item.name;
         }
     });  
     
@@ -69,7 +69,7 @@ $(document).ready (function (event) {
                     // redirect page to recipe with query in GET
                     // removing spaces from query first
                     $noSpaceSearch = searchTerm.replace(/\s/g, '');
-                    window.location.href = './recipes.html?query=' + $noSpaceSearch;          
+                    window.location.href = './recettes.php?query=' + $noSpaceSearch;          
                     
                     // No results, show message, yes results, show results
                     if ($searchResults.length < 1) {
