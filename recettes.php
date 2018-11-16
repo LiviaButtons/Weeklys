@@ -42,10 +42,10 @@ catch (PDOException $e) {
     <link rel="stylesheet" href="./css/normalize.css">
     <!--<link rel="stylesheet" href="./css/style.css">-->
     <link rel="stylesheet" href="./css/liste.css">
-    <link rel="stylesheet" href="headFoot/headerFooter.css">
+    <link rel="stylesheet" href="./headFoot/headerFooter.css">
     
-    <script src='./headFoot/js/headerNav.js'></script>
-    <script src='./headFoot/js/hamburgerMenu.js'></script>
+    <script src='./js/headerNav.js'></script>
+    <script src='./js/hamburgerMenu.js'></script>
     <script src='./js/sendMail.js'></script>
     <script src='./js/searchBar.js'></script>
     

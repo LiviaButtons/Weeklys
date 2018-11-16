@@ -74,9 +74,13 @@ if (isset($_GET['code'])){
     <link rel="stylesheet" href="./css/preparation.css">
     <link rel="stylesheet" href="./css/style_print_recette.css">
     
+    
     <link rel="stylesheet" href="./headFoot/headerFooter.css">
-    <script src='./headFoot/js/headerNav.js'></script>
-    <script src='./headFoot/js/hamburgerMenu.js'></script>
+    <script src='./js/headerNav.js'></script>
+    <script src='./js/hamburgerMenu.js'></script>
+    <script src='./js/searchBar.js'></script>
+    <script src='./js/sendMail.js'></script>
+    
     
     
 </head>
@@ -99,7 +103,8 @@ if (isset($_GET['code'])){
                 </div>
             </div>
         
-            <div class="dbSearch mobileHidden tabletHidden">
+            <div id="auto1" class="dbSearch mobileHidden tabletHidden">
+                    <label for="searchField" hidden>Search</label>
                     <input id="search1" name="searchField" class="mobileHidden searchInput" type="text" placeholder="Recherche...">
                     <button id="searchButton1" class="fas fa-search mobileHidden searchButton"></button>
             </div>
