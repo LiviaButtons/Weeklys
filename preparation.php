@@ -103,7 +103,8 @@ if (isset($_GET['code'])){
                 </div>
             </div>
         
-            <div class="dbSearch mobileHidden tabletHidden">
+            <div id="auto1" class="dbSearch mobileHidden tabletHidden">
+                    <label for="searchField" hidden>Search</label>
                     <input id="search1" name="searchField" class="mobileHidden searchInput" type="text" placeholder="Recherche...">
                     <button id="searchButton1" class="fas fa-search mobileHidden searchButton"></button>
             </div>
