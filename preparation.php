@@ -1,6 +1,6 @@
 <?php 
 
-require_once('./config.php');  
+require_once('./php/config.php');  
 
 try {
 
@@ -99,9 +99,9 @@ if (isset($_GET['code'])){
                 </div>
             </div>
         
-            <div class="dbSearch mobileHidden tabletHidden noprint">
-                <input class="mobileHidden" type="text" placeholder="Recherche...">
-                <button class="fas fa-search mobileHidden searchButton"></button>
+            <div class="dbSearch mobileHidden tabletHidden">
+                    <input id="search1" name="searchField" class="mobileHidden searchInput" type="text" placeholder="Recherche...">
+                    <button id="searchButton1" class="fas fa-search mobileHidden searchButton"></button>
             </div>
         
             <div id="hamMenu" class="tabletShow desktopHidden hamMenu noprint">
@@ -111,7 +111,7 @@ if (isset($_GET['code'])){
             <nav class="tabletHidden desktopShow noprint">
                 <ul>
                     <li ><a href="./index.html">Accueil</a></li>
-                    <li ><a href="./liste.php">Recettes</a></li>
+                    <li ><a href="./recettes.php">Recettes</a></li>
                     <li>
                         <a href="./index.html">EN</a>
                         <a href="./index.html">FR</a>
@@ -148,6 +148,18 @@ if (isset($_GET['code'])){
                 </div>
                 <div id="etapeRecette">
                     <h3>Préparation</h3> <br>
+                    
+                    <!--<?php
+                        
+                        for ($i=0; $i < count($etapes)   ;$i++){
+                            if ($result[$i]['etapes'] > 0){
+                            echo '<h4>' . 'Etape ' . $etapes[$i+1] . '</h4>';
+                                
+                            }
+                        }
+                    
+                    ?>-->
+                    
                     
                        <?php
                        for($i = 0; $i< count($etapes) ; $i++){
@@ -189,17 +201,17 @@ if (isset($_GET['code'])){
                     </p>        
                     
                     <p>Temps de préparation : <?php echo $result[0]['tempsDePrep'] . ' min.' ?></p>
-                    <p>Temps de repos : <?php echo $result[0]['tempsDeRepos'] . ' min.' ?></p>  
+                    <p>Temps de repos : <?php echo $result[0]['tempsDeRepos'] . ' min.' ?></p>  <!--METTRE UNE CONDITION SI 0-->
                     <p>Temps de cuisson : <?php echo $result[0]['tempsDeCuisson'] . ' min.' ?></p>
                     <!--<p>Temps total : 3h15</p>-->
                 </div>
                 
                 <div id="portion" class="noprint">
-                   <form action="preparation.php" method="post">
+                   <form name="form" action="preparation.php" method="post">
                        
                         Portions : 
-                        <input name="serving"  type="number" value="<?php echo $ingredients[0]['serving']?>" min="1" max="100">
-                        <button id="serving">Calculer</button>
+                        <input name="serving" id="serving" type="number" value="<?php echo $ingredients[0]['serving']?>" min="1" max="100" <!--onchange="fonctionMachin();-->">
+                        <button class="serving">Calculer</button>
                     </form>
                 </div>
                 
@@ -255,24 +267,7 @@ if (isset($_GET['code'])){
     </main>
 <?php include('./headFoot/footer.php')?>
 <script>
-/*document.getElementById('serving').addEventListener('click', function(e){
-    e.preventDefault();
-    var data= new FormData(this);
-    
-    var xhr  = new XMLHttpRequest();
-    xhr.onreadystatechange = function(){
-         if(this.readyState == 4 && this.status == 200){
-             var res = this.response;
-         }else if(this.readyState == 4){
-             
-         }
-    }
-    xhr.open("POST", script.php, true); 
-    xhr.responseType= "json"
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
-    xhr.send(data);
-    return false;
-})*/
+  
     
 </script>
 

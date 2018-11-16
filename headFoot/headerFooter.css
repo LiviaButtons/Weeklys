@@ -297,56 +297,102 @@ footer > div > div {
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 }
 
-footer > div > div > div {
+footer .socialButtons {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer .socialButtons > div {
     width: 100%; 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
 footer .contactForm {
     width: 100%;
     margin-top: 30px;
+}
+
+footer .contactForm > div {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-content: center;
 }
 
-footer .contactForm > input[type=text], 
-footer .contactForm > textarea, 
-footer .contactForm > button {
+footer .contactForm > div > input[type=text], 
+footer .contactForm > div > textarea, 
+footer .contactForm > div > button {
     width: 100%;
     padding: 10px;
-    margin: 10px;    
+    margin: 10px 0px 10px 0px;    
     border-radius: 5px;
 }
 
-footer .contactForm > input[type=text], 
-footer .contactForm > textarea {
-    border: 1px solid transparent;
-    background-color: #e3e3e3;
+footer .contactForm > div > input[type=text], 
+footer .contactForm > div > textarea {
+    border: 1px solid #e3e3e3;
+    background-color: transparent;
+    color: #e3e3e3;
 }
 
-footer .contactForm > textarea {
+footer .contactForm > div > input[type=text]::placeholder,
+footer .contactForm > div > textarea::placeholder {
+    color: #e3e3e3;
+}
+
+footer .contactForm :-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #e3e3e3;
+}
+
+footer .contactForm :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #e3e3e3;
+   opacity:  1;
+}
+
+footer .contactForm ::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #e3e3e3;
+   opacity:  1;
+}
+
+footer .contactForm :-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #e3e3e3;
+}
+footer .contactForm ::-ms-input-placeholder { /* Microsoft Edge */
+   color:    #e3e3e3;
+}
+
+footer .contactForm > div > textarea {
     height: 150px;
     resize: none;
 }
 
-footer .contactForm > button {
-    border: 1px solid transparent;
-    background-color: #FFF;
+footer .contactForm > div > button {
+    border: 1px solid #FFF;
+    background-color: transparent;
+    color: #FFF;
+}
+
+.contactMessage {
+    min-height: 30px; /* so there's no jump when the message appears */
 }
 
 .error {
-    border: 1px solid #FF0000 !important;
+    border: 1px solid #FF0000 !important; /* class added to contactForm input in JS if input doesn't pass validation */
 }
 
 .copyright {
     font-size: 0.8em;
 }
+
 
 
 /* --------------------------------------------- */
@@ -502,45 +548,61 @@ footer .contactForm > button {
     /* ---------------------------- */
     /* ---------- footer ---------- */
     footer > div {
-        flex-flow: row wrap;
+        flex-direction: column;
     }
     
-    footer > div .socialButtons {
-        width: 30%;
+    footer > div > div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
     
-    footer .socialButtons div {
+    footer > div > div > .socialButtons {
+        width: 20%;
+    }
+    
+    footer > div > div .socialButtons div {
         justify-content: center;
     }
     
-    footer .socialButtons div span {
+    footer > div > div .socialButtons div span {
         padding: 10px;
     }
     
-    footer > div .contactForm {
+    footer > div > div .contactForm {
         width: 70%;
+    }
+    
+    footer > div > div .contactForm > div {
+        display: flex;
         flex-direction: row;
     }
     
-    footer .contactForm input[type=text],
-    footer .contactForm textarea,
-    footer .contactForm #contactButton {
+    footer > div > div .contactForm > div > input[type=text],
+    footer .contactForm > div > textarea,
+    footer .contactForm > div > #contactButton {
+        height: 40px;
         width: 30%;
     }
     
-    footer .contactForm textarea {
+    footer > div > div contactForm > div > textarea {
         height: 40px;
     }
     
-    footer .contactForm > button {
+    footer > div > div .contactForm > div > button {
         -webkit-transition: background-color 1s;
         transition: background-color 1s, border 1s, color 1s;
     }
-
-    footer .contactForm > button:hover {
-        cursor: pointer;
-        border: 1px solid #FFF;
-        background-color: transparent;
-        color: #FFF;
+    
+    footer > div .contactForm p {
+        text-align: center;
     }
+
+    footer > div > div .contactForm > div > button:hover {
+        cursor: pointer;
+        color: #303030;
+        border: 1px solid transparent;
+        background-color: #FFF;
+}
 }
