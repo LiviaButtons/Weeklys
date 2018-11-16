@@ -1,6 +1,6 @@
 <?php 
 
-require_once('./php/config.php');  
+require_once('./php/config/config.php');  
 
 try {
 
@@ -43,8 +43,11 @@ catch (PDOException $e) {
     <!--<link rel="stylesheet" href="./css/style.css">-->
     <link rel="stylesheet" href="./css/liste.css">
     <link rel="stylesheet" href="headFoot/headerFooter.css">
+    
     <script src='./headFoot/js/headerNav.js'></script>
     <script src='./headFoot/js/hamburgerMenu.js'></script>
+    <script src='./js/sendMail.js'></script>
+    <script src='./js/searchBar.js'></script>
     
     
 </head>
@@ -66,10 +69,10 @@ catch (PDOException $e) {
                 </div>
             </div>
         
-            <div class="dbSearch mobileHidden tabletHidden">
-                <input name ="search" class="mobileHidden" type="text" placeholder="Recherche...">
-                <button class="fas fa-search mobileHidden searchButton"></button>
-                <div id="rechercheResultat"></div>
+            <div id="auto1" class="dbSearch mobileHidden tabletHidden">
+                    <label for="searchField" hidden>Search</label>
+                    <input id="search1" name="searchField" class="mobileHidden searchInput" type="text" placeholder="Recherche...">
+                    <button id="searchButton1" class="fas fa-search mobileHidden searchButton"></button>
             </div>
         
             <div id="hamMenu" class="tabletShow desktopHidden hamMenu">

@@ -13,10 +13,20 @@
         <script src="./js/mobileCalendar.js"></script>
         <script src="./js/headerNav.js"></script>
         <script src="./js/hamburgerMenu.js"></script>
+        <script src="./js/generateCalendar.js"></script>
+        <script src="./js/searchBar.js"></script>
+        <!-- social share sticky bar -->
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5bea9fd2ea520ec1"></script>
         
         <!-- CSS Stylesheets -->
         <link rel="stylesheet" href="./css/normalize.css">
         <link rel="stylesheet" href="./css/fontawesome-all.min.css">
+<!--
+        <link rel="stylesheet" href="./css/jquery-ui.min.css">
+        <link rel="stylesheet" href="./css/jquery-ui.structure.min.css">
+        <link rel="stylesheet" href="./css/jquery-ui.theme.min.css">
+-->
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
         <link rel="stylesheet" href="./css/style.css">
         
         <!-- Fav Icon -->
@@ -40,9 +50,10 @@
                     </div>
                 </div>
                 
-                <div class="dbSearch mobileHidden tabletHidden">
-                    <input class="mobileHidden" type="text" placeholder="Recherche...">
-                    <button class="fas fa-search mobileHidden searchButton"></button>
+                <div id="auto1" class="dbSearch mobileHidden tabletHidden">
+                    <label for="searchField" hidden>Search</label>
+                    <input id="search1" name="searchField" class="mobileHidden searchInput" type="text" placeholder="Recherche...">
+                    <button id="searchButton1" class="fas fa-search mobileHidden searchButton"></button>
                 </div>
                 
                 <div id="hamMenu" class="tabletShow desktopHidden hamMenu">
@@ -51,11 +62,11 @@
                 
                 <nav class="tabletHidden desktopShow">
                     <ul>
-                        <li class="active">Home</li>
-                        <li><a href="./recipes.html">Recettes</a></li>
+                        <li class="active">Accueil</li>
+                        <li><a href="./recettes.php">Recettes</a></li>
                         <li>
-                            <a href="http://www.interface3.be">EN</a>
-                            <a href="http://www.interface3.be">FR</a>
+                            <a href="./index.html">EN</a>
+                            <a href="./index.html">FR</a>
                         </li>
                     </ul>
                 </nav>
@@ -65,16 +76,22 @@
         <main>
             <section id="intro">
                 <div>
-                    <div class="dbSearch desktopHidden">
-                        <input class="desktopHidden" type="text" placeholder="Search for recipes, ingredients...">
-                        <button class="fas fa-search desktopHidden searchButton"></button>
+                    <div id="auto2" class="dbSearch desktopHidden">   
+                        <input id="search2" name="searchField" class="desktopHidden searchInput" type="text" placeholder="Recherche">
+                        <button id="searchButton2" class="fas fa-search desktopHidden searchButton"></button>
                     </div>
                     
                     <div class="overlayText">
                         <h2><span>Bienvenue chez</span> Weekly's!</h2>
 
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae quas ipsam quisquam, quos, aspernatur consectetur voluptas laboriosam officiis facilis blanditiis quod modi optio, at doloribus accusamus perspiciatis est eaque atque numquam eum! Eaque porro, laboriosam qui dolorem adipisci esse. Saepe sed dolorem repellat accusantium officia in id dolores quis, odit.
+                            Tu en as marre de ne pas savoir quoi cuisiner ? <br/>De ne pas savoir quoi manger pendant la semaine ?
+                        </p>
+                        
+                        <p>Weekly's est la pour toi !</p>
+                        
+                        <p>
+                            Grace à notre calendrier aléatoire, tu peux générer un calendrier qui planifie tous tes repas pour la semaine en un seul clic ! Retrouve les recettes de ta semaine, planifie tes courses, et cuisine pour toi, t’es ami(e)s, et ta famille.
                         </p>
                     </div>
                 </div>
@@ -82,16 +99,16 @@
            
             <section id="mealPlan">
                 <div>
-                    <h2>Meal planner</h2>
+                    <h2>Calendrier</h2>
                     
                     <div class="planGenerator">
                         <div class="form">
                             <div>
                                 <input type="checkbox" id="vege" name="vege" value="vege">
-                                <label for="vege">Recettes vegetariennes</label>
+                                <label for="vege">Vegetarien</label>
                             </div>
 
-                            <button id="calendarGenerator">Generer</button>
+                            <button id="calendarGenerator">Générer</button>
                         </div>
 
                         <div class="calendarShare mobileHidden">
@@ -100,246 +117,227 @@
                         </div>
                     </div>
                     
-                    <div id="weeklyCalendar">
-                        <div class="calendarSection">
-                            <div class="weekday monday">
-                                <span class="fas fa-chevron-left jsLeftButton"></span>
+                    <div id="calWithWeek"> 
+                        <div class="sideTab">
+                                <div class="mealCat"> 
 
-                                <h4>Lundi</h4>
+                                </div>
 
-                                <span class="fas fa-chevron-right jsRightButton"></span>
+                                <div class="mealCat">
+                                    <p>Petit-déjeuner</p>
+                                </div>
+
+                                <div class="mealCat">
+                                    <p>Déjeuner</p>
+                                </div>
+
+                                <div class="mealCat">
+                                    <p>Dîner</p>
+                                </div>
                             </div>
 
-                            <div class="mealtime breakfast">
-                                <h5>Breakfast</h5>
 
-                                <div>Lorem ipsum?</div>
+                        <div id="weeklyCalendar">
 
-                                <span class="fas fa-sync-alt"></span>
+
+                            <div class="calendarSection">
+                                <div class="weekday monday">
+                                    <span class="fas fa-chevron-left jsLeftButton"></span>
+
+                                    <h4>Lundi</h4>
+
+                                    <span class="fas fa-chevron-right jsRightButton"></span>
+                                </div>
+
+                                <div class="mealtime breakfast">
+                                    <div class="recipe recipeB"></div>
+
+                                    <span class="fas fa-sync-alt"></span>
+                                </div>
+
+                                <div class="mealtime lunch">
+                                    <div class="recipe recipeL"></div>
+
+                                    <span class="fas fa-sync-alt"></span>
+                                </div>
+
+                                <div class="mealtime dinner">
+                                    <div class="recipe recipeD"></div>
+
+                                    <span class="fas fa-sync-alt"></span>
+                                </div>
                             </div>
 
-                            <div class="mealtime lunch">
-                                <h5>Lunch</h5>
+                            <div class="calendarSection mobileHidden">
+                                <div class="weekday tuesday">
+                                    <span class="fas fa-chevron-left desktopHidden jsLeftButton"></span>
 
-                                <div>Lorem ipsum?</div>
+                                    <h4>Mardi</h4>
 
-                                <span class="fas fa-sync-alt"></span>
+                                    <span class="fas fa-chevron-right desktopHidden jsRightButton"></span>
+                                </div>
+
+                                <div class="mealtime breakfast">
+                                    <div class="recipe recipeB"></div>
+
+                                    <span class="fas fa-sync-alt"></span>
+                                </div>
+
+                                <div class="mealtime lunch">
+                                    <div class="recipe recipeL"></div>
+
+                                    <span class="fas fa-sync-alt"></span>
+                                </div>
+
+                                <div class="mealtime dinner">
+                                    <div class="recipe recipeD"></div>
+
+                                    <span class="fas fa-sync-alt"></span>
+                                </div>
                             </div>
 
-                            <div class="mealtime dinner">
-                                <h5>Dinner</h5>
 
-                                <div>Lorem ipsum?</div>
+                            <div class="calendarSection mobileHidden">
+                                <div class="weekday wednesday">
+                                    <span class="fas fa-chevron-left desktopHidden jsLeftButton"></span>
 
-                                <span class="fas fa-sync-alt"></span>
-                            </div>
-                        </div>
+                                    <h4>Mercredi</h4>
 
-                        <div class="calendarSection mobileHidden">
-                            <div class="weekday tuesday">
-                                <span class="fas fa-chevron-left desktopHidden jsLeftButton"></span>
+                                    <span class="fas fa-chevron-right desktopHidden jsRightButton"></span>
+                                </div>
 
-                                <h4>Mardi</h4>
+                                <div class="mealtime breakfast">
+                                    <div class="recipe recipeB"></div>
 
-                                <span class="fas fa-chevron-right desktopHidden jsRightButton"></span>
-                            </div>
+                                    <span class="fas fa-sync-alt"></span>
+                                </div>
 
-                            <div class="mealtime breakfast">
-                                <h5>Breakfast</h5>
+                                <div class="mealtime lunch">
+                                    <div class="recipe recipeL"></div>
 
-                                <div>Lorem ipsum?</div>
+                                    <span class="fas fa-sync-alt"></span>
+                                </div>
 
-                                <span class="fas fa-sync-alt"></span>
-                            </div>
+                                <div class="mealtime dinner">
+                                    <div class="recipe recipeD"></div>
 
-                            <div class="mealtime lunch">
-                                <h5>Lunch</h5>
-
-                                <div>Lorem ipsum?</div>
-
-                                <span class="fas fa-sync-alt"></span>
+                                    <span class="fas fa-sync-alt"></span>
+                                </div>
                             </div>
 
-                            <div class="mealtime dinner">
-                                <h5>Dinner</h5>
+                            <div class="calendarSection mobileHidden">
+                                <div class="weekday thursday">
+                                    <span class="fas fa-chevron-left desktopHidden jsLeftButton"></span>
 
-                                <div>Lorem ipsum?</div>
+                                    <h4>Jeudi</h4>
 
-                                <span class="fas fa-sync-alt"></span>
-                            </div>
-                        </div>
+                                    <span class="fas fa-chevron-right desktopHidden jsRightButton"></span>
+                                </div>
 
+                                <div class="mealtime breakfast">
+                                    <div class="recipe recipeB"></div>
 
-                        <div class="calendarSection mobileHidden">
-                            <div class="weekday wednesday">
-                                <span class="fas fa-chevron-left desktopHidden jsLeftButton"></span>
+                                    <span class="fas fa-sync-alt"></span>
+                                </div>
 
-                                <h4>Mercredi</h4>
+                                <div class="mealtime lunch">
+                                    <div class="recipe recipeL"></div>
 
-                                <span class="fas fa-chevron-right desktopHidden jsRightButton"></span>
-                            </div>
+                                    <span class="fas fa-sync-alt"></span>
+                                </div>
 
-                            <div class="mealtime breakfast">
-                                <h5>Breakfast</h5>
+                                <div class="mealtime dinner">
+                                    <div class="recipe recipeD"></div>
 
-                                <div>Lorem ipsum?</div>
-
-                                <span class="fas fa-sync-alt"></span>
-                            </div>
-
-                            <div class="mealtime lunch">
-                                <h5>Lunch</h5>
-
-                                <div>Lorem ipsum?</div>
-
-                                <span class="fas fa-sync-alt"></span>
+                                    <span class="fas fa-sync-alt"></span>
+                                </div>
                             </div>
 
-                            <div class="mealtime dinner">
-                                <h5>Dinner</h5>
 
-                                <div>Lorem ipsum?</div>
+                            <div class="calendarSection mobileHidden">
+                                <div class="weekday friday">
+                                    <span class="fas fa-chevron-left desktopHidden jsLeftButton"></span>
 
-                                <span class="fas fa-sync-alt"></span>
-                            </div>
-                        </div>
+                                    <h4>Vendredi</h4>
 
-                        <div class="calendarSection mobileHidden">
-                            <div class="weekday thursday">
-                                <span class="fas fa-chevron-left desktopHidden jsLeftButton"></span>
+                                    <span class="fas fa-chevron-right desktopHidden jsRightButton"></span>
+                                </div>
 
-                                <h4>Jeudi</h4>
+                                <div class="mealtime breakfast">
+                                    <div class="recipe recipeB"></div>
 
-                                <span class="fas fa-chevron-right desktopHidden jsRightButton"></span>
-                            </div>
+                                    <span class="fas fa-sync-alt"></span>
+                                </div>
 
-                            <div class="mealtime breakfast">
-                                <h5>Breakfast</h5>
+                                <div class="mealtime lunch">
+                                    <div class="recipe recipeL"></div>
 
-                                <div>Lorem ipsum?</div>
+                                    <span class="fas fa-sync-alt"></span>
+                                </div>
 
-                                <span class="fas fa-sync-alt"></span>
-                            </div>
+                                <div class="mealtime dinner">
+                                    <div class="recipe recipeD"></div>
 
-                            <div class="mealtime lunch">
-                                <h5>Lunch</h5>
-
-                                <div>Lorem ipsum?</div>
-
-                                <span class="fas fa-sync-alt"></span>
+                                    <span class="fas fa-sync-alt"></span>
+                                </div>
                             </div>
 
-                            <div class="mealtime dinner">
-                                <h5>Dinner</h5>
 
-                                <div>Lorem ipsum?</div>
+                            <div class="calendarSection mobileHidden">
+                                <div class="weekday saturday">
+                                    <span class="fas fa-chevron-left desktopHidden jsLeftButton"></span>
 
-                                <span class="fas fa-sync-alt"></span>
-                            </div>
-                        </div>
+                                    <h4>Samedi</h4>
 
+                                    <span class="fas fa-chevron-right desktopHidden jsRightButton"></span>
+                                </div>
 
-                        <div class="calendarSection mobileHidden">
-                            <div class="weekday friday">
-                                <span class="fas fa-chevron-left desktopHidden jsLeftButton"></span>
+                                <div class="mealtime breakfast">
+                                    <div class="recipe recipeB"></div>
 
-                                <h4>Vendredi</h4>
+                                    <span class="fas fa-sync-alt"></span>
+                                </div>
 
-                                <span class="fas fa-chevron-right desktopHidden jsRightButton"></span>
-                            </div>
+                                <div class="mealtime lunch">
+                                    <div class="recipe recipeL"></div>
 
-                            <div class="mealtime breakfast">
-                                <h5>Breakfast</h5>
+                                    <span class="fas fa-sync-alt"></span>
+                                </div>
 
-                                <div>Lorem ipsum?</div>
+                                <div class="mealtime dinner">
+                                    <div class="recipe recipeD"></div>
 
-                                <span class="fas fa-sync-alt"></span>
-                            </div>
-
-                            <div class="mealtime lunch">
-                                <h5>Lunch</h5>
-
-                                <div>Lorem ipsum?</div>
-
-                                <span class="fas fa-sync-alt"></span>
+                                    <span class="fas fa-sync-alt"></span>
+                                </div>
                             </div>
 
-                            <div class="mealtime dinner">
-                                <h5>Dinner</h5>
 
-                                <div>Lorem ipsum?</div>
+                            <div class="calendarSection mobileHidden">
+                                <div class="weekday sunday">
+                                    <span class="fas fa-chevron-left desktopHidden jsLeftButton"></span>
 
-                                <span class="fas fa-sync-alt"></span>
-                            </div>
-                        </div>
+                                    <h4>Dimanche</h4>
 
+                                    <span class="fas fa-chevron-right desktopHidden jsRightButton"></span>
+                                </div>
 
-                        <div class="calendarSection mobileHidden">
-                            <div class="weekday saturday">
-                                <span class="fas fa-chevron-left desktopHidden jsLeftButton"></span>
+                                <div class="mealtime breakfast">
+                                    <div class="recipe recipeB"></div>
 
-                                <h4>Samedi</h4>
+                                    <span class="fas fa-sync-alt"></span>
+                                </div>
 
-                                <span class="fas fa-chevron-right desktopHidden jsRightButton"></span>
-                            </div>
+                                <div class="mealtime lunch">
+                                    <div class="recipe recipeL"></div>
 
-                            <div class="mealtime breakfast">
-                                <h5>Breakfast</h5>
+                                    <span class="fas fa-sync-alt"></span>
+                                </div>
 
-                                <div>Lorem ipsum?</div>
+                                <div class="mealtime dinner">
+                                    <div class="recipe recipeD"></div>
 
-                                <span class="fas fa-sync-alt"></span>
-                            </div>
-
-                            <div class="mealtime lunch">
-                                <h5>Lunch</h5>
-
-                                <div>Lorem ipsum?</div>
-
-                                <span class="fas fa-sync-alt"></span>
-                            </div>
-
-                            <div class="mealtime dinner">
-                                <h5>Dinner</h5>
-
-                                <div>Lorem ipsum?</div>
-
-                                <span class="fas fa-sync-alt"></span>
-                            </div>
-                        </div>
-
-
-                        <div class="calendarSection mobileHidden">
-                            <div class="weekday sunday">
-                                <span class="fas fa-chevron-left desktopHidden jsLeftButton"></span>
-
-                                <h4>Dimanche</h4>
-
-                                <span class="fas fa-chevron-right desktopHidden jsRightButton"></span>
-                            </div>
-
-                            <div class="mealtime breakfast">
-                                <h5>Breakfast</h5>
-
-                                <div>Lorem ipsum?</div>
-
-                                <span class="fas fa-sync-alt"></span>
-                            </div>
-
-                            <div class="mealtime lunch">
-                                <h5>Lunch</h5>
-
-                                <div>Lorem ipsum?</div>
-
-                                <span class="fas fa-sync-alt"></span>
-                            </div>
-
-                            <div class="mealtime dinner">
-                                <h5>Dinner</h5>
-
-                                <div>Lorem ipsum?</div>
-
-                                <span class="fas fa-sync-alt"></span>
+                                    <span class="fas fa-sync-alt"></span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -354,30 +352,30 @@
         
         <footer>
             <div>
-                <div class="socialButtons">
-                    <p>Retrouve-nous en ligne:</p> 
-                    
-                    <div>
-                        <span class="fab fa-facebook-square fa-2x"></span>
-                        <span class="fab fa-twitter-square fa-2x"></span>
-                        <span class="fab fa-pinterest-square fa-2x"></span>
-                        <span class="fab fa-instagram fa-2x"></span>
-                        <span class="fab fa-youtube fa-2x"></span>
+                <div>
+                    <div class="socialButtons">
+                        <p>Retrouvez-nous en ligne!</p> 
+
+                        <div>
+                            <span class="fab fa-facebook-square fa-2x"></span>
+                            <span class="fab fa-twitter-square fa-2x"></span>
+                            <span class="fab fa-pinterest-square fa-2x"></span>
+                            <span class="fab fa-instagram fa-2x"></span>
+                            <span class="fab fa-youtube fa-2x"></span>
+                        </div>
+                    </div>
+
+                    <div class="contactForm">
+                        <div>
+                            <label for="email" class="hidden">Adresse mail</label>
+                            <input type="text" name="email" id="email" placeholder="Adresse mail">
+                            <label for="message" class="hidden">Message</label>
+                            <textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+                            <button id="contactButton" class="contactButton"><span class="far fa-envelope"></span> Contactez-nous</button>
+                        </div>
+                        <p class="contactMessage"></p>
                     </div>
                 </div>
-                
-                <div class="contactForm">
-                    <label for="email" class="hidden">Your e-mail address</label>
-                    <input type="text" name="email" id="email" placeholder="Your e-mail">
-                    <label for="message" class="hidden">Your message</label>
-                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Your message"></textarea>
-                    <label for="robot" class="hidden">Not a robot</label>
-                    <input type="checkbox" name="robot" id="robot">
-                    <label for="robot">I'm not a robot</label>
-                    <button id="contactButton" class="contactButton"><span class="far fa-envelope"></span> Contacte nous</button>
-                    <p class="contactMessage"></p>
-                </div>
-
                 <p class="copyright">&copy; Weekly's 2018</p>
             </div>
         </footer>

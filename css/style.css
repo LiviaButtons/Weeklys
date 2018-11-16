@@ -71,6 +71,21 @@ h6 {
     text-transform: uppercase;
 }
 
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h2 > span {
+    font-family: 'AusthinaBrush';
+    text-transform: lowercase;
+    vertical-align: bottom;
+}
+
+h5 {
+    color: #869e40;
+}
+
 
 /* --------------------------------------------- */
 /* -------------------- Header ----------------- */
@@ -257,6 +272,33 @@ header .dbSearch button {
 }
 
 
+/* styling autocomplete ul element */
+.ui-menu,
+.ui-widget, 
+.ui-widget-content,
+.ui-autocomplete,
+.ui-front {
+    font-size: 1em;
+    font-family: 'Lato', sans-serif;
+    background-color: rgb(227, 227, 227, 0.7);
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    position: fixed;
+    top: -2px;   
+}
+
+/* autocomplete list with links */
+.ui-menu-item,
+.ui-menu-item > div {
+    padding: 5px;
+}
+
+.ui-menu-item > div:hover {
+    background-color: #e3e3e3;
+    border: none;
+}
+
+
 /* --------------------------------------------- */
 /* ---------------- intro section -------------- */
 #intro {
@@ -287,6 +329,11 @@ header .dbSearch button {
     margin-bottom: 20px;
     border-radius: 5px;
     box-shadow: 0px 0px 5px 5px rgba(50,50,50,0.25);
+    text-align: justify;
+}
+
+#intro .overlayText p:nth-of-type(2) {
+    text-align: center;
 }
 
 
@@ -345,15 +392,61 @@ header .dbSearch button {
     background-color: #869e40;
 }
 
+/* sidebar with meal times */
+#calWithWeek {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.siteTab {
+    width: 40px;
+}
+
+.mealCat {
+    width: 40px;
+    padding: 5px;
+    border: 3px solid #FFF;
+}
+
+.mealCat:nth-of-type(1) {
+    margin-top: 30px;
+    height: 90px;
+}
+
+.mealCat:not(:nth-of-type(1)) {
+    height: 140px;
+    background-color: #f0c948;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mealCat:nth-of-type(2) {
+    border-top-left-radius: 5px;
+}
+
+.mealCat:nth-of-type(4) {
+    border-bottom-left-radius: 5px;
+}
+
+.mealCat > p {
+    color: #FFF;
+    font-family: 'LatoBold';
+    transform: rotate(270deg);
+    white-space: nowrap;
+}
+
 /* calendar tabs */
-#weeklyCalendar,
-.calendarSection,
-.weekday,
-.mealtime {
+#mealPlan .weekday,
+#mealPlan .mealtime,
+#mealPlan .calendarSection,
+#weeklyCalendar {
     width: 100%;
 }
 
 .weekday {
+    height: 90px;
     font-family: LatoBold;
 }
 
@@ -394,12 +487,30 @@ header .dbSearch button {
 }
 
 .mealtime {
+    min-height: 140px !important; 
     background-color: rgb(240, 201, 72, 0.2);
 }
 
+.recipe {
+    margin-top: 0;
+    padding-top: 0;
+    min-height: 100px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.recipe > a {
+    text-decoration: none;
+    color: #303030;
+}
+
 .lunch {
-    border-top: 3px solid #FFF;
-    border-bottom: 3px solid #FFF;
+    background-color: rgb(227, 227, 227, 0.8);
+    border-top: 5px solid #FFF;
+    border-bottom: 5px solid #FFF;
 }
 
 .dinner {
@@ -444,51 +555,96 @@ footer > div > div {
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 }
 
-footer > div > div > div {
+footer .socialButtons {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer .socialButtons > div {
     width: 100%; 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
 footer .contactForm {
     width: 100%;
     margin-top: 30px;
+}
+
+footer .contactForm > div {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-content: center;
 }
 
-footer .contactForm > input[type=text], 
-footer .contactForm > textarea, 
-footer .contactForm > button {
+footer .contactForm > div > input[type=text], 
+footer .contactForm > div > textarea, 
+footer .contactForm > div > button {
     width: 100%;
     padding: 10px;
-    margin: 10px;    
+    margin: 10px 0px 10px 0px;    
     border-radius: 5px;
 }
 
-footer .contactForm > input[type=text], 
-footer .contactForm > textarea {
-    border: 1px solid transparent;
-    background-color: #e3e3e3;
+footer .contactForm > div > input[type=text], 
+footer .contactForm > div > textarea {
+    border: 1px solid #e3e3e3;
+    background-color: transparent;
+    color: #e3e3e3;
 }
 
-footer .contactForm > textarea {
+footer .contactForm > div > input[type=text]::placeholder,
+footer .contactForm > div > textarea::placeholder {
+    color: #e3e3e3;
+}
+
+footer .contactForm :-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #e3e3e3;
+}
+
+footer .contactForm :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #e3e3e3;
+   opacity:  1;
+}
+
+footer .contactForm ::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #e3e3e3;
+   opacity:  1;
+}
+
+footer .contactForm :-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #e3e3e3;
+}
+footer .contactForm ::-ms-input-placeholder { /* Microsoft Edge */
+   color:    #e3e3e3;
+}
+
+footer .contactForm > div > textarea {
     height: 150px;
     resize: none;
 }
 
-footer .contactForm > button {
-    border: 1px solid transparent;
-    background-color: #FFF;
+footer .contactForm > div > button {
+    border: 1px solid #FFF;
+    background-color: transparent;
+    color: #FFF;
+}
+
+.contactMessage {
+    min-height: 30px; /* so there's no jump when the message appears */
 }
 
 .error {
-    border: 1px solid #FF0000 !important;
+    border: 1px solid #FF0000 !important; /* class added to contactForm input in JS if input doesn't pass validation */
 }
 
 .copyright {
@@ -630,7 +786,7 @@ footer .contactForm > button {
     header .dbSearch input {
         order: -1;
         align-self: center;
-        width: 200px;
+        width: 250px;
     }
     
     header .dbSearch button {
@@ -652,7 +808,7 @@ footer .contactForm > button {
     }
     
     #intro .overlayText {
-        max-width: 600px;
+        max-width: 400px;
     }
     
     /* ---------------------------- */
@@ -675,6 +831,7 @@ footer .contactForm > button {
     #mealPlan .form button {
         width: 30%;
         transition-property: background-color;
+        align-self: center;
         transition-duration: 1s;
     }
     
@@ -686,7 +843,7 @@ footer .contactForm > button {
     }
     
     #mealPlan .calendarShare {
-        width: 40%;
+        width: 10%;
         display: flex;
         justify-content: flex-end;
     }
@@ -694,7 +851,6 @@ footer .contactForm > button {
     #mealPlan .calendarShare > span {
         padding: 10px;
     }
-    
     
     .fa-chevron-right,
     .fa-chevron-left {
@@ -719,9 +875,18 @@ footer .contactForm > button {
     .mealtime > h5 {
         padding-top: 0;
         margin-top: 0;
+        margin-bottom: 5px;
     }
-
     
+    .mealtime .fa-sync-alt:hover {
+        cursor: pointer;
+    }
+    
+    .recipe {
+        min-height: 70px;
+    }
+    
+    /* adding rounded corners to relevant sections for coherent look */
     .monday {
         border-top-left-radius: 5px;
     }
@@ -759,45 +924,61 @@ footer .contactForm > button {
     /* ---------------------------- */
     /* ---------- footer ---------- */
     footer > div {
-        flex-flow: row wrap;
+        flex-direction: column;
     }
     
-    footer > div .socialButtons {
-        width: 30%;
+    footer > div > div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
     
-    footer .socialButtons div {
+    footer > div > div > .socialButtons {
+        width: 20%;
+    }
+    
+    footer > div > div .socialButtons div {
         justify-content: center;
     }
     
-    footer .socialButtons div span {
+    footer > div > div .socialButtons div span {
         padding: 10px;
     }
     
-    footer > div .contactForm {
+    footer > div > div .contactForm {
         width: 70%;
+    }
+    
+    footer > div > div .contactForm > div {
+        display: flex;
         flex-direction: row;
     }
     
-    footer .contactForm input[type=text],
-    footer .contactForm textarea,
-    footer .contactForm #contactButton {
+    footer > div > div .contactForm > div > input[type=text],
+    footer .contactForm > div > textarea,
+    footer .contactForm > div > #contactButton {
+        height: 40px;
         width: 30%;
     }
     
-    footer .contactForm textarea {
+    footer > div > div contactForm > div > textarea {
         height: 40px;
     }
     
-    footer .contactForm > button {
+    footer > div > div .contactForm > div > button {
         -webkit-transition: background-color 1s;
         transition: background-color 1s, border 1s, color 1s;
     }
+    
+    footer > div .contactForm p {
+        text-align: center;
+    }
 
-    footer .contactForm > button:hover {
+    footer > div > div .contactForm > div > button:hover {
         cursor: pointer;
-        border: 1px solid #FFF;
-        background-color: transparent;
-        color: #FFF;
+        color: #303030;
+        border: 1px solid transparent;
+        background-color: #FFF;
     }
 }
