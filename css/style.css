@@ -289,12 +289,14 @@ header .dbSearch button {
     border-bottom-left-radius: 5px;
     position: fixed;
     top: -2px;   
+    transition: top 0.2s ease-in-out;
 }
 
 /* autocomplete list with links */
 .ui-menu-item,
 .ui-menu-item > div {
     padding: 5px;
+    transition: top 0.2s ease-in-out;
 }
 
 .ui-menu-item > div:hover {
@@ -409,7 +411,7 @@ header .dbSearch button {
 .mealCat {
     width: 40px;
     padding: 5px;
-    border: 3px solid #FFF;
+    border-right: 3px solid #FFF;
 }
 
 .mealCat:nth-of-type(1) {
@@ -427,6 +429,11 @@ header .dbSearch button {
 
 .mealCat:nth-of-type(2) {
     border-top-left-radius: 5px;
+}
+
+.mealCat:nth-of-type(3) {
+    border-top: 5px solid #FFF;
+    border-bottom: 5px solid #FFF;
 }
 
 .mealCat:nth-of-type(4) {
@@ -517,7 +524,7 @@ header .dbSearch button {
 }
 
 .dinner {
-    border-bottom-left-radius: 8px;
+/*    border-bottom-left-radius: 8px;*/
     border-bottom-right-radius: 8px;
 }
 
@@ -836,6 +843,10 @@ footer .contactForm > div > button {
         display: none;
     }
     
+    .mealCat {
+        border: 3px solid #FFF;
+    }
+    
     #weeklyCalendar {
         width: 100%;
         display: flex;
@@ -849,12 +860,6 @@ footer .contactForm > div > button {
         justify-content: center;
         border-radius: 0;
         border: 3px solid #FFF;
-    }
-    
-    .mealtime > h5 {
-        padding-top: 0;
-        margin-top: 0;
-        margin-bottom: 5px;
     }
     
     .mealtime .fa-sync-alt:hover {
@@ -873,10 +878,12 @@ footer .contactForm > div > button {
     .sunday {
         border-top-right-radius: 5px;
     }
+/*
     
     .calendarSection:nth-of-type(1) .dinner {
         border-bottom-left-radius: 5px;
     }
+*/
     
     .calendarSection:nth-of-type(7) .dinner {
         border-bottom-right-radius: 5px;
