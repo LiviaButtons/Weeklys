@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 15, 2018 at 11:59 AM
+-- Generation Time: Nov 16, 2018 at 12:41 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -56,7 +56,7 @@ CREATE TABLE `t_categorierecette` (
   `idCategorieRecette` int(10) UNSIGNED NOT NULL,
   `idCategorie` int(10) UNSIGNED NOT NULL,
   `idRecette` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
 -- Dumping data for table `t_categorierecette`
@@ -161,7 +161,20 @@ INSERT INTO `t_categorierecette` (`idCategorieRecette`, `idCategorie`, `idRecett
 (129, 7, 49),
 (130, 7, 50),
 (131, 7, 51),
-(132, 7, 52);
+(132, 7, 52),
+(133, 2, 53),
+(134, 2, 54),
+(135, 2, 55),
+(136, 2, 56),
+(137, 1, 57),
+(138, 1, 58),
+(139, 5, 58),
+(140, 3, 59),
+(141, 1, 59),
+(142, 5, 59),
+(143, 1, 60),
+(144, 3, 60),
+(145, 5, 60);
 
 -- --------------------------------------------------------
 
@@ -526,7 +539,55 @@ INSERT INTO `t_etapes` (`idEtapes`, `idRecette`, `descriptEtapes`) VALUES
 (380, 52, 'Ajouter les autres ingrédients : crème, eau de fleur d\'oranger, beurre, sucre, sel, en terminant par la farine puis la levure (attention, elle ne doit pas entrer en contact avec les liquides). '),
 (381, 52, 'Mettre sur programme \"brioche\", ou \"sucré\" ou sur tout autre programme permettant de faire de la brioche.'),
 (382, 52, 'Cuire et déguster une fois refroidi. '),
-(383, 52, 'Note de l\'auteur:\r\nVous pouvez ajouter 1 cuillère à soupe d\'eau de vie (kirsch par exemple) à la pâte. Chez moi cette brioche a eut beaucoup de succès ! attention à bien faire lever la brioche pour qu\'elle soit bien aérée. A vos fourneaux! ');
+(383, 52, 'Note de l\'auteur:\r\nVous pouvez ajouter 1 cuillère à soupe d\'eau de vie (kirsch par exemple) à la pâte. Chez moi cette brioche a eut beaucoup de succès ! attention à bien faire lever la brioche pour qu\'elle soit bien aérée. A vos fourneaux! '),
+(384, 53, 'Emincer l\'oignon et le faire dorer avec un peu de beurre. '),
+(385, 53, 'Rajouter les champignons égouttés puis le vin blanc et porter à ébullition.'),
+(386, 53, 'Ajouter ensuite la crème, le bouquet garni, le sel et le poivre'),
+(387, 53, 'Mélanger et laisser un peu réduire.'),
+(388, 53, 'Rincer les filets de poisson, les éponger puis les passer dans la farine (en éliminant l\'excédent). '),
+(389, 53, 'Ajouter les filets dans la cocotte et baisser le feu. '),
+(390, 53, 'Faire cuire 20 mn. '),
+(391, 53, 'Note de l\'auteur:\r\nNe pas hésiter à rajouter un peu de liquide (eau ou vin blanc) si la sauce réduit trop. '),
+(392, 54, 'Mettez les filets de poisson sur une plaque de cuisson tapissée de papier cuisson. Ajoutez l‘huile d’olive et le Mélange d\'Épices pour Tacos Original Old El Paso™, salez et poivrer les filets. '),
+(393, 54, 'Faites-les cuire au four préchauffé à 200°C (thermostat 6-7) environ 12 à 15 minutes ou jusqu\'à ce que la chair du poisson se défasse facilement à la fourchette. '),
+(394, 54, 'Pendant ce temps préparez la salsa.\r\nCoupez l’ananas en petits dés, hachez finement l’oignon rouge et le piment vert si vous les utilisez. Ciselez la coriandre. Mélangez l’ananas, l’oignon, le piment, la coriandre avec de jus de citron vert et assaisonnez au goût. '),
+(395, 54, 'Pelez les avocats et coupez-les en lamelles, arrosez-les avec de jus de citron. '),
+(396, 54, 'Retirez les Barquitas Original Old El Paso™ de leur emballage et séparez-les. Enveloppez-les dans du papier aluminium et faites-les chauffer au four préchauffez à 140°C (thermostat 4-5) pendant 10 minutes. '),
+(397, 54, 'Remplissez-les avec le poisson, l’avocat et la salsa d’ananas.\r\nRecouvrez de sauce à napper Original Salsa Old El Paso™ et dégustez. '),
+(398, 54, 'Note de l\'auteur:\r\nPour une sauce plus crémeuse vous pouvez mélanger la sauce à napper Original Salsa Old El Paso™ avec 2 cuillères à soupe de mayonnaise. '),
+(399, 55, 'Épluchez la mangue et coupez-la en petits cubes. '),
+(400, 55, 'Mélangez ces cubes dans un bol avec ½ cuillère à café de pâte de piment rouge, 1 cuillère à soupe de coriandre ainsi que le jus et le zeste d\'un demi-citron vert. '),
+(401, 55, 'Passez le poisson dans le robot de cuisine, puis mélangez-le avec 1 œuf et 1 cuillère à café de sel ainsi que le reste du jus et du zeste de citron vert et de la pâte de piment rouge.'),
+(402, 55, 'Mélangez le reste de la coriandre, l\'oignon nouveau et 2 cuillères à soupe de noix de coco. '),
+(403, 55, 'Réservez le reste de la noix de coco dans une assiette à soupe. Divisez le mélange de poisson en 12 parts, donnez-leur une forme arrondie et parsemez-les de noix de coco.'),
+(404, 55, 'Disposez six cakes dans le panier et insérez-le dans AirFryer. Réglez la minuterie sur 7 minutes et faites cuire les cakes jusqu\'à ce qu\'ils soient dorés et cuits. Faites frire les cakes restants de la même manière. '),
+(405, 55, 'Disposez six cakes dans le panier et insérez-le dans AirFryer. Réglez la minuterie sur 7 minutes et faites cuire les cakes jusqu\'à ce qu\'ils soient dorés et cuits. Faites frire les cakes restants de la même manière. '),
+(406, 56, 'Faites revenir le poisson dans une poêle avec un filet d’huile et le sachet de Mélange aux épices pour Fajitas Original Old El Paso™ pendant 4 min. Pressez le citron et remuez. '),
+(407, 56, 'Sortez les Barquitas™ tortillas de leur étui plastique et disposez-les sur un plat adapté au micro-ondes (900W) : chauffez-les 35 secondes.\r\nAu four, préchauffé à 165°C (thermostat 5) : enveloppez-les dans un papier d’aluminium et chauffez-les 8 min.'),
+(408, 56, 'Mélangez l’oignon avec la crème fraîche. Disposez sur la table les bols contenant les différentes garnitures : le poisson cuisiné, la salade coupée en lamelles, les dés de tomates, le fromage râpé et la crème fraîche. Nappez votre Barquitas™ tortillas de sauce à cuisiner pour Fajitas Old el Paso™ et garnissez-la à moitié avec les ingrédients de votre choix et dégustez !\r\n\r\nHuuummmm … Bon appétit ! '),
+(409, 56, 'Note de l\'auteur:\r\nPssst ! La fiesta mexicaine commence d\'abord par un apéro aux multiples saveurs. Essayez le guacamole frais Old El Paso™ (un sachet d\'épices et deux avocats, et hop, le tour est joué !) ou les délicieuses chips croustillantes au maïs Old El Paso™ ! C’est vous le cuisinier en chef ! Alors n’hésitez pas à créer votre propre recette en ajoutant une touche de guacamole ou encore du fromage râpé. Pour les végétariens, remplacez le poisson par des légumes (champignons, haricots…), c’est tout aussi délicieux ! '),
+(410, 57, 'Dans une grande poêle, chauffez la moitié de l’huile et faites sauter le poulet coupé en tranches fines pendant 5 à 10 minutes afin qu’il soit complètement cuit.\r\nMettez de côté et coupez l\'avocat en cubes ou tranches, selon votre préférence.'),
+(411, 57, 'Mettez le restant d’huile dans la poêle, ajoutez l’oignon et les poivrons coupés en tranche et faites cuire 5 minutes jusqu’à ce qu’ils soient tendres. Ajoutez le mélange aux épices pour Fajitas Original Old El Paso™, et faites cuire 1 minute.'),
+(412, 57, 'Pendant ce temps, chauffez les Barquitas™ tortillas en suivant les instructions. '),
+(413, 57, 'Remplissez les Barquitas™ tortillas avec le poulet et le mélange d’oignon et poivrons, les morceaux d\'avocat et nappez de la sauce à cuisiner pour Fajitas Old el Paso™. Garnissez avec de la coriandre fraîche. Un repas rapide et facile à préparer et à manger !\r\nHuuummmm … Bon appétit !'),
+(414, 57, 'Note de l\'auteur:\r\nPssst ! La fiesta mexicaine commence d\'abord par un apéro aux multiples saveurs. Essayez le guacamole frais Old El Paso™ (un sachet d\'épices et deux avocats, et hop, le tour est joué !) ou les délicieuses chips croustillantes au maïs Old El Paso™ ! Ces Barquitas™ se marient parfaitement avec une salade verte, des tomates et un peu de fromage râpé. Vous voulez encore plus faire plaisir à vos enfants avec les Mini Barquitas™ ? Réalisez des mini bateaux pirates ! Et mettez les voiles avec les Tortillas Chips Old El Paso pour encore plus de fun dans votre assiette. Idéal pour l\'apéritif… comme pour le repas '),
+(415, 58, 'Faites chauffer l\'huile dans une cocotte ou un wok et faites-y revenir le poulet avec l\'ail, l\'oignon, le gingembre et les légumes, et faites revenir quelques minutes. Ajoutez le bouillon et laissez cuire de 12 à 15 min. '),
+(416, 58, 'Délayez la maïzena avec du bouillon et versez-la dans le plat. Ajoutez les nouilles et les champignons préalablement réhydratés. Assaisonner à votre goût avec le piment, la sauce soja et le vinaigre et laissez cuire quelques minutes. C\'est prêt ! '),
+(417, 58, 'Note de l\'auteur:\r\nLes ingrédients sont certes nombreux, mais le résultat vaut le coup : goût savoureux sans être trop fort. Plat très nourrissant qui peut servir de plat unique. '),
+(418, 59, 'Mettre 1 litre d\'eau dans un autocuiseur. '),
+(419, 59, 'Y ajouter les légumes épluchés, nettoyés et coupés en grosses rondelles, les lardons et la cuillère de miel. '),
+(420, 59, 'Laissez cuire 25 minutes après la rotation de la soupape. '),
+(421, 59, 'Mouliner le tout, ajouter selon les goûts un peu de sel et de poivre fraîchement moulu. '),
+(422, 59, 'Vous pouvez aussi rajouter dans l\'assiette un peu de crème liquide et de la coriandre surgelée, cela se marie bien ensemble.'),
+(423, 60, 'Cuire la saucisse de Morteau. '),
+(424, 60, 'Couper le potimarron et le panais en dés.  '),
+(425, 60, 'Mettre le potimarron à cuire recouvert d\'eau bouillante salée pour 30 minutes de cuisson. '),
+(426, 60, 'Cuire les dés de panais dans un peu de beurre. '),
+(427, 60, 'Lorsque le panais est cuit, ajouter les marrons, saler, poivrer et laisser réchauffer sur feu doux. '),
+(428, 60, 'Mixer la soupe de potimarron.'),
+(429, 60, 'Couper la saucisse en tranches. '),
+(430, 60, 'Servir une assiette de soupe de potimarron et l\'agrémenter de panais, marrons et saucisse de Morteau. '),
+(431, 60, 'Décorer d\'herbes. ');
 
 -- --------------------------------------------------------
 
@@ -536,7 +597,7 @@ INSERT INTO `t_etapes` (`idEtapes`, `idRecette`, `descriptEtapes`) VALUES
 
 CREATE TABLE `t_ingredient` (
   `idIngredient` int(11) UNSIGNED NOT NULL,
-  `nomIngredient` varchar(50) COLLATE utf8mb4_bin NOT NULL
+  `nomIngredient` varchar(120) COLLATE utf8mb4_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
@@ -554,7 +615,7 @@ INSERT INTO `t_ingredient` (`idIngredient`, `nomIngredient`) VALUES
 (8, 'huile de sésame'),
 (9, 'eau'),
 (10, 'chou'),
-(11, 'farine de pomme de terre'),
+(11, 'farine de pommes de terre'),
 (12, 'ail'),
 (13, 'feuille de ravioli'),
 (14, 'porc haché'),
@@ -689,14 +750,12 @@ INSERT INTO `t_ingredient` (`idIngredient`, `nomIngredient`) VALUES
 (149, 'farine de maIs'),
 (150, 'poire'),
 (151, 'lait écrémé'),
-(152, 'fromage blanc'),
 (153, 'stévia en poudre'),
 (154, 'avoine'),
 (155, 'tapioca'),
 (156, 'biscuits briochés'),
 (157, 'pains muffins'),
 (158, 'fromage'),
-(159, 'bacon'),
 (160, 'farine à gateaux'),
 (161, 'farine complète'),
 (162, 'sucre vanillé'),
@@ -712,7 +771,31 @@ INSERT INTO `t_ingredient` (`idIngredient`, `nomIngredient`) VALUES
 (172, 'kiwi'),
 (173, 'orange'),
 (174, 'lait de soja'),
-(175, 'sucre roux');
+(175, 'sucre roux'),
+(176, 'lieu noir'),
+(177, 'vin blanc'),
+(178, 'Kit Barquitas (8tacos+sauce tomate+mélange épices '),
+(180, 'poisson blanc (merlu, morue, cabillaud, eglefin)'),
+(181, 'ananas'),
+(183, 'piment vert'),
+(185, 'citron vert'),
+(186, 'piment rouge'),
+(187, 'mangue'),
+(188, 'laitue'),
+(189, 'blanc de poulet'),
+(190, 'poivron jaune'),
+(191, 'germes de soja'),
+(193, 'maizena'),
+(194, 'gingembre en poudre'),
+(195, 'sauce soja'),
+(196, 'nouilles chinoises'),
+(197, 'champignons noirs'),
+(198, 'chou-fleur'),
+(199, 'rutabaga'),
+(200, 'saucisse de morteau'),
+(201, 'marrons cuits'),
+(202, 'potimarron'),
+(203, 'panais');
 
 -- --------------------------------------------------------
 
@@ -1147,7 +1230,85 @@ INSERT INTO `t_ingredientrecette` (`idIngredientRecette`, `idIngredient`, `idRec
 (420, 4, 52, 1, 'c à soupe'),
 (421, 56, 52, 63, 'ml'),
 (422, 141, 52, 1, 'gousse(s)'),
-(423, 143, 52, 1, 'c à café');
+(423, 143, 52, 1, 'c à café'),
+(424, 176, 53, 600, 'g'),
+(425, 16, 53, 400, 'g'),
+(426, 17, 53, 1, 'pièce(s)'),
+(427, 177, 53, 15, 'cl'),
+(428, 19, 53, 15, 'cl'),
+(429, 125, 53, 1, 'bouquet(s)'),
+(430, 21, 53, 0, 'selon goût'),
+(431, 32, 53, 0, 'selon goût'),
+(432, 34, 53, 0, ''),
+(433, 49, 53, 0, ''),
+(434, 178, 54, 1, 'boîte(s)'),
+(435, 180, 54, 500, 'g'),
+(436, 181, 54, 1, 'moitié(s)'),
+(437, 102, 54, 1, 'pièce(s)'),
+(438, 81, 54, 1, 'botte(s)'),
+(439, 183, 54, 1, 'pièce(s)'),
+(440, 92, 54, 2, 'pièce(s)'),
+(441, 185, 54, 1, 'pièce(s)'),
+(442, 21, 54, 0, ''),
+(443, 32, 54, 0, ''),
+(444, 187, 55, 1, 'pièce(s)'),
+(445, 186, 55, 1, 'c à café'),
+(446, 81, 55, 3, 'c à café'),
+(447, 185, 55, 1, 'pièce(s)'),
+(448, 180, 55, 500, 'g'),
+(449, 18, 55, 1, 'entier(s)'),
+(450, 108, 55, 1, 'botte(s)'),
+(451, 166, 55, 50, 'g'),
+(461, 178, 56, 1, 'boîte(s)'),
+(462, 180, 56, 500, 'g'),
+(463, 44, 56, 2, 'pièce(s)'),
+(464, 188, 56, 1, 'pièce(s)'),
+(465, 4, 56, 10, 'cl'),
+(466, 20, 56, 125, 'g'),
+(467, 37, 56, 1, 'pièce(s)'),
+(468, 17, 56, 1, 'pièce(s)'),
+(469, 35, 56, 1, 'c à soupe'),
+(470, 178, 57, 1, 'boîte(s)'),
+(471, 189, 57, 500, 'g'),
+(472, 102, 57, 1, 'pièce(s)'),
+(473, 48, 57, 1, 'pièce(s)'),
+(474, 190, 57, 1, 'pièce(s)'),
+(475, 92, 57, 1, 'pièce(s)'),
+(476, 35, 57, 1, 'c à café'),
+(477, 81, 57, 0, 'selon goût'),
+(478, 67, 58, 2, 'pièce(s)'),
+(479, 35, 58, 1, 'c à soupe'),
+(480, 12, 58, 1, 'gousse(s)'),
+(481, 17, 58, 1, 'pièce(s)'),
+(482, 24, 58, 1, 'pièce(s)'),
+(483, 191, 58, 100, 'g'),
+(484, 88, 58, 60, 'g'),
+(485, 193, 58, 1, 'c à soupe'),
+(486, 186, 58, 1, 'c à café'),
+(487, 194, 58, 1, 'c à café'),
+(488, 195, 58, 1, 'c à soupe'),
+(489, 86, 58, 1, 'c à soupe'),
+(490, 196, 58, 125, 'g'),
+(491, 197, 58, 3, 'pièce(s)'),
+(492, 32, 58, 0, ''),
+(493, 21, 58, 0, ''),
+(494, 199, 59, 2, 'pièce(s)'),
+(495, 198, 59, 1, 'pièce(s)'),
+(496, 24, 59, 1, 'pièce(s)'),
+(497, 33, 59, 1, 'pièce(s)'),
+(498, 15, 59, 100, 'g'),
+(499, 146, 59, 1, 'c à soupe'),
+(500, 19, 59, 1, 'c à soupe'),
+(501, 81, 59, 1, 'pincée(s)'),
+(502, 32, 59, 0, ''),
+(503, 21, 59, 0, ''),
+(504, 200, 60, 1, 'pièce(s)'),
+(505, 201, 60, 20, 'pièce(s)'),
+(506, 202, 60, 1, 'pièce(s)'),
+(507, 203, 60, 2, 'pièces(s)'),
+(508, 49, 60, 30, 'g'),
+(509, 32, 60, 0, ''),
+(510, 21, 60, 0, '');
 
 -- --------------------------------------------------------
 
@@ -1224,7 +1385,15 @@ INSERT INTO `t_recette` (`idRecette`, `Code`, `nom`, `image`, `difficulte`, `cou
 (49, 3147, 'Petit déjeuner allégé à l\'avoine et aux poires', '49.jpg', 1, 1, 10, 5, 5, 0, 1, 2),
 (50, 3180, 'Gâteau de maïs', '50.jpg', 1, 1, 40, 15, 25, 0, 1, 6),
 (51, 3102, 'Brioche tressée', '51.jpg', 2, 1, 240, 90, 30, 120, 1, 10),
-(52, 3153, 'La gâche vendéenne', '52.jpg', 2, 1, 55, 10, 45, 0, 1, 4);
+(52, 3153, 'La gâche vendéenne', '52.jpg', 2, 1, 55, 10, 45, 0, 1, 4),
+(53, 8152, 'Blanquette de poisson', '53.jpg', 1, 1, 40, 10, 40, 0, 1, 4),
+(54, 8555, 'Tacos de poisson et salsa d’ananas', '54.jpg', 1, 1, 45, 20, 25, 0, 1, 4),
+(55, 8321, 'Cakes thaï au poisson avec sauce à la mangue', '55.jpg', 1, 1, 34, 20, 14, 0, 1, 4),
+(56, 3553, 'Fajitas au poisson fondant, tomates et citron', '56.jpg', 1, 1, 15, 10, 5, 0, 1, 4),
+(57, 9971, 'Fajitas au poulet fondant', '57.jpg', 1, 1, 25, 5, 21, 0, 1, 4),
+(58, 4552, 'Soupe chinoise au poulet', '58.jpg', 1, 2, 65, 45, 20, 0, 1, 3),
+(59, 4442, 'Soupe de rutabagas', '59.jpg', 1, 1, 40, 15, 25, 0, 1, 4),
+(60, 4443, 'Soupe gourmande', '60.jpg', 1, 1, 120, 30, 90, 0, 1, 4);
 
 -- --------------------------------------------------------
 
@@ -1256,7 +1425,7 @@ CREATE TABLE `t_repasrecette` (
   `idRepasRecette` int(10) UNSIGNED NOT NULL,
   `idRepas` int(10) UNSIGNED NOT NULL,
   `idRecette` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
 -- Dumping data for table `t_repasrecette`
@@ -1347,7 +1516,23 @@ INSERT INTO `t_repasrecette` (`idRepasRecette`, `idRepas`, `idRecette`) VALUES
 (83, 1, 49),
 (84, 1, 50),
 (85, 1, 51),
-(86, 1, 52);
+(86, 1, 52),
+(87, 2, 53),
+(88, 3, 53),
+(89, 2, 54),
+(90, 3, 54),
+(91, 2, 55),
+(92, 3, 55),
+(93, 2, 56),
+(94, 3, 56),
+(95, 2, 57),
+(96, 3, 57),
+(97, 2, 58),
+(98, 3, 58),
+(99, 2, 59),
+(100, 3, 59),
+(101, 2, 60),
+(102, 3, 60);
 
 -- --------------------------------------------------------
 
@@ -1380,7 +1565,7 @@ CREATE TABLE `t_tempsrecette` (
   `idTempsRecette` int(10) UNSIGNED NOT NULL,
   `idTemps` int(10) UNSIGNED NOT NULL,
   `idRecette` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
 -- Dumping data for table `t_tempsrecette`
@@ -1436,7 +1621,73 @@ INSERT INTO `t_tempsrecette` (`idTempsRecette`, `idTemps`, `idRecette`) VALUES
 (56, 1, 49),
 (57, 2, 50),
 (58, 4, 51),
-(59, 2, 52);
+(59, 2, 52),
+(60, 2, 53),
+(61, 2, 54),
+(62, 2, 55),
+(63, 1, 56),
+(64, 1, 57),
+(65, 3, 58),
+(66, 2, 59),
+(67, 4, 60);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `view_cook`
+-- (See below for the actual view)
+--
+CREATE TABLE `view_cook` (
+`idRecette` int(10) unsigned
+,`nomRecette` varchar(100)
+,`difficulte` tinyint(4)
+,`tempsTotalMinutes` tinyint(3) unsigned
+,`tempsDePrep` tinyint(3) unsigned
+,`tempsDeCuisson` tinyint(3) unsigned
+,`tempsDeRepos` tinyint(3) unsigned
+,`cout` tinyint(4)
+,`image` varchar(100)
+,`typeDeRepas` varchar(50)
+,`etapes` mediumtext
+,`ingredient` varchar(120)
+,`quantiteIngredient` smallint(4) unsigned
+,`mesureIngredient` varchar(16)
+,`categorie` varchar(50)
+,`dureeEnTranche` varchar(50)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `view_recettes`
+-- (See below for the actual view)
+--
+CREATE TABLE `view_recettes` (
+`idRecette` int(10) unsigned
+,`nomRecette` varchar(100)
+,`image` varchar(100)
+,`categorie` varchar(50)
+,`typeDeRepas` varchar(50)
+,`ingredient` varchar(120)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `view_cook`
+--
+DROP TABLE IF EXISTS `view_cook`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_cook`  AS  select distinct `t_recette`.`idRecette` AS `idRecette`,`t_recette`.`nom` AS `nomRecette`,`t_recette`.`difficulte` AS `difficulte`,`t_recette`.`duree` AS `tempsTotalMinutes`,`t_recette`.`tempsDePrep` AS `tempsDePrep`,`t_recette`.`tempsDeCuisson` AS `tempsDeCuisson`,`t_recette`.`tempsDeRepos` AS `tempsDeRepos`,`t_recette`.`cout` AS `cout`,`t_recette`.`image` AS `image`,`t_repas`.`nomRepas` AS `typeDeRepas`,`t_etapes`.`descriptEtapes` AS `etapes`,`t_ingredient`.`nomIngredient` AS `ingredient`,`t_ingredientrecette`.`ingredientQuantite` AS `quantiteIngredient`,`t_ingredientrecette`.`ingredientMesure` AS `mesureIngredient`,`t_categorie`.`nomCategorie` AS `categorie`,`t_temps`.`dureeTemps` AS `dureeEnTranche` from (((((((((`t_recette` join `t_repasrecette` on((`t_recette`.`idRecette` = `t_repasrecette`.`idRecette`))) join `t_repas` on((`t_repasrecette`.`idRepas` = `t_repas`.`idRepas`))) join `t_categorierecette` on((`t_recette`.`idRecette` = `t_categorierecette`.`idRecette`))) join `t_categorie` on((`t_categorierecette`.`idCategorie` = `t_categorie`.`idCategorie`))) join `t_ingredientrecette` on((`t_recette`.`idRecette` = `t_ingredientrecette`.`idRecette`))) join `t_ingredient` on((`t_ingredientrecette`.`idIngredient` = `t_ingredient`.`idIngredient`))) join `t_etapes` on((`t_recette`.`idRecette` = `t_etapes`.`idRecette`))) join `t_tempsrecette` on((`t_recette`.`idRecette` = `t_tempsrecette`.`idRecette`))) join `t_temps` on((`t_temps`.`idTemps` = `t_tempsrecette`.`idTemps`))) ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `view_recettes`
+--
+DROP TABLE IF EXISTS `view_recettes`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_recettes`  AS  select `t_recette`.`idRecette` AS `idRecette`,`t_recette`.`nom` AS `nomRecette`,`t_recette`.`image` AS `image`,`t_categorie`.`nomCategorie` AS `categorie`,`t_repas`.`nomRepas` AS `typeDeRepas`,`t_ingredient`.`nomIngredient` AS `ingredient` from ((((((`t_recette` join `t_repasrecette` on((`t_recette`.`idRecette` = `t_repasrecette`.`idRecette`))) join `t_repas` on((`t_repasrecette`.`idRepas` = `t_repas`.`idRepas`))) join `t_categorierecette` on((`t_recette`.`idRecette` = `t_categorierecette`.`idRecette`))) join `t_categorie` on((`t_categorierecette`.`idCategorie` = `t_categorie`.`idCategorie`))) join `t_ingredientrecette` on((`t_recette`.`idRecette` = `t_ingredientrecette`.`idRecette`))) join `t_ingredient` on((`t_ingredientrecette`.`idIngredient` = `t_ingredient`.`idIngredient`))) ;
 
 --
 -- Indexes for dumped tables
@@ -1525,31 +1776,31 @@ ALTER TABLE `t_categorie`
 -- AUTO_INCREMENT for table `t_categorierecette`
 --
 ALTER TABLE `t_categorierecette`
-  MODIFY `idCategorieRecette` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
+  MODIFY `idCategorieRecette` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=146;
 
 --
 -- AUTO_INCREMENT for table `t_etapes`
 --
 ALTER TABLE `t_etapes`
-  MODIFY `idEtapes` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=384;
+  MODIFY `idEtapes` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=432;
 
 --
 -- AUTO_INCREMENT for table `t_ingredient`
 --
 ALTER TABLE `t_ingredient`
-  MODIFY `idIngredient` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=176;
+  MODIFY `idIngredient` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=204;
 
 --
 -- AUTO_INCREMENT for table `t_ingredientrecette`
 --
 ALTER TABLE `t_ingredientrecette`
-  MODIFY `idIngredientRecette` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=424;
+  MODIFY `idIngredientRecette` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=511;
 
 --
 -- AUTO_INCREMENT for table `t_recette`
 --
 ALTER TABLE `t_recette`
-  MODIFY `idRecette` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `idRecette` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT for table `t_repas`
@@ -1561,7 +1812,7 @@ ALTER TABLE `t_repas`
 -- AUTO_INCREMENT for table `t_repasrecette`
 --
 ALTER TABLE `t_repasrecette`
-  MODIFY `idRepasRecette` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
+  MODIFY `idRepasRecette` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
 
 --
 -- AUTO_INCREMENT for table `t_temps`
@@ -1573,7 +1824,7 @@ ALTER TABLE `t_temps`
 -- AUTO_INCREMENT for table `t_tempsrecette`
 --
 ALTER TABLE `t_tempsrecette`
-  MODIFY `idTempsRecette` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `idTempsRecette` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- Constraints for dumped tables
