@@ -29,6 +29,10 @@ main {
     margin-top: 80px;
 }
 
+section:last-of-type {
+    padding-bottom: 40px;
+}
+
 .mobileHidden,
 .tabletHidden,
 .hidden {
@@ -90,7 +94,7 @@ header {
     height: 80px;
     position: fixed;
     transition: top 0.2s ease-in-out;
-    z-index: 999;
+/*    z-index: 999;*/
 }
 
 .nav-down {
@@ -377,7 +381,6 @@ header .dbSearch button {
     font-family: 'LatoLight';
     font-size: 1.1em;
     text-transform: uppercase;
-    
 }
 
 #mealPlan .form button {
@@ -516,20 +519,6 @@ header .dbSearch button {
 .dinner {
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-}
-
-#mealPlan > .calendarShare {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-bottom: 20px;
-}
-
-.fa-share-square,
-.fa-print,
-.fa-file-pdf {
-    color: #848484;
 }
 
 
@@ -840,16 +829,6 @@ footer .contactForm > div > button {
         color: #869e40;
         background-color: #FFF;
         cursor: pointer;
-    }
-    
-    #mealPlan .calendarShare {
-        width: 10%;
-        display: flex;
-        justify-content: flex-end;
-    }
-    
-    #mealPlan .calendarShare > span {
-        padding: 10px;
     }
     
     .fa-chevron-right,
