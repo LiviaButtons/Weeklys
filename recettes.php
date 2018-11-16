@@ -26,10 +26,16 @@ catch (PDOException $e) {
     <meta name="description" content="">
     <meta name="author" content="">
    
-    <!--Filtre-->
+    
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
-
+    <script src='./js/headerNav.js'></script>
+    <script src='./js/hamburgerMenu.js'></script>
+    <script src='./js/sendMail.js'></script>
+    <script src='./js/searchBar.js'></script>
+    <link rel="stylesheet" href="./css/jquery-ui.min.css">
+    <link rel="stylesheet" href="./css/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="./css/jquery-ui.theme.min.css">
     
     <!--PAGINATION-->
     
@@ -44,10 +50,7 @@ catch (PDOException $e) {
     <link rel="stylesheet" href="./css/liste.css">
     <link rel="stylesheet" href="./headFoot/headerFooter.css">
     
-    <script src='./js/headerNav.js'></script>
-    <script src='./js/hamburgerMenu.js'></script>
-    <script src='./js/sendMail.js'></script>
-    <script src='./js/searchBar.js'></script>
+    
     
     
 </head>
@@ -334,6 +337,9 @@ $(document).ready(function(){
     
 });
 </script>    
+
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5bea9fd2ea520ec1"></script>
+
+
 </body>
 </html>

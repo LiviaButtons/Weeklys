@@ -68,18 +68,32 @@ if (isset($_GET['code'])){
     <meta name="description" content="">
     <meta name="author" content="">
    
-
-    <link rel="stylesheet" href="./css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="css/normalize.css">
+   
+    <!-- JavaScript and jQuery -->
+        <script src="./js/jquery-3.3.1.min.js"></script>
+        <script src="./js/jquery-ui.min.js"></script>
+        <script src="./js/sendMail.js"></script>
+        <script src="./js/mobileCalendar.js"></script>
+        <script src="./js/headerNav.js"></script>
+        <script src="./js/hamburgerMenu.js"></script>
+        <script src="./js/generateCalendar.js"></script>
+        <script src="./js/searchBar.js"></script>
+        <!-- social share sticky bar -->
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5bea9fd2ea520ec1"></script>
+        
+        <!-- CSS Stylesheets -->
+        <link rel="stylesheet" href="./css/normalize.css">
+        <link rel="stylesheet" href="./css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="./css/jquery-ui.min.css">
+        <link rel="stylesheet" href="./css/style.css">
+    
+    
     <link rel="stylesheet" href="./css/preparation.css">
     <link rel="stylesheet" href="./css/style_print_recette.css">
     
     
     <link rel="stylesheet" href="./headFoot/headerFooter.css">
-    <script src='./js/headerNav.js'></script>
-    <script src='./js/hamburgerMenu.js'></script>
-    <script src='./js/searchBar.js'></script>
-    <script src='./js/sendMail.js'></script>
+    
     
     
     
@@ -276,7 +290,10 @@ if (isset($_GET['code'])){
     
 </script>
 
+
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5bea9fd2ea520ec1"></script>
+
+
      
 </body>
 </html>

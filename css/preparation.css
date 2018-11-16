@@ -46,7 +46,7 @@ body{
 
 main{
     margin-bottom: 80px;
-    margin-top: 80px;
+    margin-top: 40px;
 }
 
 main > div {
@@ -71,7 +71,7 @@ main > div {
 /*    flex-direction: row;*/
     justify-content: space-between;
     align-items:center;
-    margin-bottom: 70px;
+    /*margin-bottom: 70px;*/
     margin-top: 80px;
 }
 
@@ -91,11 +91,6 @@ h4{
     text-transform: lowercase;
 }
 
-/*A VOIR*/
-#nomRecette {
-    
-    justify-content: center;
-}
 
 
 div.calendarShare span {
