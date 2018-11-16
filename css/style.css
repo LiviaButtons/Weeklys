@@ -71,6 +71,11 @@ h6 {
     text-transform: uppercase;
 }
 
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
 h2 > span {
     font-family: 'AusthinaBrush';
 /*    color: #869e40;*/
@@ -298,6 +303,11 @@ header .dbSearch button {
     margin-bottom: 20px;
     border-radius: 5px;
     box-shadow: 0px 0px 5px 5px rgba(50,50,50,0.25);
+    text-align: justify;
+}
+
+#intro .overlayText p:nth-of-type(2) {
+    text-align: center;
 }
 
 
@@ -356,7 +366,56 @@ header .dbSearch button {
     background-color: #869e40;
 }
 
+#mealPlan .weekday,
+#mealPlan .mealtime,
+#mealPlan .calendarSection {
+    width: 100%;
+}
 
+/* sidebar with meal times */
+#calWithWeek {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.siteTab {
+    width: 40px;
+}
+
+.mealCat {
+    width: 40px;
+    padding: 5px;
+    border: 3px solid #FFF;
+}
+
+.mealCat:nth-of-type(1) {
+    margin-top: 30px;
+    height: 90px;
+}
+
+.mealCat:not(:nth-of-type(1)) {
+    height: 140px;
+    background-color: #f0c948;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mealCat:nth-of-type(2) {
+    border-top-left-radius: 5px;
+}
+
+.mealCat:nth-of-type(4) {
+    border-bottom-left-radius: 5px;
+}
+
+.mealCat > p {
+    color: #FFF;
+    font-family: 'LatoBold';
+    transform: rotate(270deg);
+    white-space: nowrap;
+}
 
 .weekday {
     height: 90px;
@@ -722,7 +781,7 @@ footer .contactForm > div > button {
     }
     
     #intro .overlayText {
-        max-width: 600px;
+        max-width: 400px;
     }
     
     /* ---------------------------- */
