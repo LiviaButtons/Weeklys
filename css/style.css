@@ -405,7 +405,7 @@ header .dbSearch button {
 }
 
 .mealtime {
-    min-height: 180px !important; 
+    min-height: 140px !important; 
     background-color: rgb(240, 201, 72, 0.2);
 }
 
@@ -426,8 +426,9 @@ header .dbSearch button {
 }
 
 .lunch {
-    border-top: 3px solid #FFF;
-    border-bottom: 3px solid #FFF;
+    background-color: rgb(227, 227, 227, 0.8);
+    border-top: 5px solid #FFF;
+    border-bottom: 5px solid #FFF;
 }
 
 .dinner {
@@ -524,21 +525,24 @@ footer .contactForm > div > textarea::placeholder {
     color: #e3e3e3;
 }
 
-:-webkit-input-placeholder { /* WebKit, Blink, Edge */
+footer .contactForm :-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color:    #e3e3e3;
 }
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+
+footer .contactForm :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
    color:    #e3e3e3;
    opacity:  1;
 }
-::-moz-placeholder { /* Mozilla Firefox 19+ */
+
+footer .contactForm ::-moz-placeholder { /* Mozilla Firefox 19+ */
    color:    #e3e3e3;
    opacity:  1;
 }
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
+
+footer .contactForm :-ms-input-placeholder { /* Internet Explorer 10-11 */
    color:    #e3e3e3;
 }
-::-ms-input-placeholder { /* Microsoft Edge */
+footer .contactForm ::-ms-input-placeholder { /* Microsoft Edge */
    color:    #e3e3e3;
 }
 
@@ -800,6 +804,7 @@ footer .contactForm > div > button {
         min-height: 70px;
     }
     
+    /* adding rounded corners to relevant sections for coherent look */
     .monday {
         border-top-left-radius: 5px;
     }
