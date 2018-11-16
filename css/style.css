@@ -22,11 +22,15 @@ footer {
 }
 
 header, section {
-    border-bottom: 2px solid rgb(30, 30, 30, 0.5);
+    border-bottom: 1px solid rgb(30, 30, 30, 0.5);
 }
 
 main {
-    margin-top: 90px;
+    margin-top: 80px;
+}
+
+section:last-of-type {
+    padding-bottom: 40px;
 }
 
 .mobileHidden,
@@ -82,18 +86,15 @@ h2 > span {
     vertical-align: bottom;
 }
 
-h5 {
-    color: #869e40;
-}
-
 
 /* --------------------------------------------- */
 /* -------------------- Header ----------------- */
 header {
     background-color: #FFF;
-    height: 90px;
+    height: 80px;
     position: fixed;
     transition: top 0.2s ease-in-out;
+/*    z-index: 999;*/
 }
 
 .nav-down {
@@ -102,7 +103,7 @@ header {
 }
 
 .nav-up {
-    top: -90px; /* same as height of header */
+    top: -80px; /* same as height of header */
 }
 
 header > div {
@@ -125,7 +126,7 @@ header .logo {
 }
 
 header img {
-    width: 85px;
+    width: 75px;
     margin: 0;
     padding-right: 10px;
 }
@@ -140,13 +141,14 @@ header img {
 
 .logoText > h1 {
     padding-bottom: 0;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
 }
 
 .logoText > p {
     font-family: 'AusthinaBrush', cursive;
     padding-top: 0;
     margin-top: 0;
+    margin-bottom: 0;
 }
 
 header a {
@@ -160,7 +162,7 @@ header a {
 nav {
     width: 100%;
     position: fixed;
-    top: 90px;
+    top: 80px;
     left: 0;
     display: flex;
     flex-direction: column;
@@ -185,7 +187,7 @@ nav ul li {
     text-transform: uppercase;
     color: #FFF;
     font-size: 1.5em;
-    font-family: 'Lato';
+    font-family: 'LatoLight';
 }
 
 nav ul li:not(:last-child) {
@@ -205,6 +207,7 @@ nav ul li:last-child {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    font-size: 1.5em;
 }
 
 nav ul li:last-child a:first-child {
@@ -230,12 +233,12 @@ header .dbSearch {
 
 #intro .dbSearch input[type="text"],
 header .dbSearch input[type="text"] {
-    height: 40px;
+    height: 35px;
     padding: 10px;
     margin-right: 0;
     border: 1px solid transparent;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
 }
 
 #intro .dbSearch {
@@ -261,14 +264,15 @@ header .dbSearch input[type="text"] {
 
 #intro .dbSearch button,
 header .dbSearch button {
+    height: 35px;
     color: #FFF;
     background: rgba(134, 158, 64, 0.7);
     min-width: 50px;
     padding: 11px;
     margin-left: 0;
     border: 1px solid transparent;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
 }
 
 
@@ -377,7 +381,6 @@ header .dbSearch button {
     font-family: 'LatoLight';
     font-size: 1.1em;
     text-transform: uppercase;
-    
 }
 
 #mealPlan .form button {
@@ -516,20 +519,6 @@ header .dbSearch button {
 .dinner {
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-}
-
-#mealPlan > .calendarShare {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-bottom: 20px;
-}
-
-.fa-share-square,
-.fa-print,
-.fa-file-pdf {
-    color: #848484;
 }
 
 
@@ -840,16 +829,6 @@ footer .contactForm > div > button {
         color: #869e40;
         background-color: #FFF;
         cursor: pointer;
-    }
-    
-    #mealPlan .calendarShare {
-        width: 10%;
-        display: flex;
-        justify-content: flex-end;
-    }
-    
-    #mealPlan .calendarShare > span {
-        padding: 10px;
     }
     
     .fa-chevron-right,
