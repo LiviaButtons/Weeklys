@@ -40,7 +40,7 @@ $(document).ready (function (e) {
             // visually 'close' the hamburger menu by changing icon
             $('#hamMenu > span').removeClass('fa-times').addClass('fa-bars'); 
             // close the autocomplete menu
-            $('.ui-widget, .ui-autocomplete, .ui-menu-item').delay(50).hide(200, 'swing'); 
+            $('.ui-widget, .ui-autocomplete, .ui-menu-item').delay(50).hide(50, 'linear'); 
         } else {
             // Scrolling up, show the header
             if (st + $(window).height() < $(document).height()) {
