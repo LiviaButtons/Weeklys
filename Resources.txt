@@ -1,6 +1,5 @@
-
-
-
+https://www.addthis.com/
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5bea9fd2ea520ec1"></script>
 
 
 Calculateur/Calories counter
@@ -108,6 +107,11 @@ https://www.marmiton.org/recettes/recette_tomate-burger_343515.aspx 15
 https://www.marmiton.org/recettes/recette_aubergine-a-la-carbonara_62110.aspx 16 
 https://www.marmiton.org/recettes/recette_brochettes-de-veau-marine-aux-herbes_24862.aspx 17
 https://www.marmiton.org/recettes/recette_thon-grille-marinade-mediterraneenne_14222.aspx 18
+https://www.marmiton.org/recettes/recette_blanquette-de-poisson_33302.aspx 53
+https://www.marmiton.org/recettes/recette_tacos-de-poisson-sur-la-plaque-salsa-d-ananas_359451.aspx 54
+https://www.marmiton.org/recettes/recette_cakes-thai-au-poisson-avec-sauce-a-la-mangue_348457.aspx 55
+https://www.marmiton.org/recettes/recette_barquitas-au-poisson-fondant-tomates-et-citron_349975.aspx 56
+https://www.marmiton.org/recettes/recette_barquitas-fajitas-original-au-poulet-fondant_349982.aspx 57
 ACCOMPAGNEMENT
 https://www.marmiton.org/recettes/recette_pomme-de-terre-au-four_14679.aspx 19
 https://www.marmiton.org/recettes/recette_zoodle-de-butternut_346491.aspx 20
@@ -146,4 +150,7 @@ https://www.marmiton.org/recettes/recette_la-gache-vendeenne-du-petit-dejeuner_2
 SOUPES
 https://www.marmiton.org/recettes/recette_soupe-de-champignons_24874.aspx 42
 https://www.marmiton.org/recettes/recette_soupe-au-potiron_18643.aspx 43
+https://www.marmiton.org/recettes/recette_soupe-chinoise-au-poulet_31812.aspx 58
+https://www.marmiton.org/recettes/recette_soupe-de-rutabagas_195227.aspx 59
+https://www.marmiton.org/recettes/recette_soupe-gourmande_349209.aspx 60
 

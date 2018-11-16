@@ -71,6 +71,18 @@ h6 {
     text-transform: uppercase;
 }
 
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h2 > span {
+    font-family: 'AusthinaBrush';
+/*    color: #869e40;*/
+    text-transform: lowercase;
+    vertical-align: bottom;
+}
+
 h5 {
     color: #869e40;
 }
@@ -321,6 +333,11 @@ header .dbSearch button {
     margin-bottom: 20px;
     border-radius: 5px;
     box-shadow: 0px 0px 5px 5px rgba(50,50,50,0.25);
+    text-align: justify;
+}
+
+#intro .overlayText p:nth-of-type(2) {
+    text-align: center;
 }
 
 
@@ -379,15 +396,59 @@ header .dbSearch button {
     background-color: #869e40;
 }
 
-/* calendar tabs */
-#weeklyCalendar,
-.calendarSection,
-.weekday,
-.mealtime {
+#mealPlan .weekday,
+#mealPlan .mealtime,
+#mealPlan .calendarSection {
     width: 100%;
 }
 
+/* sidebar with meal times */
+#calWithWeek {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.siteTab {
+    width: 40px;
+}
+
+.mealCat {
+    width: 40px;
+    padding: 5px;
+    border: 3px solid #FFF;
+}
+
+.mealCat:nth-of-type(1) {
+    margin-top: 30px;
+    height: 90px;
+}
+
+.mealCat:not(:nth-of-type(1)) {
+    height: 140px;
+    background-color: #f0c948;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mealCat:nth-of-type(2) {
+    border-top-left-radius: 5px;
+}
+
+.mealCat:nth-of-type(4) {
+    border-bottom-left-radius: 5px;
+}
+
+.mealCat > p {
+    color: #FFF;
+    font-family: 'LatoBold';
+    transform: rotate(270deg);
+    white-space: nowrap;
+}
+
 .weekday {
+    height: 90px;
     font-family: LatoBold;
 }
 
@@ -409,6 +470,7 @@ header .dbSearch button {
 
 .weekday,
 .mealtime {
+/*    width: 90%;*/
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -428,7 +490,7 @@ header .dbSearch button {
 }
 
 .mealtime {
-    min-height: 180px !important; 
+    min-height: 140px !important; 
     background-color: rgb(240, 201, 72, 0.2);
 }
 
@@ -449,8 +511,9 @@ header .dbSearch button {
 }
 
 .lunch {
-    border-top: 3px solid #FFF;
-    border-bottom: 3px solid #FFF;
+    background-color: rgb(227, 227, 227, 0.8);
+    border-top: 5px solid #FFF;
+    border-bottom: 5px solid #FFF;
 }
 
 .dinner {
@@ -537,8 +600,35 @@ footer .contactForm > div > button {
 
 footer .contactForm > div > input[type=text], 
 footer .contactForm > div > textarea {
-    border: 1px solid transparent;
-    background-color: #e3e3e3;
+    border: 1px solid #e3e3e3;
+    background-color: transparent;
+    color: #e3e3e3;
+}
+
+footer .contactForm > div > input[type=text]::placeholder,
+footer .contactForm > div > textarea::placeholder {
+    color: #e3e3e3;
+}
+
+footer .contactForm :-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #e3e3e3;
+}
+
+footer .contactForm :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #e3e3e3;
+   opacity:  1;
+}
+
+footer .contactForm ::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #e3e3e3;
+   opacity:  1;
+}
+
+footer .contactForm :-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #e3e3e3;
+}
+footer .contactForm ::-ms-input-placeholder { /* Microsoft Edge */
+   color:    #e3e3e3;
 }
 
 footer .contactForm > div > textarea {
@@ -547,12 +637,17 @@ footer .contactForm > div > textarea {
 }
 
 footer .contactForm > div > button {
-    border: 1px solid transparent;
-    background-color: #FFF;
+    border: 1px solid #FFF;
+    background-color: transparent;
+    color: #FFF;
+}
+
+.contactMessage {
+    min-height: 30px; /* so there's no jump when the message appears */
 }
 
 .error {
-    border: 1px solid #FF0000 !important;
+    border: 1px solid #FF0000 !important; /* class added to contactForm input in JS if input doesn't pass validation */
 }
 
 .copyright {
@@ -716,7 +811,7 @@ footer .contactForm > div > button {
     }
     
     #intro .overlayText {
-        max-width: 600px;
+        max-width: 400px;
     }
     
     /* ---------------------------- */
@@ -794,6 +889,7 @@ footer .contactForm > div > button {
         min-height: 70px;
     }
     
+    /* adding rounded corners to relevant sections for coherent look */
     .monday {
         border-top-left-radius: 5px;
     }
@@ -884,8 +980,8 @@ footer .contactForm > div > button {
 
     footer > div > div .contactForm > div > button:hover {
         cursor: pointer;
-        border: 1px solid #FFF;
-        background-color: transparent;
-        color: #FFF;
+        color: #303030;
+        border: 1px solid transparent;
+        background-color: #FFF;
     }
 }
