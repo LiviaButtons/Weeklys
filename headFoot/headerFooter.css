@@ -1,11 +1,11 @@
-* {
+/** {
     box-sizing: border-box;
     border-collapse: collapse;
 }
 
 html {
     width: 100%;
-    font-family: "Lato", sans-serif;
+    font-family: "LatoLight", sans-serif;
     font-size: 1em;
     line-height: 1.5em;
     color: #404040;
@@ -19,15 +19,21 @@ footer {
     width: 100%;
     padding: 0;
     margin: 0;
+}*/
+
+/*header, section {
+    border-bottom: 1px solid rgb(30, 30, 30, 0.5);
+}*/
+
+header{
+    /*border-bottom: 1px solid rgb(30, 30, 30, 0.5);*/
+    border-bottom: 1px solid #707070;
+    z-index: 999;                  /***************************************rajoute*****/
 }
 
-header, section {
-    /*border-bottom: 2px solid rgb(30, 30, 30, 0.5);*/
-}
-
-main {
+/*main {
     margin-top: 90px;
-}
+}*/
 
 .mobileHidden,
 .tabletHidden,
@@ -63,7 +69,7 @@ main {
 /* ------------------ Headings ----------------- */
 h1,
 h2,
-h3,
+/*h3,*/
 h4,
 h5,
 h6 {
@@ -71,27 +77,13 @@ h6 {
     text-transform: uppercase;
 }
 
-h2 {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-h2 > span {
-    font-family: 'AusthinaBrush';
-    text-transform: lowercase;
-    vertical-align: bottom;
-}
-
-h5 {
-    color: #869e40;
-}
-
 
 /* --------------------------------------------- */
 /* -------------------- Header ----------------- */
 header {
     background-color: #FFF;
-    height: 90px;
+    /*height: 90px; */                            /*reel*******************************/
+    height: 80px;
     position: fixed;
     transition: top 0.2s ease-in-out;
 }
@@ -125,7 +117,8 @@ header .logo {
 }
 
 header img {
-    width: 85px;
+    width: 75px;           /*****************************modif*/
+    /*width: 80px;*/  
     margin: 0;
     padding-right: 10px;
 }
@@ -140,7 +133,8 @@ header img {
 
 .logoText > h1 {
     padding-bottom: 0;
-    margin-bottom: 5px;
+    /*margin-bottom: 5px; */                   /*******reel modif en bas***/
+    margin-bottom: 15px;                          /*modif***************/
 }
 
 .logoText > p {
@@ -185,7 +179,7 @@ nav ul li {
     text-transform: uppercase;
     color: #FFF;
     font-size: 1.5em;
-    font-family: 'Lato';
+    font-family: 'LatoLight';                   /*********************Mis en LatoLight à la place de Lato*/
 }
 
 nav ul li:not(:last-child) {
@@ -205,6 +199,7 @@ nav ul li:last-child {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    font-size: 1.5em;    /**************************************************rajoute*/
 }
 
 nav ul li:last-child a:first-child {
@@ -230,12 +225,15 @@ header .dbSearch {
 
 #intro .dbSearch input[type="text"],
 header .dbSearch input[type="text"] {
-    height: 40px;
+    /*height: 40px;*/                                  /**************reel modif en bas*/
+    height: 35px;
     padding: 10px;
     margin-right: 0;
     border: 1px solid transparent;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+    /*border-top-left-radius: 5px;  */                           /********reel en bas modif**/
+    border-top-left-radius: 40px;
+    /*border-bottom-left-radius: 5px;  */                                      /********reel en bas modif**/
+    border-bottom-left-radius: 40px;
 }
 
 #intro .dbSearch {
@@ -267,270 +265,14 @@ header .dbSearch button {
     padding: 11px;
     margin-left: 0;
     border: 1px solid transparent;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    /*border-top-right-radius: 5px;*/
+    border-top-right-radius: 40px;
+    /*border-bottom-right-radius: 5px;*/
+    border-bottom-right-radius: 40px;
+    height: 35px; /**********************************rajoute*/
 }
 
 
-/* styling autocomplete ul element */
-.ui-menu,
-.ui-widget, 
-.ui-widget-content,
-.ui-autocomplete,
-.ui-front {
-    font-size: 1em;
-    font-family: 'Lato', sans-serif;
-    background-color: rgb(227, 227, 227, 0.7);
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    position: fixed;
-    top: -2px;   
-}
-
-/* autocomplete list with links */
-.ui-menu-item,
-.ui-menu-item > div {
-    padding: 5px;
-}
-
-.ui-menu-item > div:hover {
-    background-color: #e3e3e3;
-    border: none;
-}
-
-
-/* --------------------------------------------- */
-/* ---------------- intro section -------------- */
-#intro {
-    background-image: url('../assets/images/hpImage.jpg');
-    min-height: 500px; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-    background-size: cover; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#intro > div {
-    width: 90%;
-    padding: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-#intro .overlayText {
-    background: rgba(255, 255, 255, 0.7);
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px 5px rgba(50,50,50,0.25);
-    text-align: justify;
-}
-
-#intro .overlayText p:nth-of-type(2) {
-    text-align: center;
-}
-
-
-/* --------------------------------------------- */
-/* ------------ meal planner section ----------- */
-#mealPlan > div {
-    width: 90%;
-    padding: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-#mealPlan .form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-#mealPlan .form div {
-    padding: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-}
-
-#mealPlan .form input[type=checkbox] {
-    width: 25px;
-    height: 25px;
-    padding: 5px;
-    margin: 5px;
-}
-
-#mealPlan .form label {
-    font-family: 'LatoLight';
-    font-size: 1.1em;
-    text-transform: uppercase;
-    
-}
-
-#mealPlan .form button {
-    width: 100%;
-    text-transform: uppercase;
-    padding: 10px;
-    margin: 10px;
-    border: 1px solid transparent;
-    border-radius: 5px;
-    font-family: 'LatoBold';
-    color: #FFF;
-    background-color: #869e40;
-}
-
-/* sidebar with meal times */
-#calWithWeek {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-}
-
-.siteTab {
-    width: 40px;
-}
-
-.mealCat {
-    width: 40px;
-    padding: 5px;
-    border: 3px solid #FFF;
-}
-
-.mealCat:nth-of-type(1) {
-    margin-top: 30px;
-    height: 90px;
-}
-
-.mealCat:not(:nth-of-type(1)) {
-    height: 140px;
-    background-color: #f0c948;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.mealCat:nth-of-type(2) {
-    border-top-left-radius: 5px;
-}
-
-.mealCat:nth-of-type(4) {
-    border-bottom-left-radius: 5px;
-}
-
-.mealCat > p {
-    color: #FFF;
-    font-family: 'LatoBold';
-    transform: rotate(270deg);
-    white-space: nowrap;
-}
-
-/* calendar tabs */
-#mealPlan .weekday,
-#mealPlan .mealtime,
-#mealPlan .calendarSection,
-#weeklyCalendar {
-    width: 100%;
-}
-
-.weekday {
-    height: 90px;
-    font-family: LatoBold;
-}
-
-.calendarSection {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.calendarSection:not(:first-of-type) {
-    display: none; /* hide all but the first calendar section on mobile */
-}
-
-.fa-sync-alt {
-    color: #848484;
-}
-
-.weekday,
-.mealtime {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.weekday {
-    background-color: #f0c948;
-    color: #FFF;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-}
-
-.weekday > *,
-.mealtime > * {
-    padding: 10px;
-}
-
-.mealtime {
-    min-height: 140px !important; 
-    background-color: rgb(240, 201, 72, 0.2);
-}
-
-.recipe {
-    margin-top: 0;
-    padding-top: 0;
-    min-height: 100px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-}
-
-.recipe > a {
-    text-decoration: none;
-    color: #303030;
-}
-
-.lunch {
-    background-color: rgb(227, 227, 227, 0.8);
-    border-top: 5px solid #FFF;
-    border-bottom: 5px solid #FFF;
-}
-
-.dinner {
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-}
-
-#mealPlan > .calendarShare {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-bottom: 20px;
-}
-
-.fa-share-square,
-.fa-print,
-.fa-file-pdf {
-    color: #848484;
-}
 
 
 /* --------------------------------------------- */
@@ -650,6 +392,7 @@ footer .contactForm > div > button {
 .copyright {
     font-size: 0.8em;
 }
+
 
 
 /* --------------------------------------------- */
@@ -786,7 +529,7 @@ footer .contactForm > div > button {
     header .dbSearch input {
         order: -1;
         align-self: center;
-        width: 250px;
+        width: 200px;
     }
     
     header .dbSearch button {
@@ -800,127 +543,8 @@ footer .contactForm > div > button {
         border: 1px solid #869e40;
         cursor: pointer;
     }
-    
-    /* ---------------------------- */
-    /* ----------- intro ---------- */
-    #intro {
-        min-height: 600px;
-    }
-    
-    #intro .overlayText {
-        max-width: 400px;
-    }
-    
-    /* ---------------------------- */
-    /* --------- mealPlan --------- */
-    #mealPlan .planGenerator {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-    
-    #mealPlan .planGenerator .form {
-        width: 60%;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-    
-    #mealPlan .form button {
-        width: 30%;
-        transition-property: background-color;
-        align-self: center;
-        transition-duration: 1s;
-    }
-    
-    #mealPlan .form button:hover {
-        border: 1px solid #869e40;
-        color: #869e40;
-        background-color: #FFF;
-        cursor: pointer;
-    }
-    
-    #mealPlan .calendarShare {
-        width: 10%;
-        display: flex;
-        justify-content: flex-end;
-    }
-    
-    #mealPlan .calendarShare > span {
-        padding: 10px;
-    }
-    
-    .fa-chevron-right,
-    .fa-chevron-left {
-        display: none;
-    }
-    
-    #weeklyCalendar {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-    }
-    
-    .weekday,
-    .mealtime {
-        justify-content: center;
-        border-radius: 0;
-        border: 3px solid #FFF;
-    }
-    
-    .mealtime > h5 {
-        padding-top: 0;
-        margin-top: 0;
-        margin-bottom: 5px;
-    }
-    
-    .mealtime .fa-sync-alt:hover {
-        cursor: pointer;
-    }
-    
-    .recipe {
-        min-height: 70px;
-    }
-    
-    /* adding rounded corners to relevant sections for coherent look */
-    .monday {
-        border-top-left-radius: 5px;
-    }
-    
-    .sunday {
-        border-top-right-radius: 5px;
-    }
-    
-    .calendarSection:nth-of-type(1) .dinner {
-        border-bottom-left-radius: 5px;
-    }
-    
-    .calendarSection:nth-of-type(7) .dinner {
-        border-bottom-right-radius: 5px;
-    }
-
-    .mealtime {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    
-    .mealtime .fa-sync-alt {
-        padding-bottom: 0;
-        padding-left: 0;
-        order: -1;
-        align-self: flex-end;
-    }
-    
-    .calendarSection {
-        display: flex !important;
-        width: 20%;
-    }
-    
+   
+   
     /* ---------------------------- */
     /* ---------- footer ---------- */
     footer > div {
@@ -980,5 +604,5 @@ footer .contactForm > div > button {
         color: #303030;
         border: 1px solid transparent;
         background-color: #FFF;
-    }
+}
 }
