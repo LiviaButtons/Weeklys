@@ -54,7 +54,7 @@ $(document).ready (function (ev) {
                             
                             // give link necessary attributes
                             $($link).attr({
-                                'href': './recipes.html?nomRecette=' + $url,
+                                'href': './preparation.php?code=' + arr[$x].idRecette,
                                 'alt': arr[$x].nomRecette
                             });
                             
@@ -100,9 +100,9 @@ $(document).ready (function (ev) {
                     
                     // create new link, build URL, give link attributes
                     $newLink = document.createElement('a');
-                    $newUrl = $results[0].nomRecette.replace(/\s/g, '');
+//                    $newUrl = $results[0].nomRecette.replace(/\s/g, '');
                     $($newLink).attr({
-                        'href': './recipes.html?nomRecette=' + $newUrl,
+                        'href': './preparation.php?code=' + $results[0].idRecette,
                         'alt': $results[0].nomRecette
                     });
                     $($newLink).html($results[0].nomRecette);
