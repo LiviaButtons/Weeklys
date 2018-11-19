@@ -974,3 +974,110 @@ footer .contactForm > div > button {
         background-color: #FFF;
     }
 }
+
+
+@media print {
+/*    header,*/
+    main {
+        -webkit-transform: rotate(-90deg); 
+        -moz-transform:rotate(-90deg);
+        filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+        display: flex;
+        flex-direction: column;
+/*        justify-content: flex-end;*/
+        justify-content: center;
+        align-items: flex-start;
+    }
+    
+    #hamMenu,
+    #intro,
+    .dbSearch,
+    .planGenerator,
+    footer {
+        display: none;
+    }
+    
+    .nav-down {
+        display: flex;
+    }
+    
+    #logoImg,
+    #logoText {
+        display: block;
+    }
+    
+    header,
+    footer, 
+    main, 
+    section {
+        border: 1px solid transparent;
+    }
+    
+    /* ---------------------------- */
+    /* --------- mealPlan --------- */
+    .fa-chevron-right,
+    .fa-chevron-left {
+        display: none;
+    }
+    
+    #weeklyCalendar {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    
+    .siteTab {
+        align-self: flex-end;
+    }
+    
+    .weekday,
+    .mealtime {
+        justify-content: center;
+        border-radius: 0;
+        border: 1px solid #303030;
+    }
+    
+    .lunch {
+        background-color: rgb(227, 227, 227, 0.8);
+    }
+    
+    .weekday {
+        background-color: #f0c948;
+    }
+    .recipe {
+        min-height: 70px;
+    }
+    
+    /* adding rounded corners to relevant sections for coherent look */
+    .monday {
+        border-top-left-radius: 5px;
+    }
+    
+    .sunday {
+        border-top-right-radius: 5px;
+    }
+    
+    .calendarSection:nth-of-type(1) .dinner {
+        border-bottom-left-radius: 5px;
+    }
+    
+    .calendarSection:nth-of-type(7) .dinner {
+        border-bottom-right-radius: 5px;
+    }
+    .mealtime {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .mealtime .fa-sync-alt {
+        display: none;
+    }
+    
+    .calendarSection {
+        display: flex !important;
+        width: 20%;
+    }
+}
