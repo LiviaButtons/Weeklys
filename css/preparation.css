@@ -214,3 +214,13 @@ select{
 ul.ingredients li {
     line-height: 25px;
 }
+
+#nomRecette{
+    line-height: 1.3em;
+}
+
+.inpServ{
+    width: 70%;
+    text-align: center;
+}
+
