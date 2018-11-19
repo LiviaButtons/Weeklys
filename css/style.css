@@ -978,14 +978,9 @@ footer .contactForm > div > button {
 
 @media print {
     /* general */
-    /* hide irrelevant areas, rotate main so default mode is landscape */
-    
-    * {
-        box-sizing: border-box;
-        border-collapse: collapse;
-    }
-    
+    /* hide irrelevant areas, rotate main so default mode is landscape */    
     main {
+/*        -webkit-print-color-adjust: exact;*/
         -webkit-transform: rotate(-90deg); 
         -moz-transform:rotate(-90deg);
         filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
@@ -1033,24 +1028,55 @@ footer .contactForm > div > button {
         display: none;
     }
     
+    #calWithWeek {
+        width: 100%
+    }
+    
+    #calWithWeek .siteTab {
+        width: 10%;
+/*        height: 10%;*/
+    }
+    
     #weeklyCalendar {
-        width: 100%;
+        width: 90%;
+/*        height: 90%;*/
+/*        margin-top: 150px;*/
+/*        margin-right: 100px;*/
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
         align-items: center;
     }
     
-    .siteTab {
-        align-self: flex-start;
-        margin-top: 200px;
+    .mealCat {
+        position: absolute !important;
+        left: -120px !important;
+/*        top: 0px !important;*/
+/*        justify-self: flex-start;*/
+/*        align-self: flex-end;*/
+/*        align-self: baseline;*/
+/*        margin-top: 220px;*/
+/*        margin-bottom: 500px;*/
+/*        padding-right: 1200px;*/
+    }
+    
+    .mealCat:nth-of-type(2) {
+        top: 360px;
+    }
+    
+    .mealCat:nth-last-of-type(3) {
+        top: 380px;
+    }
+    
+    .mealCat:nth-of-type(4) {
+        top: 500px;
     }
     
     .weekday,
     .mealtime {
         justify-content: center;
         border-radius: 0;
-        border: 1px solid #303030;
+        border: 3px solid #FFF;
     }
     
     .lunch {
@@ -1063,8 +1089,7 @@ footer .contactForm > div > button {
     .recipe {
         min-height: 70px;
     }
-    
-    /* adding rounded corners to relevant sections for coherent look */
+
     .monday {
         border-top-left-radius: 5px;
     }
@@ -1080,6 +1105,7 @@ footer .contactForm > div > button {
     .calendarSection:nth-of-type(7) .dinner {
         border-bottom-right-radius: 5px;
     }
+    
     .mealtime {
         display: flex;
         flex-direction: column;
@@ -1092,6 +1118,6 @@ footer .contactForm > div > button {
     
     .calendarSection {
         display: flex !important;
-        width: 20%;
+        width: 30%;
     }
 }
