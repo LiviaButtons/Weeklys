@@ -118,7 +118,7 @@ if (isset($_GET['code'])){
                 </div>
             </div>
         
-            <div id="auto1" class="dbSearch mobileHidden tabletHidden">
+            <div id="auto1" class="dbSearch mobileHidden tabletHidden ">
                     <label for="searchField" hidden>Search</label>
                     <input id="search1" name="searchField" class="mobileHidden searchInput" type="text" placeholder="Recherche...">
                     <button id="searchButton1" class="fas fa-search mobileHidden searchButton"></button>
@@ -146,38 +146,25 @@ if (isset($_GET['code'])){
     <!---->
     
     
-    
+    <div id="auto2" class="dbSearch desktopHidden">   
+        <input id="search2" name="searchField" class="desktopHidden searchInput" type="text" placeholder="Recherche">
+        <button id="searchButton2" class="fas fa-search desktopHidden searchButton"></button>
+    </div>
   
   
    <div id="titreRecette" class="">
         <h2 id="nomRecette"><?php echo $result[0]['nomRecette'];?></h2>
-       
-       
-
    </div>
    
    
     <main>
-        <div>
+        <div class="mobile">
             <section id="section1" class="">
-                <div id="imageRecette">
+                <div id="imageRecette" class="hiddenMobile">
                     <img src="./assets/img/<?php echo $result[0]['image'];?>" alt="">
                 </div>
                 <div id="etapeRecette">
                     <h3>Préparation</h3> <br>
-                    
-                    <!--<?php
-                        
-                        for ($i=0; $i < count($etapes)   ;$i++){
-                            if ($result[$i]['etapes'] > 0){
-                            echo '<h4>' . 'Etape ' . $etapes[$i+1] . '</h4>';
-                                
-                            }
-                        }
-                    
-                    ?>-->
-                    
-                    
                        <?php
                        for($i = 0; $i< count($etapes) ; $i++){
                            $j = $i +1 ;
@@ -190,6 +177,9 @@ if (isset($_GET['code'])){
             </section>
             
             <section id="section2" class="">
+                <div id="imageRecette" class="hiddenDesktop" >
+                    <img class="hiddenDesktop" src="./assets/img/<?php echo $result[0]['image'];?>" alt="">
+                </div>
                 <div id="contenuTemps">
                     <p id="difficulte">
                         <?php 

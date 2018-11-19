@@ -214,16 +214,17 @@ nav ul li:last-child a:last-child {
 
 /* --------------------------------------------- */
 /* ------------------ search bar --------------- */
-#intro .dbSearch,
+
 header .dbSearch {
-    width: 100%;
+    
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
-#intro .dbSearch input[type="text"],
+
+
 header .dbSearch input[type="text"] {
     /*height: 40px;*/                                  /**************reel modif en bas*/
     height: 35px;
@@ -236,28 +237,13 @@ header .dbSearch input[type="text"] {
     border-bottom-left-radius: 40px;
 }
 
-#intro .dbSearch {
-    margin-bottom: 30px;
-}
 
-#intro .dbSearch input[type="text"] {
-    width: calc(90% - 50px);
-    width: -moz-calc(90% - 50px); /* Firefox */
-    width: -webkit-calc(90% - 50px); /* Safari */
-    width: -o-calc(90% - 50px); /* Opera */
-    background: rgba(255, 255, 255, 0.7);
-}
 
-#intro .dbSearch {
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-}
 
 header .dbSearch input[type="text"] {
     background-color: #e3e3e3;
 }
 
-#intro .dbSearch button,
 header .dbSearch button {
     color: #FFF;
     background: rgba(134, 158, 64, 0.7);
@@ -432,16 +418,16 @@ footer .contactForm > div > button {
     }
     
     header .logoText p {
-        font-size: 0.8em;
+        font-size: 1em;
     }
     
     header .logoImg {
-        width: 85px;
+        width: 75px;;
         margin-left: 0px;
     }
     
     header .logoImg img {
-        width: 85px;
+        width: 75px;
     }
     
     header .logoText {
