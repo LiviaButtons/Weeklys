@@ -125,7 +125,7 @@ header .logo {
     align-items: center;
 }
 
-header img {
+header .logo img {
     width: 75px;
     margin: 0;
     padding-right: 10px;
@@ -661,12 +661,12 @@ footer .contactForm > div > button {
     }
     
     header .logoImg {
-        width: 85px;
+        width: 75px;
         margin-left: 0px;
     }
     
     header .logoImg img {
-        width: 85px;
+        width: 75px;
     }
     
     header .logoText {
