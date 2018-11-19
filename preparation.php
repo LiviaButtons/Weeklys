@@ -85,20 +85,16 @@ if (isset($_GET['code'])){
         <link rel="stylesheet" href="./css/normalize.css">
         <link rel="stylesheet" href="./css/fontawesome-all.min.css">
         <link rel="stylesheet" href="./css/jquery-ui.min.css">
-<<<<<<< HEAD
-        
+        <link rel="stylesheet" href="./css/preparation.css">
+        <link rel="stylesheet" href="./css/style_print_recette.css">
     
     
-    <link rel="stylesheet" href="./css/preparation.css">
-    <link rel="stylesheet" href="./css/style_print_recette.css">
-    
-    
-    <link rel="stylesheet" href="./headFoot/headerFooter.css">
-=======
+        <link rel="stylesheet" href="./headFoot/headerFooter.css">
+
         <link rel="stylesheet" href="./css/preparation.css">
         <link rel="stylesheet" href="./css/style_print_recette.css">
         <link rel="stylesheet" href="./headFoot/headerFooter.css">
->>>>>>> 27079ae0825db828357a8bd9aa0ea707450a2c4d
+
     
     
     
