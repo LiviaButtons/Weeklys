@@ -1,5 +1,4 @@
 <?php 
-
 require_once('./php/config/config.php');  
 
 try {
@@ -25,8 +24,7 @@ if(isset($_POST["action"]) || isset ($_POST['query'])) {
 		$dureeEnTranche_filter = implode("','", $_POST["dureeEnTranche"]);
 		$query .= "
 		 WHERE dureeEnTranche IN('".$dureeEnTranche_filter."')
-		";
-        
+		";  
 	}
     
     if(isset($_POST["categorie"]) AND empty($_POST["dureeEnTranche"]) AND empty($_POST["typeDeRepas"]))
@@ -34,8 +32,7 @@ if(isset($_POST["action"]) || isset ($_POST['query'])) {
 		$categorie_filter = implode("','", $_POST["categorie"]);
 		$query .= "
          WHERE categorie IN('".$categorie_filter."') 
-		";
-        
+		"; 
 	}
     
     if(isset($_POST["typeDeRepas"]) AND empty($_POST["categorie"]) AND empty($_POST["dureeEnTranche"]))
@@ -43,8 +40,7 @@ if(isset($_POST["action"]) || isset ($_POST['query'])) {
 		$typeDeRepas_filter = implode("','", $_POST["typeDeRepas"]);
 		$query .= "
 		 WHERE typeDeRepas IN('".$typeDeRepas_filter."')
-		";
-        
+		"; 
 	}
     
     /**/
@@ -56,7 +52,6 @@ if(isset($_POST["action"]) || isset ($_POST['query'])) {
 		$query .= "
          WHERE dureeEnTranche IN('".$dureeEnTranche_filter."') AND categorie IN('".$categorie_filter."')
 		";
-        
 	}
     
    /**/
@@ -68,7 +63,6 @@ if(isset($_POST["action"]) || isset ($_POST['query'])) {
 		$query .= "
          WHERE categorie IN('".$categorie_filter."') AND typeDeRepas IN('".$typeDeRepas_filter."')
 		";
-        
 	}
     
     
@@ -81,7 +75,6 @@ if(isset($_POST["action"]) || isset ($_POST['query'])) {
 		$query .= "
          WHERE dureeEnTranche IN('".$dureeEnTranche_filter."') AND typeDeRepas IN('".$typeDeRepas_filter."')
 		";
-        
 	}
     
     /**/
@@ -99,7 +92,7 @@ if(isset($_POST["action"]) || isset ($_POST['query'])) {
     /******/
     /******/
     /******/
-    
+    /* search function from bar */
     // if you got a query via POST (AKA search)
     if (isset ($_POST['query']) && $_POST['query'] != '') {
         // Create SQL request leaving a placeholder for user input
@@ -121,11 +114,7 @@ if(isset($_POST["action"]) || isset ($_POST['query'])) {
         
         // search query
         $query = $sqlSelect . " idRecette, nomRecette, image " . $sqlFrom;
-
-        // Prepare the request (send to server)
         $statement = $pdo->prepare ($query);
-
-        // Inject user input into the query
         $statement->bindValue(':input', $input, PDO::PARAM_STR);
     
     } else {
