@@ -85,7 +85,7 @@ if (isset($_GET['code'])){
         <link rel="stylesheet" href="./css/normalize.css">
         <link rel="stylesheet" href="./css/fontawesome-all.min.css">
         <link rel="stylesheet" href="./css/jquery-ui.min.css">
-        <link rel="stylesheet" href="./css/style.css">
+        
     
     
     <link rel="stylesheet" href="./css/preparation.css">
@@ -151,11 +151,11 @@ if (isset($_GET['code'])){
    <div id="titreRecette" class="">
         <h2 id="nomRecette"><?php echo $result[0]['nomRecette'];?></h2>
        
-        
+        <!--
         <div class="calendarShare mobileHidden noprint">
-            <!--<span><img src="./assets/favicon/if_Share_853347.png" alt=""></span>-->
+            <span><img src="./assets/favicon/if_Share_853347.png" alt=""></span>
             <span><a href="javascript:window.print()"><img src="./assets/favicon/if_Noun_Project_100Icon_10px_grid-28_296916.png" alt=""></a></span>
-        </div>
+        </div>-->
    </div>
    
    
@@ -226,57 +226,32 @@ if (isset($_GET['code'])){
                 </div>
                 
                 <div id="portion" class="noprint">
-                   <form name="form" action="preparation.php" method="post">
+                   <form action="" method="post">
                        
                         Portions : 
-                        <input name="serving" id="serving" type="number" value="<?php echo $ingredients[0]['serving']?>" min="1" max="100" <!--onchange="fonctionMachin();-->">
-                        <button class="serving">Calculer</button>
+                        <input class ="inpServ" name='inputServing' id="inputServing" type="number" value="<?php echo $ingredients[0]['serving']?>" min="0" max="100" >
+                        
+                        <button id="btnServing">Calculer</button>
                     </form>
                 </div>
                 
                 <div id="contenuIngredient">
                    
                    <h3>Ingrédients : </h3>
-                   <!--
-                   <ul class="ingrendient_serving">
-                        <?php
-                        if (isset($_POST['serving'])){
-                            for($i = 0; $i< count($ingredients) ; $i++){ 
-                                if($ingredients[$i]['ingredientQuantite'] != 0){
-                        ?>
-                                <li> <?php echo ($_POST['serving'] * $ingredients[$i]['ingredientQuantite'])  . ' ' .  $ingredients[$i]['ingredientMesure'] . ' ' . $ingredients[$i]['nomIngredient'];?></li>
-                        <?php    
-                                }
-                                else {
-                        ?>
-                                <li><?php echo  ' ' . $ingredients[$i]['ingredientMesure'] . ' ' . $ingredients[$i]['nomIngredient']?></li>
-                        <?php
-                                }
-                            }
-                        }
-                        ?>
-                      
-                       
-                    </ul>-->
-                   
-                   
                    <ul class="ingredients">
                         <?php
-    
-   
-                        for($i = 0; $i< count($ingredients) ; $i++){
-                            if($ingredients[$i]['ingredientQuantite'] != 0){
-                        ?>
-                            <li><?php echo $ingredients[$i]['ingredientQuantite'] . ' ' .  $ingredients[$i]['ingredientMesure'] . ' ' . $ingredients[$i]['nomIngredient']?></li>
-                        <?php
+                            /*$li= '';*/
+                            for ($i = 0; $i < count($ingredients); $i++){
+                                if($ingredients[$i]['ingredientQuantite'] != 0){
+                                    echo '<li>' . $ingredients[$i]['ingredientQuantite']. ' ' . $ingredients[$i]['ingredientMesure'] . ' ' . $ingredients[$i]['nomIngredient'] . '</li>';
+                                }else {
+                                    echo '<li>' . ' ' . $ingredients[$i]['ingredientMesure'] . ' ' . $ingredients[$i]['nomIngredient'] . '</li>';
+                                }
+                                
+                                
                             }
-                            else {
                         ?>
-                            <li><?php echo  ' ' . $ingredients[$i]['ingredientMesure'] . ' ' . $ingredients[$i]['nomIngredient']?></li>
-                        <?php
-                            }
-                        }
-                        ?>
+                        
                    </ul>
                    
                 </div>
@@ -286,8 +261,30 @@ if (isset($_GET['code'])){
     </main>
 <?php include('./headFoot/footer.php')?>
 <script>
-  
-    
+$(document).ready(function(){
+    $('#btnServing').on("click", function(e){
+        e.preventDefault();
+        var inputServing = document.getElementById("inputServing").value;
+
+        console.log(inputServing);
+        var idRecette= <?php echo json_encode ($idRecette);?>;
+        var idRecetteNumber = Number(idRecette);
+        console.log(idRecette);
+     
+
+        
+        $.ajax({
+            url:"serving.php",
+            method:"post",
+            data:{inputServing:inputServing, idRecetteNumber:idRecetteNumber},
+            success: function(data){
+                $('.ingredients').html(data);
+            }
+            
+        });
+    });
+}); 
+
 </script>
 
 

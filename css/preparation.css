@@ -40,13 +40,13 @@ body, header, main, section, footer {
 }
 
 body{
-    margin-top: 150px;
+    margin-top: 140px;
     font-family: LatoLight;
 }
 
 main{
     margin-bottom: 80px;
-    margin-top: 40px;
+    margin-top: 60px;
 }
 
 main > div {
@@ -199,7 +199,7 @@ select{
     padding: 10px;
     width: 70%;
 }
-button.serving {
+#btnServing {
     background-color: #DE606E;
     color: white;
     font-weight: bold;
