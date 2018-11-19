@@ -14,8 +14,7 @@ catch (PDOException $e) {
 }
 
 
-if(isset($_POST["action"]))
-{
+if(isset($_POST["action"]) || isset ($_POST['query'])) {
 	$query = "
 		SELECT DISTINCT nomRecette, image, idRecette FROM view_cook";
     
@@ -94,17 +93,49 @@ if(isset($_POST["action"]))
         $typeDeRepas_filter = implode("','", $_POST["typeDeRepas"]);
 		$query .= "
          WHERE dureeEnTranche IN('".$dureeEnTranche_filter."') AND categorie IN('".$categorie_filter."') AND typeDeRepas IN('".$typeDeRepas_filter."')
-		";
-        
+		";   
 	}
     
+//    $_GET['query'] = 'gyo';
     
-    // $query = $query . " LIMIT ".$_POST['limite'];
+    // if you got a query via POST (AKA search)
+    if (isset ($_GET['query']) && $_GET['query'] != '') {
+        // Create SQL request leaving a placeholder for user input
+        // compare lowercase to lowercase to ensure matches despite capitalisation
+        // add wildcard on either end so it doesn't need exact match
+        $sqlSelect = "SELECT DISTINCT";
+        $sqlFrom = "FROM view_recettes
+                    WHERE LOWER(nomRecette) LIKE CONCAT('%', LOWER(:input), '%')
+                        OR LOWER(ingredient) LIKE CONCAT('%', LOWER(:input), '%')
+                        OR LOWER(typeDeRepas) LIKE CONCAT('%', LOWER(:input), '%')
+                        OR LOWER(categorie) LIKE CONCAT('%', LOWER(:input), '%')"; 
+
+        // regular and special characters that could cause issues with match
+        $special = array ('à', 'è', 'é', 'ò', 'ù', 'â', 'ê', 'î', 'ô', 'û', 'ë', 'ï', 'ç', 'É', 'À', 'È', 'Ù', 'Â', 'Ê', 'Î', 'Ô', 'Û', 'Ë', 'Ï', 'Ç', 'Ä', 'ä', 'Ö', 'ö', 'Ü', 'ü', 'ß', 'Œ', 'œ', 'e', 'a', 'i', 'o', 'u', 'c');
     
+        $input = strip_tags ($_GET['query']); // remove any tags
+        $input = trim ($input); // trim spaces
+        $input = str_replace ($special, '_', $input); // replace problematic characters with wildcard _ 
+        
+        // search query
+        $query = $sqlSelect . " idRecette, nomRecette, image " . $sqlFrom;
+
+        // Prepare the request (send to server)
+        $statement = $pdo->prepare ($query);
+
+        // Inject user input into the query
+        $statement->bindValue(':input', $input, PDO::PARAM_STR);
     
+    } else {
+        $statement = $pdo->prepare($query);
+    }
     
-    $statement = $pdo->prepare($query);
 	$statement->execute();
+//    
+//    if (isset ($_GET['query'])) {
+//        $statement->bindValue(':input', $input, PDO::PARAM_STR);
+//    }
+//    
 	$result = $statement->fetchAll(PDO::FETCH_ASSOC);
 	$total_row = $statement->rowCount();
 	$output = '';
@@ -144,7 +175,5 @@ if(isset($_POST["action"]))
 }
 /*class="listeDeDiv" style="display: none;*/
 
+
 ?>
-
-            
-

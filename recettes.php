@@ -12,9 +12,8 @@ catch (PDOException $e) {
     $pdo = null; 
     die();
 }
-
-
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -50,10 +49,8 @@ catch (PDOException $e) {
     <link rel="stylesheet" href="./css/liste.css">
     <link rel="stylesheet" href="./headFoot/headerFooter.css">
     
-    
-    
-    
 </head>
+
 <body>
     <!--<?php include('./headFoot/header.php')?>-->
     <!--Header-->
@@ -99,7 +96,7 @@ catch (PDOException $e) {
     
     <!---->
     <div class="un">
-    <h2 class="titreRecette">Les recettes</h2>
+        <h2 class="titreRecette">Les recettes</h2>
     </div>
     
     <main>
@@ -203,16 +200,14 @@ catch (PDOException $e) {
             <section id="section2">
                 <div class="row filter_data">
                 </div>
-                
+                    
                 <div class="page"></div>
             </section>
      
         </div>
-       
     </main>
     
     <?php include('./headFoot/footer.php')?>
-    
     
 <style>
 #loading
@@ -228,8 +223,7 @@ $(document).ready(function(){
    
     filter_data();
   
-    function filter_data()
-    {
+    function filter_data() {
         // la limite d'éléments par page
         var limite =9;
         
@@ -250,7 +244,6 @@ $(document).ready(function(){
                 var total_row = $('div.pagi').data('total');
                 total_row_nb = parseInt(total_row);
                 
-                
                 // afficher la premiere page
                 var arrayDiv = document.getElementsByClassName('pagi');
                 // afficher les premiers div
@@ -258,47 +251,40 @@ $(document).ready(function(){
                         arrayDiv[i].style.display = "flex";    
                 }
                 
-                
-        // pagination
-        $(function() {
-            $('.page').pagination({
-                items: total_row_nb,
-                itemsOnPage: limite,
-                cssStyle: 'light-theme',
-                currentPage: 1,
-                onPageClick: function(index){
-                    console.log ("page :" +index);
-                    //  les éléments affichés
-                    var arrayDiv = document.getElementsByClassName('pagi');
-                    // afficher les divs qu'on doit afficher
-                    for (var i=0;i< arrayDiv.length ;i++){
-                        if(i>=(index-1)*limite && i<(index-1)*limite + limite){
-                            arrayDiv[i].style.display = "flex";    
-                        }
-                        else {
-                            arrayDiv[i].style.display = "none";
-                        }
-                    }
-                            
-                    // afficher: aller de (page - 1) * 5 jusqua  limite +  limite * 
-                }
-            });
-        });
-                
-                
+                // pagination
+                $(function() {
+                    $('.page').pagination({
+                        items: total_row_nb,
+                        itemsOnPage: limite,
+                        cssStyle: 'light-theme',
+                        currentPage: 1,
+                        onPageClick: function(index){
+        //                    console.log ("page :" +index);
+                            //  les éléments affichés
+                            var arrayDiv = document.getElementsByClassName('pagi');
+                            // afficher les divs qu'on doit afficher
+                            for (var i=0;i< arrayDiv.length ;i++){
+                                if(i>=(index-1)*limite && i<(index-1)*limite + limite){
+                                    arrayDiv[i].style.display = "flex";    
+                                }
+                                else {
+                                    arrayDiv[i].style.display = "none";
+                                }
+                            }
 
-                console.log(total_row_nb); 
+                            // afficher: aller de (page - 1) * 5 jusqua  limite +  limite * 
+                        }
+                    });
+                });
+
+//                console.log(total_row_nb); 
             }
         });
         
        
     }
-    
-
-    
-    
-    function get_filter(class_name)
-    {
+        
+    function get_filter(class_name) {
         var filter = [];
         $('.'+class_name+':checked').each(function(){
             filter.push($(this).val());
@@ -310,8 +296,6 @@ $(document).ready(function(){
         filter_data();
     });
     
-    
-
       /*$('#search').keyup(function(){  
            var query = $(this).val();  
            if(query != '')  
@@ -339,7 +323,6 @@ $(document).ready(function(){
 </script>    
 
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5bea9fd2ea520ec1"></script>
-
 
 </body>
 </html>

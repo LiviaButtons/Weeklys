@@ -84,10 +84,12 @@ $(document).ready (function (event) {
                 }
             }
         }
-
+        
+//        xhr.open ('POST', './fetch_recettes.php');
         xhr.open ('POST', './php/searchBar.php');
-//        xhr.open ('GET', './php/searchBar.php?query=' + searchTerm);
+//        xhr.open ('GET', './recettes.php?query=' + searchTerm);
         xhr.setRequestHeader ('Content-type', 'application/x-www-form-urlencoded');
         xhr.send ('query=' + searchTerm);
+//        xhr.send();
     }
 });
