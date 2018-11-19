@@ -8,11 +8,7 @@ $(document).ready (function (event) {
         appendTo: "#autosearch",
         delay: 500,
         // when an autocomplete link is selected
-        select: function (event, ui) {
-            // prevent default behaviour (to display value)
-            event.preventDefault(); 
-            // 
-            $(this).val(ui.item.value);    
+        select: function (event, ui) {  
             // navigate to that recipe's page
             window.location.href= './preparation.php?code=' + ui.item.name;
         }
@@ -24,10 +20,6 @@ $(document).ready (function (event) {
         delay: 500,
         // when an autocomplete link is selected
         select: function (event, ui) {
-            // prevent default behaviour (to display value)
-            event.preventDefault(); 
-            // 
-            $(this).val(ui.item.value);    
             // navigate to that recipe's page
             window.location.href= './preparation.php?code=' + ui.item.name;
         }
@@ -46,50 +38,13 @@ $(document).ready (function (event) {
             $searchTerm = $('#search2').val();
         }
 
-        // if you received a search term, execute search function
+        // if you received a search term, redirect to recipe page with query
         if ($searchTerm != '') {
-            search($searchTerm);
+//            search($searchTerm);
+            window.location.href = './recettes.php?query=' + $searchTerm;
         } else {
-            // Else, tell user to enter a search term
-            $('.searchInput').attr('placeholder', 'Tapez quelque-chose !');
+        // else, just redirect to standard recipe page
+            window.location.href = './recettes.php';
         }
     });
-    
-    function search (searchTerm) {
-        let xhr = new XMLHttpRequest;
-
-        xhr.onreadystatechange = function (e) {
-            
-            if (xhr.readyState == 4) {
-                if (xhr.status == 200) {
-                    $searchResults = JSON.parse(xhr.responseText);
-//                    console.log (xhr.responseText);
-                    
-                    // if you connected to the DB successfully
-                    // redirect page to recipe with query in GET
-                    // removing spaces from query first
-                    $noSpaceSearch = searchTerm.replace(/\s/g, '');
-                    window.location.href = './recettes.php?query=' + $noSpaceSearch;          
-                    
-                    // No results, show message, yes results, show results
-                    if ($searchResults.length < 1) {
-                        console.log ('Aucun résultat pour votre recherche avec le terme ' + searchTerm + '. Voici toutes nos recettes !');
-                    } else {
-                        console.log ($searchResults);
-                        return $searchResults;
-                    }
-                
-                } else {
-                    console.log ('Error! ' + xhr.status);
-                }
-            }
-        }
-        
-//        xhr.open ('POST', './fetch_recettes.php');
-        xhr.open ('POST', './php/searchBar.php');
-//        xhr.open ('GET', './recettes.php?query=' + searchTerm);
-        xhr.setRequestHeader ('Content-type', 'application/x-www-form-urlencoded');
-        xhr.send ('query=' + searchTerm);
-//        xhr.send();
-    }
 });

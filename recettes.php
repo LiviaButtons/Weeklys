@@ -1,5 +1,4 @@
 <?php 
-
 require_once('./php/config/config.php');  
 
 try {
@@ -25,7 +24,6 @@ catch (PDOException $e) {
     <meta name="description" content="">
     <meta name="author" content="">
    
-    
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src='./js/headerNav.js'></script>
@@ -37,11 +35,9 @@ catch (PDOException $e) {
     <link rel="stylesheet" href="./css/jquery-ui.theme.min.css">
     
     <!--PAGINATION-->
-    
     <script type="text/javascript" src="./simplePagination/jquery.simplePagination.js"></script>
     <link type="text/css" rel="stylesheet" href="./simplePagination/simplePagination.css"/>
 
-           
     
     <link rel="stylesheet" href="./css/fontawesome-all.min.css">
     <link rel="stylesheet" href="./css/normalize.css">
@@ -134,7 +130,6 @@ catch (PDOException $e) {
                 
                     <br>
                     <hr>
-            
                    
                     <!--********************************************Par Catégorie-->
                     <h3><img src="./assets/favicon/if_burger_hamburger_meat_cheese_food_meal_fast_restaurant_junk_fastfood_3465572.png" alt=""> - Catégorie</h3>
@@ -164,7 +159,6 @@ catch (PDOException $e) {
                     }
                     ?>
                     
-                
                     <br>
                     <hr>
             
@@ -188,8 +182,6 @@ catch (PDOException $e) {
                         <input type="checkbox"  class="common_selector typeDeRepas" value="<?php echo $row['typeDeRepas']; ?>" > <?php echo $row['typeDeRepas']; ?>
                         <span class="checkmark"></span>
                         </label>
-                
-                    
                     </form>
                     <?php
                     }
@@ -198,12 +190,9 @@ catch (PDOException $e) {
             </section>
         
             <section id="section2">
-                <div class="row filter_data">
-                </div>
-                    
+                <div class="row filter_data"></div>
                 <div class="page"></div>
             </section>
-     
         </div>
     </main>
     
@@ -220,7 +209,23 @@ catch (PDOException $e) {
 
 <script>
 $(document).ready(function(){
-   
+    
+    // retrieve GET value passed in URL
+    // from https://www.kevinleary.net/javascript-get-url-parameters/
+    // this is used in AJAX call to retrieve search results
+    function getUrlParams( prop ) {
+        var params = {};
+        var search = decodeURIComponent( window.location.href.slice( window.location.href.indexOf( '?' ) + 1 ) );
+        var definitions = search.split( '&' );
+
+        definitions.forEach( function( val, key ) {
+            var parts = val.split( '=', 2 );
+            params[ parts[ 0 ] ] = parts[ 1 ];
+        } );
+
+    return ( prop && prop in params ) ? params[ prop ] : params;
+    }
+    
     filter_data();
   
     function filter_data() {
@@ -232,11 +237,12 @@ $(document).ready(function(){
         var typeDeRepas = get_filter('typeDeRepas');
         var categorie = get_filter('categorie');
         var dureeEnTranche = get_filter('dureeEnTranche');
+        var query = getUrlParams('query');
         
         $.ajax({
             url:"fetch_recettes.php",
             method:"POST",
-            data:{action:action, typeDeRepas:typeDeRepas, categorie:categorie, dureeEnTranche:dureeEnTranche,limite:limite},
+            data:{action:action, typeDeRepas:typeDeRepas, categorie:categorie, dureeEnTranche:dureeEnTranche,limite:limite,query:query},
             success:function(data){
                 
                 // afficher tous les divs
@@ -280,8 +286,6 @@ $(document).ready(function(){
 //                console.log(total_row_nb); 
             }
         });
-        
-       
     }
         
     function get_filter(class_name) {
@@ -294,31 +298,7 @@ $(document).ready(function(){
 
     $('.common_selector').click(function(){
         filter_data();
-    });
-    
-      /*$('#search').keyup(function(){  
-           var query = $(this).val();  
-           if(query != '')  
-           {  
-                $.ajax({  
-                     url:"search.php",  
-                     method:"POST",  
-                     data:{query:query},  
-                     success:function(data)  
-                     {  
-                          $('#rechercheResultat').fadeIn();  
-                          $('#rechercheResultat').html(data);  
-                     }  
-                });  
-           }  
-      });  
-      $(document).on('click', 'li', function(){  
-           $('#search').val($(this).text());  
-           $('#rechercheResultat').fadeOut();  
-      });  */
-    
-                
-    
+    });    
 });
 </script>    
 
