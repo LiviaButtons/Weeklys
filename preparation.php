@@ -216,7 +216,7 @@ if (isset($_GET['code'])){
                 <div id="portion" class="noprint">
                    <form action="" method="post">
                         
-                        Portions :
+                        <!--Portions :-->
                         <input class ="inpServ" name='inputServing' id="inputServing" type="number" value="<?php echo $ingredients[0]['serving']?>" min="0" max="100" >
                         
                         <button id="btnServing">Calculer</button>
