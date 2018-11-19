@@ -225,7 +225,7 @@ ul.ingredients li {
     text-align: center;
 }
 
-@media(min-width : 500px){
+@media(min-width : 900px){
     .hiddenDesktop {
         display: none;
     }
@@ -417,6 +417,29 @@ ul.ingredients li {
     border: none;
     z-index: 999999999999999;
 }
+    .mobile{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        
+        width: 100%;
+        
+    }
+    #section1{
+        width: 100%;
+        text-align: justify;
+        justify-content: center;
+        display: inline-block;
+    }
+    
+    #section2{
+        width: 100%;
+        display: inline-block;
+        justify-content: center;
+    }
+    .hiddenMobile {
+    display: none;
+    }
 }
 
 
