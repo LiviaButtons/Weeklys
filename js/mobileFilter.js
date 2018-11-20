@@ -23,8 +23,6 @@ $(document).ready(function (event) {
         $($button).html('Filtrer');
         $($button).appendTo('.un');
         
-        
-        
         // hide section 1, make section 2 larger
         $('#section1').hide('slide', {direction: 'left' }, 300);
         $('#section2').css({
@@ -37,7 +35,7 @@ $(document).ready(function (event) {
         // better: apply a class which is styled in mobile CSS
         $($button).on('click', function (e) {
             $('#section1').css({
-               'z-index': 999,
+                'z-index': 999,
                 'position': 'fixed',
                 'top': 0,
                 'left': '0',
@@ -45,6 +43,8 @@ $(document).ready(function (event) {
                 'margin-left': 'auto',
                 'margin-right': 'auto'
             });
+            
+            $('#section1').addClass('filtreMobile');
             
             // Create a "close button" and insert it at the top of filter
             $newSpan = document.createElement('span');
@@ -56,11 +56,11 @@ $(document).ready(function (event) {
             $('#section1 > div > h3:nth-of-type(1)').before($newSpan);
             
             $('#section1').show('slide', {direction: 'left' }, 300)
+            
+            $('.closeFilter').on('click', function(bla) {
+                $('#section1').hide('slide', {direction: 'left'}, 300); 
+            });
         })
-        
-        
-//        $children = $('#section1 > form');
-//        console.log ($children); 
         
         $('#section1 > div').on('click', function (ev) {
             $clicked = ev.target;
@@ -72,10 +72,4 @@ $(document).ready(function (event) {
             }
         });
     } 
-    
-    // add event listener to the "close button"
-    $('.closeFilter').on('click', function (ee) {
-        $('#section1').hide('slide', {direction: 'left'}, 300);
-        console.log ('test');
-    })
 });
