@@ -30,6 +30,7 @@ catch (PDOException $e) {
     <script src='./js/hamburgerMenu.js'></script>
     <script src='./js/sendMail.js'></script>
     <script src='./js/searchBar.js'></script>
+    <script src='./js/mobileFilter.js'></script>
     <link rel="stylesheet" href="./css/jquery-ui.min.css">
     <link rel="stylesheet" href="./css/jquery-ui.structure.min.css">
     <link rel="stylesheet" href="./css/jquery-ui.theme.min.css">
