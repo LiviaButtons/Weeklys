@@ -4,7 +4,6 @@
 
 $(document).ready(function (event) {
     $width = $(window).width();
-//    console.log ($width);
     
     if ($width < 950) {
         // create a button, style it, add it after h2
@@ -44,9 +43,10 @@ $(document).ready(function (event) {
                 'margin-right': 'auto'
             });
             
+            // class for styling in CSS stylesheet
             $('#section1').addClass('filtreMobile');
             
-            // Create a "close button" and insert it at the top of filter
+            // Create a "close button" and insert it at the top of filter (before the first h3)
             $newSpan = document.createElement('span');
             $($newSpan).addClass('fas fa-times fa-2x closeFilter').css({
                 'position': 'absolute',
@@ -55,21 +55,20 @@ $(document).ready(function (event) {
             });
             $('#section1 > div > h3:nth-of-type(1)').before($newSpan);
             
+            // when the "close button" is in place, show the filters
             $('#section1').show('slide', {direction: 'left' }, 300)
             
-            $('.closeFilter').on('click', function(bla) {
+            // closer filter upon clicking of "close button"
+            $('.closeFilter').on('click', function() {
                 $('#section1').hide('slide', {direction: 'left'}, 300); 
             });
         })
         
-        $('#section1 > div').on('click', function (ev) {
-            $clicked = ev.target;
-            console.log (ev.target);  
-            
+        $('#section1 > div').on('click', function (ev) {            
             if (ev.target == this) {
                 // hide if click didn't occur on a child (aka form or checkbox)
-                $('#section1').hide('slide', {direction: 'left'}, 300);     
-            }
+                $('#section1').hide('slide', {direction: 'left'}, 300); 
+            };
         });
-    } 
+    }; 
 });
