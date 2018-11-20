@@ -278,7 +278,16 @@ form:nth-of-type(1) .container{
     transform: rotate(45deg);
 }
 
-
+.filterButton{
+    background-color: #869e40;
+    height: 40px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    font-family: LatoBold;
+    text-transform: uppercase;
+    color: #FFF;
+    width: 50%;
+}
 
 
 

@@ -10,14 +10,14 @@ $(document).ready(function (event) {
         $button = document.createElement ('button');
         $($button).addClass ('filterButton');
         $($button).css({
-            'background-color': '#869e40',
+            /*'background-color': '#869e40',
             'height': '40px',
             'border': '1px solid transparent',
             'border-radius': '5px',
             'font-family': 'LatoBold',
             'text-transform': 'uppercase',
             'color': '#FFF',
-            'width': '50%'
+            'width': '50%'*/
         });
         $($button).html('Filtrer');
         $($button).appendTo('.un');
