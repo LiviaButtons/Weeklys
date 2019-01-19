@@ -20,6 +20,11 @@ if (isset($_GET['code'])){
     $statement->execute();
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
     
+    if (count($result) <= 0) {
+        header('location: 404.html');
+        die();
+    }
+    
     $queryIngredients = "SELECT t_recette.idRecette, t_ingredientrecette.ingredientQuantite, t_ingredientrecette.ingredientMesure, t_ingredient.nomIngredient, t_recette.difficulte, t_recette.serving FROM t_recette 
                             JOIN t_ingredientrecette
 	                           ON t_ingredientrecette.idRecette = t_recette.idRecette
@@ -30,17 +35,6 @@ if (isset($_GET['code'])){
     $statement = $pdo->prepare($queryIngredients);
     $statement->execute();
     $ingredients = $statement->fetchAll(PDO::FETCH_ASSOC);
-    
-    /*$queryIngredients = "SELECT t_recette.idRecette,  t_recette.serving FROM t_recette 
-                            JOIN t_ingredientrecette
-	                           ON t_ingredientrecette.idRecette = t_recette.idRecette
-                            JOIN t_ingredient
-	                           ON t_ingredient.idIngredient = t_ingredientrecette.idIngredient
-
-                        WHERE t_recette.idRecette = $idRecette";
-    $statement = $pdo->prepare($queryIngredients);
-    $statement->execute();
-    $ingredients = $statement->fetchAll(PDO::FETCH_ASSOC);*/
     
     $queryEtapes = "SELECT t_etapes.descriptEtapes FROM t_etapes 
                         JOIN t_recette

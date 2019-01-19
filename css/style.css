@@ -975,6 +975,29 @@ footer .contactForm > div > button {
     }
 }
 
+    
+/* ---------------------------- */
+/* ------------- 404 ---------- */
+.div-404 {
+    width: 50%; 
+    margin-top:50px; 
+    margin-left: auto; 
+    margin-right:auto; 
+    padding:20px;
+}
+
+.h2-404 {
+    margin-top:60px;
+}
+
+.img-404 {
+    width: 100%; 
+    height: auto; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+
 
 @media print {
     /* general */
